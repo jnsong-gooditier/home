@@ -110,8 +110,8 @@ body>div{
 
 .thumbnail{
   display: block;
-  width: 364px;
-  height: 364px;
+  width: 360px;
+  height: 360px;
   border-radius: 30px;
   background-color: #000;
   overflow: hidden;
@@ -122,6 +122,7 @@ select{
   font-size: 20px;
   padding-left: 15px;
 }
+
 select option{
   font-size: 20px;
 }
@@ -171,12 +172,11 @@ select option{
   text-align: center;
   font-size: 24px;
 }
+
 .header .menuBtn{
-  width: 50px;
-  height: 50px;
   position: absolute;
-  right:0;
-  top: 25px;
+  top: 18px;
+  right: 0;
   background-image: url(../img/menu-on.png);
   background-size: cover;
   display: none;
@@ -217,10 +217,14 @@ select option{
 }
 
 .scrolloff .menuBtn{
+  position: absolute;
+  top: 18px;
+  right: 0;
   background-image: url(../img/menu-on-white.png);
   background-size: cover;
   display: none;
 }
+
 
 /*slide*/
 .slide{
@@ -330,7 +334,7 @@ select option{
   height: 100%;
 }
 
-/*notice*/
+/*home-notice*/
 .notice{
   height: 100vh;
   background-color: #fff;
@@ -361,17 +365,14 @@ select option{
 }
 
 .notice .con{
-  position: relative;
   overflow: scroll;
   width: 1580px;
   height: 500px;
-  margin-left: 340px;
 }
 
 .notice .con .notice-con{
-  position: absolute;
   width: 3262px;
-  top: 40px;
+  margin-top: 40px;
 }
 
 .notice .con .notice-con>div{
@@ -382,7 +383,7 @@ select option{
   margin-right: 0px;
 }
 
-/*career*/
+/*home-career*/
 .career{
   position: relative;
   height: 100vh;
@@ -430,13 +431,16 @@ select option{
   height: 130px;
   margin-top: 75px;
 }
-
+.career .contents .maintitle{
+  width: 50%;
+}
 .career .contents .career-info{
   margin-top: 55px;
 }
 
 .career .contents .title{
   width: 50%;
+  margin-top: 5px;
 }
 
 .career .maintitle{
@@ -600,7 +604,7 @@ select option{
   padding-left: 15px;
   border: none;
   font-size: 20px;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 
@@ -616,7 +620,15 @@ select option{
   width: 100%;
   height: 70px;
   border: none;
-  border-radius: 10px;
+  border-radius: 20px;
+}
+
+.contact .contents .send a{
+  font-size: 24px;
+}
+
+.contact .contents .send .agree a{
+  text-decoration: underline;
 }
 
 .contact .contents .send .kind-btn .left {
@@ -624,7 +636,7 @@ select option{
   height: 70px;
   line-height: 70px;
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 20px;
   font-size: 24px;
   text-align: center;
   margin-right: 2%;
@@ -649,7 +661,7 @@ select option{
   width: 100%;
   height: 70px;
   background-color: #0865B0;
-  border-radius: 10px;
+  border-radius: 20px;
   color: #fff;
   text-align: center;
   line-height: 70px;
@@ -688,8 +700,8 @@ select option{
   padding-right: 40px;
 }
 
-.footer .contents>.left p{
-  display: block;
+.footer p {
+  display: inline-block;
 }
 
 .footer .contents .footer-info{
@@ -705,7 +717,7 @@ select option{
   height: 50px;
   background-color: #273F72;
   border: solid 2px #fff;
-  border-radius: 10px;
+  border-radius: 20px;
   font-size: 20px;
   color: #fff;
   padding: 0 15PX;
@@ -729,10 +741,6 @@ select option{
 
 .overview h1{
   padding-top: 170px;
-}
-
-.overview h2{
-  line-height: 50px;
 }
 
 .overview .overview-con{
@@ -768,7 +776,7 @@ select option{
   background-image: url(../img/aboutimg.jpg);
   background-size: cover;
   margin-right: 3%;
-  border-radius: 30px;
+  border-radius: 20px;
 }
 
 .info .info-con>div:nth-child(2){
@@ -862,6 +870,7 @@ select option{
 .organization .chart .team{
   width: 100%;
 }
+
 .organization .chart .team > div{
   width: 30%;
   height: 150px;
@@ -890,23 +899,25 @@ select option{
 }
 
 /*about-ci*/
-
 .ci h1{
   width: 30%;
   margin-right: 6%;
 }
+
 .ci .ci-mean{
   width: 64%;
   height: 300px;
 }
+
 .ci a.btn-download {
   padding: 20px 0;
   width: 47%;
   margin-top: 30px;
-  border-radius: 10px;
+  border-radius: 20px;
   background-color: #80C0E3;
   color: #fff;
 }
+
 .ci a.btn-download:nth-child(1){
   margin-right: 6%;
 }
@@ -952,8 +963,7 @@ select option{
   margin-right: 0;
 }
 
-.ci .logo-bg
-{
+.ci .logo-bg{
   width: 100%;
   height: 200px;
   margin-top: 20px;
@@ -963,6 +973,7 @@ select option{
   background-color: #fff;
   text-align: center;
 }
+
 .ci .bg-color{
   background-color: #273F72;
 }
@@ -975,6 +986,7 @@ select option{
   width: 100%;
   padding-top: 10px;
 }
+
 .ci .ci-white .sb-title{
   padding-top: 150px;
 }
@@ -983,6 +995,7 @@ select option{
   width: 30%;
   margin-right: 5%;
 }
+
 .ci .ci-color > div:last-child{
   margin-right: 0;
 }
@@ -990,7 +1003,7 @@ select option{
 .ci .ci-color > div > div{
   width: 100%;
   height: 50px;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 .ci .ci-color .bold{
@@ -1017,18 +1030,21 @@ select option{
 .certifications h1{
   text-align: center;
 }
+
 .certifications .cert-btn{
   width: 100%;
   height: 70px;
   margin-top: 30px;
   margin-bottom: 90px;
 }
+
 .certifications .cert-btn>div{
   width: 600px;
   margin: 0 auto;
   border-radius: 20px;
   overflow: hidden;
 }
+
 .certifications .cert-btn .left{
   width: 200px;
   height: 70px;
@@ -1038,28 +1054,42 @@ select option{
   text-align: center;
   color: #fff;
 }
+
 .certifications .cert-btn .left:nth-child(1){
   background-color: #0865B0;
 }
+
+.certifications .cert-con .cert02{
+  display: none;
+}
+
+.certifications .cert-con .cert03{
+  display: none;
+}
+
 .certifications .cert-con{
   width: 100%;
   height: auto;
 }
-.certifications .cert-con .cert01 .left{
+
+.certifications .cert-con .left{
   width: 20.5%;
   margin-left: 6%;
   text-align: center;
 }
-.certifications .cert-con .cert01 .left:nth-child(1){
+
+.certifications .cert-con .left:nth-child(1){
   margin-left: 0;
 }
+
 .certifications .cert-con .cerimg-bg{
   width: 100%;
   height: 330px;
   background-color: #D1D1D1;
-  border-radius: 20px;
+  border-radius: 30px;
   margin-bottom: 10px;
 }
+
 /*service-development*/
 .development h1{
   text-align: center;
@@ -1082,10 +1112,12 @@ select option{
 .news {
   height: 1500px;
 }
+
 .news .news-title{
   height: 300px;
   margin-bottom: 10px;
 }
+
 .news .search-bar{
   width: 500px;
   height: 70px;
@@ -1093,6 +1125,7 @@ select option{
   background-color: #f2f2f2;
   border-radius: 20px;
 }
+
 .news .search-bar select{
   border: none;
   width: 100px;
@@ -1101,6 +1134,7 @@ select option{
   background-color: rgba(255, 255, 255, 0);
   margin-right: 10px;
 }
+
 .news .search-bar input{
   border: none;
   width: 320px;
@@ -1109,21 +1143,26 @@ select option{
   font-size: 20px;
   background-color: rgba(255, 255, 255, 0);
 }
+
 .news .news-con{
   width: 100%;
   height: 1000px;
 }
+
 .news .news-con li{
   padding-bottom: 100px;
 }
+
 .news .news-con .left{
   width: 30%;
   margin-left: 5%;
   margin-bottom: 70px;
 }
+
 .news .news-con .left:nth-child(1){
   margin-left: 0;
 }
+
 .news .news-con .left .sb-title{
   display: inline-block;
   width: 100%;
@@ -1131,6 +1170,7 @@ select option{
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
 .news .paging{
   width: 380px;
   margin: 0 auto;
@@ -1161,11 +1201,6 @@ select option{
 
 .talent h1{
   padding-top: 170px;
-}
-
-.talent h2{
-  line-height: 50px;
-  margin-top: 0px;
 }
 
 .talent .talent-con{
@@ -1224,6 +1259,7 @@ select option{
   height: 100px;
   padding-right: 15px;
 }
+
 .benefit > div{
   width: 70%;
 }
@@ -1262,7 +1298,7 @@ select option{
   width: 48%;
   height: 135px;
   background-color: #fff;
-  border-radius: 30px;
+  border-radius: 20px;
   box-shadow: 0 0 5px #d1d1d1;
 }
 
@@ -1302,7 +1338,7 @@ select option{
 .process .step-bg .step {
   width: 20.5%;
   height: 250px;
-  border-radius: 30px;
+  border-radius: 20px;
   background-color: #fff;
   box-shadow: 0 0 10px #d1d1d1;
   text-align: center;
@@ -1382,7 +1418,7 @@ select option{
 .careerlist .careerlist-con li p.left{
   height: 70px;
   line-height: 70px;
-  width: 10%;
+  width: 7%;
 }
 
 .careerlist .careerlist-con li p.right{
@@ -1392,7 +1428,7 @@ select option{
 }
 
 .careerlist .careerlist-con a.left{
-  width: 70%;
+  width: 73%;
   font-weight: bold;
 }
 
@@ -1451,9 +1487,6 @@ select option{
 .menuOn .menuBtn{
   background-image: url(../img/menu-off.png);
   background-size: cover;
-  width: 55px;
-  height: 55px;
-  margin-top: 18px;
 }
 
 .menuOn .siteMap{
@@ -1468,19 +1501,15 @@ select option{
   line-height: 40px;
 }
 
-.menuOn .siteMap ul li{
-  font-size: 20px;
-}
-
-.menuOn .siteMap ul li:nth-child(1){
-  font-weight: bold;
-}
+.ci .tabletOn {
+  display: none;
+} 
 
 
 /*~1439px 태블릿 가로, 노트북 이하*/
 @media (max-width:1439px) {
   section{
-    height: auto;
+    height: 100vh;
   }
 
   a{
@@ -1499,36 +1528,35 @@ select option{
     display: block;
     width: 45px;
     height: 45px;
-    top: 12px;
+    top: 20px;
   }
 
   .menuOn .menuBtn{
     width: 45px;
     height: 45px;
-    margin-top: 12px;
+    margin-top: 20px;
+  }
+
+  .menuOn .siteMap ul li a{
+    font-size: 20px;
+  }
+  
+  .menuOn .siteMap ul li:nth-child(1) a{
+    font-weight: bold;
+    font-size: 25px;
   }
 
   .btn-more{
-    padding: 10px;
-    padding-left: 15px;
-    padding-right: 15px;
     border-radius: 15px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
-  .contact .contents .send{
-    width: 425px;
-    height: 545px;
-    padding: 35px;
-  }
-  .contact .contents .send input{
-    font-size: 16px;
-  }
-  .contact .contents .send .kind-btn .left{
-    font-size: 16px;
-  }
-}
 
-/*1024~1439px 태블릿 가로*/
-@media (min-width:1024px) and (max-width:1439px) {
+  /*font-size*/
+  a{
+    font-size: 14px;
+  }
   
   h1{
     font-size: 55px;
@@ -1541,21 +1569,397 @@ select option{
   
   p.title{
     font-size: 25px;
-    line-height: 30px;
-    margin-top: 15px;
   }
   
   p.sb-title{
-    font-size: 20px;
-    font-weight: bold;
-    line-height: 55px;
-  }
+    font-size: 20px;}
   
   p{
+    font-size: 14px;
+    line-height: 20px;
+  }
+  
+  select{
+    font-size: 14px;
+  }
+  
+  select option{
+    font-size: 14px;
+  }
+  
+  .header .mainNav a{
+    font-size: 20px;
+  }
+  
+  .header .subNav a{
+    font-size: 14px;
+  }
+  
+  .career .contents .btn .thumbnail{
+    font-size: 25px;
+  }
+  
+  .career .maintitle .career-table>div a{
+    font-size: 20px;
+  }
+  
+  .contact .contents .send{
+    font-size: 20px;
+  }
+  
+  .contact .contents .send p{
+    font-size: 20px;
+  }
+  
+  .contact .contents .send input{
+    font-size: 14px;
+  }
+  
+  .contact .contents .send a{
+    font-size: 20px;
+  }
+  
+  .contact .contents .send .kind-btn .left {
+    font-size: 20px;
+  }
+  
+  .footer{
+    height: 330px;
+    font-size: 14px;
+  }
+
+  .footer .contents>.left:nth-child(1) {
+    width: 75%;
+  }
+
+  .footer .contents>.left:nth-child(2) {
+    width: 25%;
+  }
+  
+  .footer .contents .footer-info {
+    margin: 20px 0;
+  }
+
+  .footer .fs-logo select{
+    font-size: 14px;
+  }
+
+  .footer .fs-logo img {
+    width: 150px;
+    margin-top: 10px;
+  }
+  
+  
+  /*about-회사소개*/
+  
+  .overview .overview-title{
+    height: 60%;
+  }
+  
+  .overview .overview-con{
+    height: 40%;
+  }
+
+  .overview .overview-con .contents > div {
+    margin: 100px 0;
+  }
+
+  .vision .vision-con > div{
+    margin-top: 25px;
+  }
+
+  .info .info-con>div {
+    margin-top: 30px;
+    height: 450px;
+  }
+  .info dl {
+    padding: 16px;
+  }
+
+  .info .info-con dt {
+    width: 20%;
+  }
+
+  .info .info-con dd {
+    width: 80%;
+  }
+
+  /*about-조직도*/
+  .organization .chart .team > div p{
+    font-size: 20px;
+  }
+  
+  .ci .ci-color .bold{
+    font-size: 14px;
+  }
+
+  .ci .ci-white .sb-title {
+    padding-top: 50px;
+}
+  
+  .certifications .cert-btn .left{
+    font-size: 14px;
+  }
+  
+  .news .search-bar select{
+    font-size: 14px;
+  }
+  
+  .news .search-bar input{
+    font-size: 14px;
+  }
+  
+  .news .paging a{
+    font-size: 14px;
+  }
+  
+  .careerlist .search-bar select{
+    font-size: 14px;
+  }
+  
+  .careerlist .search-bar input{
+    font-size: 14px;
+  }
+  
+  .careerlist .paging a{
+    font-size: 14px;
+  }
+  
+  .menuOn .siteMap ul{
+    font-size: 14px;
+  }
+  
+  /*border-radius*/
+  .thumbnail{
+    border-radius: 25px;
+  }
+  
+  .career .maintitle .btn{
+    border-radius: 25px;
+  }
+  
+  .contact .contents .send{
+    border-radius: 25px;
+  }
+  
+  .contact .contents .send input{
+    border-radius: 15px;
+  }
+  
+  .contact .contents .send select{
+    border-radius: 15px;
+  }
+  
+  .contact .contents .send .kind-btn .left {
+    border-radius: 15px;
+  }
+  
+  .contact .contents .map{
+    border-radius: 25px;
+  }
+  
+  .contact .contents .send .send-btn {
+    border-radius: 15px;
+  }
+  
+  .footer .fs-logo select{
+    border-radius: 15px;
+  }
+  
+  .info .info-con>div:nth-child(1){
+    border-radius: 15px;
+  }
+  
+  .organization .chart .team > div{
+    border-radius: 15px;
+  }
+  
+  .ci a.btn-download {
+    border-radius: 15px;
+  }
+  
+  .ci .logo-bg{
+    border-radius: 15px;
+  }
+  
+  .ci .ci-color > div > div{
+    border-radius: 15px;
+  }
+  
+  .certifications .cert-btn>div{
+    border-radius: 15px;
+  }
+  
+  .certifications .cert-con .cerimg-bg{
+    border-radius: 25px;
+  }
+  
+  .news .search-bar{
+    border-radius: 15px;
+  }
+  
+  .benefit > div > div{
+    border-radius: 25px;
+  }  
+  
+  .process .career-link .btn{
+    border-radius: 15px;
+  }
+  
+  .process .step-bg .step {
+    border-radius: 15px;
+  }
+  
+  .careerlist .search-bar{
+    border-radius: 15px;
+  }
+
+  /*notice*/
+
+  /*home-career*/
+  .career .contents .btn .thumbnail:nth-child(1){
+    top: 150px;
+  }
+
+  .career .contents .btn .thumbnail:nth-child(2){
+    top:370px;
+    left:120px;
+  }
+
+  .career .contents .btn .thumbnail:nth-child(3){
+    top:590px
+  }
+
+  .career .contents .btn img {
+    margin-top: 40px;
+  }
+
+  .career .maintitle .btn img {
+    margin-top: 30px;
+    width: 60px;
+    height: 60px;
+}
+
+  .career .contents .title {
+    margin-top: 10px;
+  }
+
+  .career .maintitle .career-table {
+    margin-top: 10px;
+  }
+
+  .career .maintitle .career-table>div a{
+    width: 40%;
+  }
+
+  .career .maintitle .btn {
+    height: 125px;
+  }
+
+  .career .maintitle .btn p {
+    line-height: 30px;
+    margin-left: 15px;
+  }
+
+  /*home-contact*/
+  .contact .contents .send{
+    width: 355px;
+    height: 475px;
+    padding: 35px;
+  }
+
+  .contact .contents .send>div {
+    margin-bottom: 20px;
+  }
+
+  .contact .contents .send p {
+    margin-bottom: 5px;
+  }
+  .contact .contents .send input{
     font-size: 16px;
+  }
+
+  .contact .contents .send a{
+    font-size: 16px;
+  }
+
+  .contact .contents .send .kind-btn .left{
+    font-size: 16px;
+  }
+
+  .contact .contents .name input {
+    width: 230px;
+    height: 50px;
+  }
+
+  .contact .contents .send select {
+    width: 100%;
+    height: 50px;
+    border: none;
+  }
+  
+  .contact .contents .phone input {
+    width: 340px;
+    height: 50px;
+  }
+
+  .contact .contents .send .kind-btn .left {
+    height: 50px;
+    line-height: 50px;
+  }
+
+  .contact .contents .send .send-btn {
+    height: 50px;
+    line-height: 50px;
+  }
+
+  .contact .contents .map {
+    height: 350px;
+  }
+  .contact .contents .info>div {
+    height: 35px;
+  }
+
+  .contact .contents .info>div:nth-child(1) {
+    margin-top: 10px;
+  }
+
+  .contact .contents .info img {
+    width: 30px;
+    height: 30px;
+    padding: 2.5px;
+  }
+
+  .contact .contents .info p {
     line-height: 35px;
   }
 
+  .ci .pcOn {
+    display: none;
+  } 
+
+  .ci .tabletOn {
+    display: block;
+  } 
+
+  /*notice-공지사항*/
+  .careerlist .careerlist-con li p.right {{
+    height: 50px;
+    line-height: 50px;
+  }
+  .careerlist .careerlist-con li {
+    height: 50px;
+    line-height: 50px;
+  }
+
+  .careerlist .careerlist-con li p.right {
+    height: 50px;
+    line-height: 50px;
+  }
+}
+
+/*1024~1439px 태블릿 가로*/
+@media (min-width:1024px) and (max-width:1439px) {
   .contents {
     width: 930px;
   }
@@ -1567,13 +1971,6 @@ select option{
   .header .logo img{
     height: 90px;
     line-height: 90px;
-  }
-
-  .header .menuBtn{
-    display: block;
-    width: 55px;
-    height: 55px;
-    top: 18px;
   }
   
   .thumbnail{
@@ -1594,36 +1991,67 @@ select option{
     font-size: 16px;
   }
 
+  
+  .organization .chart .top {
+    width: 200px;
+    height: 200px;
+    margin-top: 30px;
+    border-radius: 200px;
+    border: solid 10px #80C0E3;
+  }
+
+  .organization .chart .top img {
+    height: 130px;
+    margin-top: 35px;
+  }
+
+  .organization .chart .team > div{
+    height: 135px;
+  }
+  
+  .organization .chart .team > div img {
+    height: 60px;
+    padding-left: 70px;
+  }
+
+  /*about-ci*/
+  .ci-white {
+    height: 550px;
+  }
+
+  .ci-bg {
+    height: 400px;
+  }
+
+  .ci h1 {
+    width: 100%;
+    text-align: center;
+    margin-right: 6%;
+    float: none;
+  }
+
+  .ci .header-margin {
+    margin-top: 40px;
+    width: 100%;
+    float: none;
+  }
+
+  .ci a.btn-download:nth-child(1) {
+    margin-right: 4%;
+  }
+
+  .ci a.btn-download {
+    width: 48%;
+  } 
+
+  .ci .logo-bg {
+    height: 150px;
+  }
 }
 
 /*~1023px 태블릿 세로 이하*/
 @media (max-width:1023px) {
-  h1{
-    font-size: 36px;
-  }
-  
-  h2{
-    font-size: 16px;
-    line-height: 50px;
-  }
-  
-  p.title{
-    font-size: 20px;
-    line-height: 50px;
-  }
-  
-  p.sb-title{
-    font-size: 14px;
-    font-weight: bold;
-    line-height: 55px;
-  }
-  
-  p{
-    font-size: 14px;
-    line-height: 35px;
-  }
-
-  .contents {
+    .contents {
     width: 90%;
   }
   
@@ -1643,6 +2071,20 @@ select option{
   .menuOn .menu-head img{
     height: 70px;
     line-height: 70px;
+  }
+
+  
+  .header .menuBtn{
+    display: block;
+    width: 35px;
+    height: 35px;
+    top: 17px;
+  }
+
+  .menuOn .menuBtn{
+    width: 35px;
+    height: 35px;
+    margin-top: 17px;
   }
 
   section{
@@ -1690,13 +2132,227 @@ select option{
     width: 40%;
     margin-top: 0;
   }
+
+  .btn-more{
+    border-radius: 10px;
+  }
+  
+  .thumbnail{
+    border-radius: 20px;
+  }
+  
+  .career .maintitle .btn{
+    border-radius: 20px;
+  }
+  
+  .contact .contents .send{
+    border-radius: 20px;
+  }
+  
+  .contact .contents .send input{
+    border-radius: 10px;
+  }
+  
+  .contact .contents .send select{
+    border-radius: 10px;
+  }
+  
+  .contact .contents .send .kind-btn .left {
+    border-radius: 10px;
+  }
+  
+  .contact .contents .map{
+    border-radius: 20px;
+  }
+  
+  .contact .contents .send .send-btn {
+    border-radius: 10px;
+  }
+  
+  .footer .fs-logo select{
+    border-radius: 10px;
+  }
+  
+  .info .info-con>div:nth-child(1){
+    border-radius: 10px;
+  }
+  
+  .organization .chart .team > div{
+    border-radius: 10px;
+  }
+  
+  .ci a.btn-download {
+    border-radius: 10px;
+  }
+  
+  .ci .logo-bg{
+    border-radius: 10px;
+  }
+  
+  .ci .ci-color > div > div{
+    border-radius: 10px;
+  }
+  
+  .certifications .cert-btn>div{
+    border-radius: 10px;
+  }
+  
+  .certifications .cert-con .cerimg-bg{
+    border-radius: 20px;
+  }
+  
+  .news .search-bar{
+    border-radius: 10px;
+  }
+  
+  .benefit > div > div{
+    border-radius: 20px;
+  }  
+  
+  .process .career-link .btn{
+    border-radius: 10px;
+  }
+  
+  .process .step-bg .step {
+    border-radius: 10px;
+  }
+  
+  .careerlist .search-bar{
+    border-radius: 10px;
+  }
 }
 
 /*768~1023px 태블릿 세로*/
 @media (min-width:768px) and (max-width:1023px) {
-
+  /*thumbnail*/
+  .thumbnail{
+    width: 240px;
+    height: 240px;
+  }
 }
 
 /*0 ~ 767px 모바일*/
 @media (max-width:767px) {
+  /*font-size*/
+  a{
+    font-size: 12px;
+  }
+  
+  h1{
+    font-size: 36px;
+  }
+  
+  h2{
+    font-size: 16px;
+  }
+  
+  p.title{
+    font-size: 20px;
+  }
+  
+  p.sb-title{
+    font-size: 16px;}
+  
+  p{
+    font-size: 12px;
+  }
+  
+  select{
+    font-size: 12px;
+  }
+  
+  select option{
+    font-size: 12px;
+  }
+  
+  .header .mainNav a{
+    font-size: 16px;
+  }
+  
+  .header .subNav a{
+    font-size: 12px;
+  }
+  
+  .career .contents .btn .thumbnail{
+    font-size: 20px;
+  }
+  
+  .career .maintitle .career-table>div a{
+    font-size: 16px;
+  }
+  
+  .contact .contents .send{
+    font-size: 16px;
+  }
+  
+  .contact .contents .send p{
+    font-size: 16px;
+  }
+  
+  .contact .contents .send input{
+    font-size: 12px;
+  }
+  
+  .contact .contents .send a{
+    font-size: 16px;
+  }
+  
+  .contact .contents .send .kind-btn .left {
+    font-size: 16px;
+  }
+  
+  .footer{
+    font-size: 12px;
+  }
+  
+  .footer .fs-logo select{
+    font-size: 12px;
+  }
+  
+  .organization .chart .team > div p{
+    font-size: 16px;
+  }
+  
+  .ci .ci-color .bold{
+    font-size: 12px;
+  }
+  
+  
+  .certifications .cert-btn .left{
+    font-size: 12px;
+  }
+  
+  .news .search-bar select{
+    font-size: 12px;
+  }
+  
+  .news .search-bar input{
+    font-size: 12px;
+  }
+  
+  .news .paging a{
+    font-size: 12px;
+  }
+  
+  .careerlist .search-bar select{
+    font-size: 12px;
+  }
+  
+  .careerlist .search-bar input{
+    font-size: 12px;
+  }
+  
+  .careerlist .paging a{
+    font-size: 12px;
+  }
+  
+  .menuOn .siteMap ul{
+    font-size: 12px;
+  }
+
+  /*thumbnail*/
+  .thumbnail{
+    width: 160px;
+    height: 160px;
+  }
 }

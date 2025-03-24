@@ -87,5 +87,24 @@ $(document).ready(function () {
             $(".menuOn").fadeOut(); // 메뉴 숨김 (부드러운 효과)
         });
     });
+
+    //certifications 버튼 동작
+    $(".cert-btn a").on("click", function (e) {
+        e.preventDefault(); // a 태그 기본 동작 방지
+
+        let index = $(this).index(); // 클릭한 a 태그의 인덱스 가져오기
+
+        // 모든 a 태그 스타일 초기화
+        $(".cert-btn a").css("background-color", "#80C0E3");
+
+        // 클릭한 a 태그 스타일 변경
+        $(this).css("background-color", "#0865b0");
+
+        // 모든 cert 클래스 숨기기
+        $(".cert01, .cert02, .cert03").hide();
+
+        // 클릭한 인덱스에 맞는 cert 클래스 보이기
+        $(".cert0" + (index + 1)).show();
+    });
     
 });
