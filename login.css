@@ -1,0 +1,161 @@
+@charset "utf-8";
+
+
+
+
+.login_bg_top{
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: -1;
+}
+
+.login_bg_bottom{
+    position: absolute;
+    bottom:0;
+    right: 0;
+}
+
+.logo {
+    display: block;
+    padding-left: 50px;
+}
+
+h1{
+    position: absolute;
+    width: 181px;
+    height: 58px;
+    top:40px;
+    left: 60px;
+    z-index: 10;
+}
+
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 5px 5px 5px rgba(66, 50, 50, 0.1);
+}
+
+
+.login-container {
+    width: 450px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+    line-height: 60px;
+    margin-top: 14px;
+}
+
+.separator {
+    width: 150px;
+    height: 4px;
+    background-color: #15a0e1;
+    margin: 24px;
+}
+
+.welcome-message {
+    text-align: center;
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 30px;
+    color: #696969;
+}
+
+.welcome-message >span {
+    color: darkorange;
+}
+
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-control {
+    width: 100%;
+    position: relative;
+    margin-bottom: 24px;
+}
+
+input,
+button {
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+input {
+    width: 320px;
+    background: #e6e6e6;
+    color: #333;
+    letter-spacing: 0.5px;
+    padding: 14px 64px;
+}
+
+input ~ i {
+    position: absolute;
+    left: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    transition: color   0.4s;
+}
+
+input:focus ~ i {
+    color: #15a0e1;
+}
+
+button.submit {
+    color: #fff;
+    padding: 14px 64px;
+    margin: 30px auto 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    background-image: linear-gradient(to right, #1566ab, #15a0e1);
+    cursor: pointer;
+    transition: opacity 0.4s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+button.submit:hover {
+    opacity: 0.9;
+}
+
+/* ----  Responsiveness   ----  */
+@media (max-width: 780px) {
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .side {
+        display: none;
+    }
+}
+
+/* input background-color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+	transition: background-color 5000s ease-in-out 0s;
+	-webkit-transition: background-color 9999s ease-out;
+	-webkit-box-shadow: 0 0 0px 1000px #e6e6e6 inset !important;
+}

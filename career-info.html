@@ -1,202 +1,953 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>굿아이티어 홈페이지-채용정보</title>
-    
-    <link rel="stylesheet" href="css/style.css">
+<!-- saved from url=(0078)https://www.wizetech.co.kr/recruit/recruitment_recruitInfoList.do?menu_id=0604 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="./js/script.js"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- stylesheet -->
+<link rel="stylesheet" href="./jquery-ui.css">
+<!-- free icon -->
+<link rel="stylesheet" href="./all.min.css">
+
+<!-- jquery -->
+<script type="text/javascript" src="./jquery-1.11.0.min.js.다운로드"></script>
+<!-- locale -->
+
+<!-- ui -->
+<script type="text/javascript" src="./jquery-ui-1.10.4.custom.min.js.다운로드"></script>
+<!-- form  -->
+<script type="text/javascript" src="./jquery.form.js.다운로드"></script>
+<!-- mask -->
+<script type="text/javascript" src="./jquery.mask.js.다운로드"></script>
+<!-- chart -->
+<script type="text/javascript" src="./highcharts-custom-min2.js.다운로드"></script>
+<!-- common  -->
+<script type="text/javascript" src="./map.js.다운로드"></script>
+<script type="text/javascript" src="./common.js.다운로드"></script>
+<!-- toast -->
+<link rel="stylesheet" href="./jquery.toast.min.css">
+<script type="text/javascript" src="./jquery.toast.min.js.다운로드"></script>
+
+<!-- ///////////////////////////////////////////////////////////////////////////////////// -->
+<!-- new js -->
+<script type="text/javascript" src="./js.js.다운로드"></script>
+<script src="./html5.js.다운로드"></script>
+<script src="./respond.min.js.다운로드"></script>
+<script src="./content.js.다운로드"></script>
+<script src="./navFunc.js.다운로드"></script>
+<!-- summernote -->
+<script src="./summernote-lite.js.다운로드"></script>
+<script src="./summernote-ko-KR.js.다운로드"></script>
+
+<link rel="stylesheet" href="./reset.css">
+<link rel="stylesheet" href="./layout.css">
+<link rel="stylesheet" href="./contents.css">
+<link rel="stylesheet" href="./loading.css">
+<link rel="stylesheet" href="./datepicker-custom.css">
+<link rel="stylesheet" href="./responsive.css">
+<!-- summernote -->
+<link rel="stylesheet" href="./summernote-lite.css">
 </head>
 <body>
-    <!-- Header Start -->
-    <header class="header">
-        <div class="contents row">
-            <a href="index.html" class="left logo">
-                <img src="img/logo-color.png" alt="굿아이티어 로고">
-            </a>
-            <nav class="right menu">
-                <ul class="mainNav">
-                    <li><a class="left" href="about-us.html"> ABOUT US</a></li>
-                    <li><a class="left" href="service-development.html"> SERVICE</a></li>
-                    <li><a class="left" href="notice.html"> NOTICE</a></li>
-                    <li><a class="left" href="career-talent.html">CAREER</a></li>
-                    <li><a class="left" href="contact.html"> CONTACT US</a></li>
-                </ul>
-                <div class="menuBtn">
-                </div>
-                <div class="subNavBG">
-                    <div class="subNav">
-                        <ul class="left">
-                            <li><a href="about-us.html">회사소개</a></li>
-                            <li><a href="about-history.html">연혁</a></li>
-                            <li><a href="about-organization.html">조직도</a></li>
-                            <li><a href="about-ci.html">CI</a></li>
-                            <li><a href="about-certification.html">자격 및 인증</a></li>
-                        </ul>
-                        <ul class="left">
-                            <li><a href="service-development.html">소프트웨어 개발</a></li>
-                            <li><a href="service-supply.html">소프트웨어 공급</a></li>
-                            <li><a href="service-maintenance.html">소프트웨어 유지보수</a></li>
-                        </ul>
-                        <ul class="left">
-                            <li><a href="notice.html">공지사항</a></li>
-                            <li><a href="notice-news.html">소식</a></li>
-                        </ul>
-                        <ul class="left">
-                            <li><a href="career-talent.html">인재상</a></li>
-                            <li><a href="career-benefit.html">복리후생</a></li>
-                            <li><a href="career-process.html">채용절차</a></li>
-                            <li><a href="career-info.html">채용정보</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </header>
-    <!-- Header End -->
-     
-    <!--Menu-->
-    <div class="menuOn">
-        <div class="menu-head contents">
-            <a href="index.html" class="left logo">
-                <img src="img/logo-color.png" alt="굿아이티어 로고">
-            </a>
-            <div class="menuBtn right">
-            </div>
-        </div>
-        <div class="siteMap contents">     
-            <ul class="left">
-                <li><a href="about-us.html"> ABOUT US</a></li>
-                <li><a href="about-us.html">회사소개</a></li>
-                <li><a href="about-history.html">연혁</a></li>
-                <li><a href="about-organization.html">조직도</a></li>
-                <li><a href="about-ci.html">CI</a></li>
-                <li><a href="about-certification.html">자격 및 인증</a></li>
-            </ul>
-            <ul class="left">
-                <li><a href="service-development.html"> SERVICE</a></li>
-                <li><a href="service-development.html">소프트웨어 개발</a></li>
-                <li><a href="service-supply.html">소프트웨어 공급</a></li>
-                <li><a href="service-maintenance.html">소프트웨어 유지보수</a></li>
-            </ul>
-            <ul class="left">
-                <li><a href="notice.html"> NOTICE</a></li>
-                <li><a href="notice.html">공지사항</a></li>
-                <li><a href="notice-news.html">소식</a></li>
-            </ul>
-            <ul class="left">
-                <li><a href="career-talent.html">CAREER</a></li>
-                <li><a href="career-talent.html">인재상</a></li>
-                <li><a href="career-benefit.html">복리후생</a></li>
-                <li><a href="career-process.html">채용절차</a></li>
-                <li><a href="career-info.html">채용정보</a></li>
-            </ul>
-            <ul class="left">
-                <li><a class="left" href="contact.html"> CONTACT US</a></li>
-            </ul>
-        </div>  
-    </div>
 
-    <section class="careerlist contents">
-        <div class="careerlist-title">
-            <h1 class="left">채용정보</h1>
-            <div class="search-bar right header-margin">
-                <select name="" id="" class="left">
-                    <option value="제목">제목</option>
-                    <option value="제목">내용</option>
-                </select>
-                <input type="search" class="left"placeholder="검색어를 입력해주세요.">
-                <img src="" alt="" class="left">
-            </div>
-        </div>
-        <ul class="careerlist-con">
-            <li>
-                <p class="left">개발팀</p>
-                <a href="" class="left">팀원채용</a>
-                <p class="left">정규직</p>
-                <p class="right">~2025.03.31</p>
-            </li>
-            <li>
-                <p class="left">개발팀</p>
-                <a href="" class="left">팀원채용</a>
-                <p class="left">정규직</p>
-                <p class="right">~2025.03.31</p>
-            </li>
-            <li>
-                <p class="left">개발팀</p>
-                <a href="" class="left">팀원채용</a>
-                <p class="left">정규직</p>
-                <p class="right">~2025.03.31</p>
-            </li>
-            <li>
-                <p class="left">개발팀</p>
-                <a href="" class="left">팀원채용</a>
-                <p class="left">정규직</p>
-                <p class="right">~2025.03.31</p>
-            </li>
-            
-            <li>
-                <p class="left">개발팀</p>
-                <a href="" class="left">팀원채용</a>
-                <p class="left">정규직</p>
-                <p class="right">~2025.03.31</p>
-            </li>
-            <li>
-                <p class="left">개발팀</p>
-                <a href="" class="left">팀원채용</a>
-                <p class="left">정규직</p>
-                <p class="right">~2025.03.31</p>
-            </li>
-            <li>
-                <p class="left">개발팀</p>
-                <a href="" class="left">팀원채용</a>
-                <p class="left">정규직</p>
-                <p class="right">~2025.03.31</p>
-            </li>
-        </ul>
-        <div class="paging">
-            <a href="" class="paging-arrow prev"><</a>
-            <a href="">1</a>
-            <a href="">2</a>
-            <a href="">3</a>
-            <a href="">4</a>
-            <a href="">5</a>
-            <a href="" class="paging-arrow next">></a>
-        </div>
-    </section>
+	
 
-    <!-- Footer Start -->
-    <div class="footer">
-        <div class="contents">
-            <div class="left">
-                <div>
-                    <a href="">이용약관</a>
-                    <a href="">개인정보처리방침</a>
-                </div>
-                <div class="footer-info">
-                    <div>
-                        <p class="left">대표이사 : 이현민</p>
-                        <p class="left">사업자등록번호 : 283-87-03452</p>
-                        <p class="left">이메일 : gooditier@gooditier.co.kr</p>
-                    </div>
-                    <br>
-                    <p>대전광역시 유성구 복용동로 43, F636호 (복용동, 대전더리브시그니처)</p>
-                </div>
-                <p class="copy">Copyright 2025 GoodITier Co.,Ltd. All rights reserved.</p>
-            </div>
-            <div class="left fs-logo">
-                <select name="" id="">
-                    <option value="FAMILY SITE" selected="selected">FAMILY SITE</option>
-                    <option value="FAMILY SITE">GoodITier PA</option>
-                    <option value="FAMILY SITE">GoodITier PMS</option>
-                </select>
-                <img src="img/logo-white.png" alt="굿아이티어 로고">
-            </div>
-        </div>
-    </div>
-    <!-- Footer End -->
-</body>
-</html>
+
+
+<script type="text/javascript">
+/*var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
+
+$(document).ready(function(){
+// 	var width_size = window.outerWidth;
+	
+// 	if(width_size <= 1400){// 모바일 css
+	if(isMobile){// 모바일 css
+		$(".lnb").css("display","none");
+		$(".wrap").css("width", "100%");
+		$(".contents_wrap").css({"margin":"0px 50px", "width":"90%"});
+		
+		$(".sitemap_depth2").css("width", "100%");
+		$(".sitemap_inner").css("width", "100%");
+		$(".navigation").css("width", "100%");
+		$(".nav_depth").css("width", "100%");
+		
+		$(".talent_wrap").css("width", "100%");
+		$(".footer_width").css({"width":"88%", "padding":"0px 70px"});
+		$(".wrap h1").css("padding-left", "30px");
+		
+		// section2 
+		$(".section2_text2").css({"width":"550px", "margin":"20px auto"});
+		$(".section2_text3").css("margin-top","50px");
+		
+		// main - news&notice
+		$(".index_news_box").css("width","33%");
+		$(".index_news_box:last").css("display","none");
+		$(".index_news_box img").css("width","100%");
+		
+		// main-career
+		$(".career_info_title").css("width", "75%");
+		$(".career_info_in").css({"width":"45%","padding":"30px 15px"});
+		
+		$(".area_wrap").css("width","33%");
+		$(".area_box_inner").css("padding","17px 40px");
+		
+		// 메인 배경 위치 잡기
+		$(".section2_bg, .section3_bg, .section4_bg").css({"top":"", "height":"50%"});
+		$("#section4").css("padding-bottom","180px");
+		
+		$(".visual_slide_btn").css("display","none");
+		
+		// main section 
+		$(".index_visual_line").css("margin-left", "70px");
+		$(".index_visual_inner_wrap").css("padding-left", "120px");
+		$(".section_con_center").removeClass("width1400");
+		$(".section_con_left").removeClass("width1400");
+		$(".section_con_center").css("padding", "0px 30px");
+		$(".section_con_left").css({"padding":"0px 30px", "width":"95%"});
+
+		// wizeBoard
+		$(".news_title_text img").css("width", "100%");
+		$(".newsnotice_con_box .area").css("width", "33%");
+		$(".newsnotice_con_box > div").css("width","33%");
+		$(".news_title_text .no_image_wrap, .news_title_text .no_image_center").css("width","288px");
+		
+		// 연혁 
+		$(".history_text_set").css("width", "30%");
+		$(".year_con_1").css("width", "60%");
+		$(".history_con_box2").css("width", "100%");
+		// ci 
+		$(".ci_text_bold").css("margin-bottom", "0px");
+		// 오시는길
+		$(".transit_center").css("margin", "35px");
+		// 인증현황
+		$(".certification_img_title").css("height", "15%");
+		// 복지제도
+		$(".welfare_con_wrap").css({"height":"185px", "padding":"30px 20px"});
+		$(".welfare_wrap1, .welfare_wrap1-1").css("width", "100%");
+		// 채용정보
+		$(".post_data_width").css("width", "100%");
+		
+	}
+});*/
+$(function(){
+	$("#ham").click(function(){
+		$(".sitemap_wrap").slideDown(300);
+	});
+	$(".ham_close").click(function(){
+		$(".sitemap_wrap").slideUp(300);
+	});
+});
+</script>
+<div id="ajaxveil">
+	<img src="./img/wize_loading.gif" alt="로딩 이미지">
+</div>
+<div id="fade"></div>
+
+<!--사이트맵  -->
+<div class="sitemap_wrap" style="display : none;">
+	<div class="sitemap_layer">
+		<div class="ham_close"><p></p></div>
+		<div class="sitemap_inner_wrap">
+			<div class="sitemap_inner">
+				<div class="sitemap_align1-1">
+					<ul class="sitemap_depth1">
+						<li class="sitemap_align2">
+							<!--https://www.wizetech.co.kr/info/companyInfo_greeting.do?menu_id=0101-->
+							<a href="./about-us.html" onclick="showBusysign();">
+								<span class="blue underline">
+									ABOUT US
+								</span>
+							</a>
+							<ul class="sitemap_depth2">
+								<li>
+									<!--https://www.wizetech.co.kr/info/companyInfo_greeting.do?menu_id=0101-->
+									<a href="./about-us.html" onclick="showBusysign();">
+										회사소개
+									</a>
+								</li>
+								<li>
+									<!--https://www.wizetech.co.kr/info/companyInfo_history.do?menu_id=0102-->
+									<a href="./about-history.html" onclick="showBusysign();">
+										연혁
+									</a>
+								</li>
+								<li>
+									<!--https://www.wizetech.co.kr/info/companyInfo_orgChart.do?menu_id=0103-->
+									<a href="./about-organization.html" onclick="showBusysign();">
+										조직도
+									</a>
+								</li>
+								<li>
+									<!--https://www.wizetech.co.kr/info/companyInfo_ciInfo.do?menu_id=0105-->
+									<a href="./about-ci.html" onclick="showBusysign();">
+										CI
+									</a>
+								</li>
+								<li>
+									<!--https://www.wizetech.co.kr/promotion/promotion_certStatusList.do?menu_id=0502-->
+									<a href="./about-certification.html" onclick="showBusysign();">
+										자격 및 인증
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+					
+				<div class="sitemap_align1-2">
+					<ul class="sitemap_depth1">
+						<li class="sitemap_align2">
+							<!--https://www.wizetech.co.kr/procurement/product_doWebLogic.do?menu_id=0201-->
+							<a href="./service-development.html" onclick="showBusysign();">
+								<span class="blue underline">
+									SERVICE
+								</span>
+							</a>
+							<ul class="sitemap_depth2">
+								<li>
+									<!--https://www.wizetech.co.kr/procurement/product_doWebLogic.do?menu_id=0201-->
+									<a href="./service-development.html" onclick="showBusysign();">
+										소프트웨어 개발
+									</a>
+								</li>
+								<li>
+									<!--https://www.wizetech.co.kr/procurement/product_doWebTier.do?menu_id=0202-->
+									<a href="./service-supply.html" onclick="showBusysign();">
+										소프트웨어 공급
+									</a>
+								</li>
+								<li>
+									<!--https://www.wizetech.co.kr/procurement/product_toadForOracle.do?menu_id=0205-->
+									<a href="./service-maintenance.html" onclick="showBusysign();">
+										소프트웨어 유지보수
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+					
+				<div class="sitemap_align1-2">
+					<ul class="sitemap_depth1">
+						<li class="sitemap_align2">
+							<!--https://www.wizetech.co.kr/promotion/promotion_wizeBoardList.do?menu_id=0501-->
+							<a href="notice.html" onclick="showBusysign();">
+								<span class="blue underline">
+									NOTICE
+								</span>
+							</a>
+							<ul class="sitemap_depth2">
+								<li>
+									<!--https://www.wizetech.co.kr/promotion/promotion_wizeBoardList.do?menu_id=0501-->
+									<a href="notice.html" onclick="showBusysign();">
+										공지사항
+									</a>
+								</li>
+								<li>
+									<!--https://www.wizetech.co.kr/promotion/promotion_wizeBoardList.do?menu_id=0501-->
+									<a href=".notice-news.html" onclick="showBusysign();">
+										소식
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+					
+				<div class="sitemap_align1-2">
+					<ul class="sitemap_depth1">
+						<li class="sitemap_align2">
+							<!--https://www.wizetech.co.kr/recruit/recruitment_talent.do?menu_id=0601-->
+							<a href="./career-talent.html" onclick="showBusysign();">
+								<span class="blue underline">
+									CAREER
+								</span>
+							</a>
+							<ul class="sitemap_depth2">
+								<li>
+									<!--https://www.wizetech.co.kr/recruit/recruitment_talent.do?menu_id=0601-->
+									<a href="./career-talent.html" onclick="showBusysign();">
+										인재상
+									</a>
+								</li>
+								<li>
+									<!--https://www.wizetech.co.kr/recruit/recruitment_welfare.do?menu_id=0603-->
+									<a href="./career-benefit.html" onclick="showBusysign();">
+										복리후생
+									</a>
+								</li>
+								<li>
+									<!--https://www.wizetech.co.kr/recruit/recruitment_recruitProcess.do?menu_id=0602-->
+									<a href="./career-process.html" onclick="showBusysign();">
+										채용절차
+									</a>
+								</li>
+								<li>
+									<!--https://www.wizetech.co.kr/recruit/recruitment_recruitInfoList.do?menu_id=0604-->
+									<a href="./career-info.html" onclick="showBusysign();">
+										채용정보
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+				<div class="sitemap_align1-2">
+					<ul class="sitemap_depth1">
+						<li class="sitemap_align2">
+							<!--https://www.wizetech.co.kr/info/companyInfo_location.do?menu_id=0106-->
+							<a href="./contact-us.html" onclick="showBusysign();">
+								<span class="blue underline">
+									CONTACT US
+								</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- header :: s :: -->
+<header class="header">
+	<div class="wrap">
+		<!--https://www.wizetech.co.kr/main/main_doMain.do-->
+		<h1><a href="index.html"><img src="./img/gooditierlogo.png" alt="굿아이티어" style="width: 70px;"></a></h1>
+		<div class="lnb">
+			<nav>
+				<ul>
+					<li>
+						<!--https://www.wizetech.co.kr/info/companyInfo_greeting.do?menu_id=0101-->
+						<a href="./about-us.html" onclick="showBusysign();">ABOUT US</a>
+						<ul>
+							<li>
+								<!--https://www.wizetech.co.kr/info/companyInfo_greeting.do?menu_id=0101-->
+								<a href="./about-us.html" onclick="showBusysign();">회사소개</a>
+							</li>
+							<li>
+								<!--https://www.wizetech.co.kr/info/companyInfo_history.do?menu_id=0102-->
+								<a href="./about-history" onclick="showBusysign();">연혁</a>
+							</li>
+							<li>
+								<!--https://www.wizetech.co.kr/info/companyInfo_orgChart.do?menu_id=0103-->
+								<a href="./about-organization.html" onclick="showBusysign();">조직도</a>
+							</li>
+							<li>
+								<!--https://www.wizetech.co.kr/info/companyInfo_ciInfo.do?menu_id=0105-->
+								<a href="./about-ci.html" onclick="showBusysign();">CI</a>
+							</li>
+							<li>
+								<!--https://www.wizetech.co.kr/promotion/promotion_certStatusList.do?menu_id=0502-->
+								<a href="./about-certification.html" onclick="showBusysign();">자격 및 인증</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<!--https://www.wizetech.co.kr/procurement/product_doWebLogic.do?menu_id=0201-->
+						<a href="./service-development.html" onclick="showBusysign();">SERVICE</a>
+						<ul>
+							<li>
+								<!--https://www.wizetech.co.kr/procurement/product_doWebLogic.do?menu_id=0201-->
+								<a href="./service-development.html" onclick="showBusysign();">소프트웨어 개발</a>
+							</li>
+							<li>
+								<!--https://www.wizetech.co.kr/procurement/product_doWebTier.do?menu_id=0202-->
+								<a href="./service-supply.html" onclick="showBusysign();">소프트웨어 공급</a>
+							</li>
+							<li>
+								<!--https://www.wizetech.co.kr/procurement/product_toadForOracle.do?menu_id=0205-->
+								<a href="./service-maintenance.html" onclick="showBusysign();">소프트웨어 유지보수</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<!--https://www.wizetech.co.kr/promotion/promotion_wizeBoardList.do?menu_id=0501-->
+						<a href="./notice.html" onclick="showBusysign();">NOTICE</a>
+						<ul>
+							<li>
+								<!--https://www.wizetech.co.kr/promotion/promotion_wizeBoardList.do?menu_id=0501-->
+								<a href="./notice.html" onclick="showBusysign();">공지사항</a>
+							</li>
+							<li>
+								<!--https://www.wizetech.co.kr/promotion/promotion_wizeBoardList.do?menu_id=0501-->
+								<a href="./notice-news.html" onclick="showBusysign();">소식</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<!--https://www.wizetech.co.kr/recruit/recruitment_talent.do?menu_id=0601-->
+						<a href="./career-talent.html" onclick="showBusysign();">CAREER</a>
+						<ul>
+							<li>
+								<!--https://www.wizetech.co.kr/recruit/recruitment_talent.do?menu_id=0601-->
+								<a href="./career-talent.html" onclick="showBusysign();">인재상</a>
+							</li>
+							<li>
+								<!--https://www.wizetech.co.kr/recruit/recruitment_welfare.do?menu_id=0603-->
+								<a href="./career-benefit.html" onclick="showBusysign();">복지후생</a>
+							</li>
+							<li>
+								<!--https://www.wizetech.co.kr/recruit/recruitment_recruitProcess.do?menu_id=0602-->
+								<a href="./career-process.html" onclick="showBusysign();">채용절차</a>
+							</li>
+							<li>
+								<!--https://www.wizetech.co.kr/recruit/recruitment_recruitInfoList.do?menu_id=0604-->
+								<a href="./career-info.html" onclick="showBusysign();">채용정보</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<!--https://www.wizetech.co.kr/info/companyInfo_location.do?menu_id=0106-->
+						<a href="./contact-us.html" onclick="showBusysign();">CONTACT US</a>
+					</li>
+				</ul>
+			</nav>
+			<div>
+			</div>
+		</div>
+		<ul>
+			<li><a href="javascript:;" id="ham"><img src="./img/ham_1.png" alt=""></a></li>
+		</ul>
+	</div>
+</header>
+<!-- header :: e :: -->
+		
+<div id="headImg" class="visual_6">
+	<div class="visual_wrap">
+		<div>CAREER</div>
+	</div>
+</div>
+		
+<input type="hidden" id="menuParentsId" value="01">
+<div class="nav_bg">
+	<div class="navigation">
+		<div class="nav_home_btn">
+			<!--https://www.wizetech.co.kr/main/main_doMain.do-->
+			<a href="./index.html"><div class="icon-4"></div></a>
+		</div>
+		<!--navigation-->
+		<ul class="nav_depth">
+			<li onclick="slideMenu();">
+				<a href="javascript:;" id="menu">
+					<ul class="nav_btn_in">
+						<li>CAREER</li>
+						<li class="icon-6"></li>
+					</ul>
+				</a>
+				<ul class="nav_depth_drop" id="downNav">
+					<li>
+						<a href="javascript:;" onclick="changeNavMenu(&#39;01&#39;, &#39;ABOUT US&#39;);">
+							ABOUT US
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;" onclick="changeNavMenu(&#39;02&#39;, &#39;SERVICE&#39;);">
+							SERVICE
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;" onclick="changeNavMenu(&#39;03&#39;, &#39;NOTICE&#39;);">
+							NOTICE
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;" onclick="changeNavMenu(&#39;04&#39;, &#39;CAREER&#39;);">
+							CAREER
+						</a>
+					</li>
+					<li>
+						<a href="./contact-us.html">
+							CONTACT US
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li onclick="slideSubMenu(&#39;04&#39;);" id="subMenu">
+				<a href="javascript:;">
+					<ul class="nav_btn_in">
+						<li>채용정보</li>
+						<li class="icon-6"></li>
+					</ul>
+				</a>		
+				<ul class="nav_depth_drop drop_nav_01">
+					<li>
+						<a href="./about-us.html">
+							<span class="subTitle">회사소개</span>
+						</a>
+					</li>
+					<li>
+						<a href="./about-history.html">
+							<span class="subTitle">연혁</span>
+						</a>
+					</li>
+					<li>
+						<a href="./about-organization.html">
+							<span class="subTitle">조직도</span>
+						</a>
+					</li>
+					<li>
+						<a href="./about-ci.html">
+							<span class="subTitle">CI</span>
+						</a>
+					</li>
+					<li>
+						<a href="./about-certification.html">
+							<span class="subTitle">자격 및 인증</span>
+						</a>
+					</li>
+				</ul>
+				<ul class="nav_depth_drop drop_nav_02">
+					<li>
+						<a href="./service-development.html">
+							<span class="subTitle">소프트웨어 개발</span>
+						</a>
+					</li>
+					<li>
+						<a href="./service-supply.html">
+							<span class="subTitle">소프트웨어 공급</span>
+						</a>
+					</li>
+					<li>
+						<a href="./service-maintenance.html">
+							<span class="subTitle">소프트웨어 유지보수</span>
+						</a>
+					</li>
+				</ul>
+				<ul class="nav_depth_drop drop_nav_03">
+					<li>
+						<a href="./notice.html">
+							<span class="subTitle">공지사항</span>
+						</a>
+					</li>
+					<li>
+						<a href="./notice-news.html">
+							<span class="subTitle">소식</span>
+						</a>
+					</li>
+				</ul>
+				<ul class="nav_depth_drop drop_nav_04">
+					<li>
+						<a href="./career-talent.html">
+							<span class="subTitle">인재상</span>
+						</a>
+					</li>
+					<li>
+						<a href="./career-benefit.html">
+							<span class="subTitle">복리후생</span>
+						</a>
+					</li>
+					<li>
+						<a href="./career-process.html">
+							<span class="subTitle">채용절차</span>
+						</a>
+					</li>
+					<li>
+						<a href="./career-info.html">
+							<span class="subTitle">채용정보</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<!--contents-->
+<script type="text/javascript">
+$(document).ready(function () {
+	$('.search_input_guide i').removeClass('x_btn');
+	$('.gSearch').focus(function () {
+		$('.search_input_guide i').removeClass('search_icon');
+		$('.search_input_guide i').addClass('x_btn');
+	});
+	$('.gSearch').blur(function () {
+		$('.search_input_guide i').addClass('search_icon');
+		$('.search_input_guide i').removeClass('x_btn');
+	});
+	
+
+	$(".search_icon").click(function(){
+		$("#sch_keyword").val("");
+		search("STATE_CD", "");
+	})
+
+});
+
+// 진행상황 selectBox
+function changeRecruitProcessCd(){
+	form.action = "/recruit/recruitment_recruitInfoList.do";
+	form.submit();
+}
+
+// 상세 화면 이동(ajax용)
+function goToView(idx, recruitStateCd, keyword, recruitId){
+	location.href="/recruit/recruitment_recruitInfoView.do?index="+idx +
+			"&menu_id=0604&elementPerPage=5&sch_recruit_state_cd="+recruitStateCd
+			+"&sch_keyword="+keyword+"&recruit_id="+recruitId;
+}
+
+/* 검색어 입력 */
+function search(type, value){
+	var recruitStateCd = $("#sch_recruit_state_cd").val();
+	var keyword = $("#sch_keyword").val();
+
+	if(type == "STATE_CD"){
+		recruitStateCd = value;
+	}else{
+		keyword = value;
+	}
+	
+	var recruitElementPerPage = "5";
+	setTimeout(function(){
+		$.ajax({
+			type : "POST",
+			async : true,
+			url : "/recruit/recruitment_ajaxRecruitInfoList.do",
+			data : {
+				menu_id : '0604',
+				sch_recruit_state_cd : recruitStateCd,
+				sch_keyword : keyword
+			},
+			success : function(result) {
+				$("#recruitList li, #recruitList div").remove();
+				var htmls = "";
+				var recruitInfoVOList = result.recruitInfoVOList;
+
+				if(recruitInfoVOList.length != 0){
+					var length = recruitElementPerPage;
+					if(recruitInfoVOList.length < recruitElementPerPage){
+						length = recruitInfoVOList.length;
+					}
+					
+					for(var i = 0; i < length; i++){
+						var item = recruitInfoVOList[i];
+						htmls += "<li class='recruit_list_box_1' onclick=\"goToView(1,'"+recruitStateCd+"','"+keyword+"','"+item.recruit_id+"');\">"; 
+						htmls += '	<p class="post_bold_title">'+item.title+'</p>';
+						htmls += '<ul class="small_info_text">';
+						if(item.recruit_state_cd == "PROCEEDING"){
+							htmls += '	<li class="post_ing_box">'+ item.recruit_state_nm + "</li>";
+						}else{
+							htmls += '	<li class="post_end_box">'+ item.recruit_state_nm + "</li>";
+						}
+						htmls += '		<li>';
+						htmls += '			<ul class="post_data_width">';
+						htmls += '				<li class="post_calendar icon-23"></li>';
+						htmls += '				<li class="post_sub_text_side">기간</li>';
+						if(item.notice_end_date == null){
+							htmls += '				<li class="post_sub_text_side">'+item.notice_start_date +" ~ 채용 시</li>";
+						}else{
+							htmls += '				<li class="post_sub_text_side">'+item.notice_start_date +" ~ "+item.notice_end_date+"</li>";
+						}
+						htmls += '			</ul>';
+						htmls += '		</li>';
+						htmls += '		<li class="post_side_margin">';
+						htmls += '			<ul class="post_data_width">';
+						htmls += '				<li class="post_clock icon-24"></li>';
+						htmls += '				<li class="post_sub_text_side">등록일</li>';
+						htmls += '				<li class="post_sub_text_side">'+item.reg_date +"</li>";
+						htmls += '			</ul>';
+						htmls += '		</li>';
+						htmls += '	</ul>';
+						htmls += '</li>';
+						htmls += '<div class="recruit_list_line"></div>';
+					}
+				}else{
+					htmls += '<li class="recruit_list_box_1">';
+					htmls += '	<p class="post_bold_title">등록된 자료가 없습니다</p>';
+					htmls += '</li>';
+					htmls += '<div class="recruit_list_line"></div>';
+				}
+				
+				$("#recruitList").append(htmls);
+
+				/* paging */
+				$(".page_nation > [name='sch_keyword']").val(keyword);
+				$(".post_num_text").text("총 "+result.total +"건");
+	
+				/* pagination draw */
+				var lastPageNum = parseInt(recruitInfoVOList.length/recruitElementPerPage)+1;
+				$(".page_wrap .page_nation").remove();
+				var pageHtmls = "";
+				pageHtmls += '<div class="page_nation">';
+				var pagingVO = result.pagingVO;
+				
+				if(recruitInfoVOList.length == 0){
+					pageHtmls += '<a href="javascript:;" &index=1" class="active">1</a>';
+				}else{
+					var pagingUrl = '?menu_id=0604&elementPerPage='+recruitElementPerPage+'&sch_recruit_state_cd='+recruitStateCd+'&sch_keyword='+keyword;
+					if(pagingVO.isFirstIndex){
+						pageHtmls += '<a class="arrow pprev" href="'+pagingUrl+'&index=1"></a>';
+					}
+					if(pagingVO.hasPrevGroup){
+						pageHtmls += '<a class="arrow prev" href="'+pagingUrl+'&index='+(pagingVO.startPage -1)+'"></a>';
+					}
+					for(var i = pagingVO.startPage; i <= pagingVO.endPage; i++){
+						if(pagingVO.index == i){
+							pageHtmls += '<a href="'+pagingUrl+'&index='+i+'" class="active">'+i+'</a>';
+						}else{
+							pageHtmls += '<a href="'+pagingUrl+'&index='+i+'">'+i+'</a>';
+						}
+					}
+					if(pagingVO.hasNextGroup){
+						pageHtmls += '<a class="arrow next" href="'+pagingUrl+'&index='+(pagingVO.startPage + pagingVO.pageLimit)+'"></a>';
+					}
+					if(pagingVO.isLastIndex){
+						pageHtmls += '<a class="arrow nnext" href="'+pagingUrl+'&index='+pagingVO.maxPage+'"></a>';
+					}
+				}
+				pageHtmls += '</div>';
+				$(".page_wrap").append(pageHtmls);
+			}
+		});
+	}, 300);
+}
+
+</script>
+
+<div class="contents_wrap">
+	<div class="contents_title_wrap">
+		<p class="sub_page_title2 txt_ani">채용정보</p>
+	</div>
+	
+	<form id="searchCommand" name="form" action="https://www.wizetech.co.kr/recruit/recruitment_recruitInfoList.do?menu_id=0604" method="get">
+		<input type="hidden" name="index" value="1">
+		<input type="hidden" name="menu_id" value="0604">
+		<div class="post_info_2">
+			<p>굿아이티어와 함께 할 인재를 모집합니다.</p>
+			<div class="input_guide_wrap">
+				<div class="input_guide">
+					<select id="sch_recruit_state_cd" name="sch_recruit_state_cd" class="select1" onchange="search(&#39;STATE_CD&#39;,this.value); return false;">
+						<option value="">전체</option>
+						<option value="PROCEEDING">진행중</option><option value="DEADLINE">마감</option>
+					</select>
+				</div>
+				<div id="search">
+					<div class="search_input_guide">
+						<input id="sch_keyword" name="sch_keyword" class="gSearch" onkeyup="search(&#39;KEYWORD&#39;,this.value); return false;" placeholder="검색어 입력" onfocus="this.placeholder=&#39;&#39;" onblur="this.placeholder=&#39;검색어 입력&#39;" type="text" value="" size="20">
+						<i class="search_icon"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+	<div class="post_num_2">
+		<ul>
+			<li><img src="./img/post_num.png"></li>
+		</ul>
+		<ul>
+			<li class="post_num_text">총 3건</li>
+		</ul>
+	</div>
+
+	
+	
+	<ul class="recruit_list_wrap" id="recruitList">
+			<li class="recruit_list_box_1" onclick="location.href=&#39;/recruit/recruitment_recruitInfoView.do?index=1&amp;menu_id=0604&amp;elementPerPage=5&amp;recruit_id=RECRUIT_00001&amp;recruit_state_cd=PROCEEDING&#39;">
+				<p class="post_bold_title">Oracle 엔지니어 채용</p>
+				<ul class="small_info_text">
+					<li class="post_ing_box">진행중</li>
+					<li>
+						<ul class="post_data_width">
+							<li class="post_calendar icon-23"></li>
+							<li class="post_sub_text_side">기간</li>
+							<li class="post_sub_text_side">2023.02.14 ~
+									채용시
+							</li>
+						</ul>
+					</li>
+					<li class="post_side_margin">
+						<ul class="post_data_width">
+							<li class="post_clock icon-24"></li>
+							<li class="post_sub_text_side">등록일</li>
+							<li class="post_sub_text_side">2022.10.24</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<div class="recruit_list_line"></div>
+		
+			
+			<li class="recruit_list_box_1" onclick="location.href=&#39;/recruit/recruitment_recruitInfoView.do?index=1&amp;menu_id=0604&amp;elementPerPage=5&amp;recruit_id=RECRUIT_00002&amp;recruit_state_cd=PROCEEDING&#39;">
+				<p class="post_bold_title">소프트웨어 개발자 채용</p>
+				<ul class="small_info_text">
+					<li class="post_ing_box">진행중</li>
+					<li>
+						<ul class="post_data_width">
+							<li class="post_calendar icon-23"></li>
+							<li class="post_sub_text_side">기간</li>
+							<li class="post_sub_text_side">2023.02.14 ~
+									채용시
+							</li>
+						</ul>
+					</li>
+					<li class="post_side_margin">
+						<ul class="post_data_width">
+							<li class="post_clock icon-24"></li>
+							<li class="post_sub_text_side">등록일</li>
+							<li class="post_sub_text_side">2022.10.24</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<div class="recruit_list_line"></div>
+		
+			
+			<li class="recruit_list_box_1" onclick="location.href=&#39;/recruit/recruitment_recruitInfoView.do?index=1&amp;menu_id=0604&amp;elementPerPage=5&amp;recruit_id=RECRUIT_00003&amp;recruit_state_cd=PROCEEDING&#39;">
+				<p class="post_bold_title">Oracle 기술영업 채용</p>
+				<ul class="small_info_text">
+					<li class="post_ing_box">진행중</li>
+					<li>
+						<ul class="post_data_width">
+							<li class="post_calendar icon-23"></li>
+							<li class="post_sub_text_side">기간</li>
+							<li class="post_sub_text_side">2023.02.14 ~
+									채용시
+							</li>
+						</ul>
+					</li>
+					<li class="post_side_margin">
+						<ul class="post_data_width">
+							<li class="post_clock icon-24"></li>
+							<li class="post_sub_text_side">등록일</li>
+							<li class="post_sub_text_side">2022.10.24</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<div class="recruit_list_line"></div>
+		
+	</ul>
+	<!-- paginate :S -->
+	<div class="page_wrap">
+		<div class="page_nation">
+			
+
+			
+			
+			
+				<a href="https://www.wizetech.co.kr/recruit/recruitment_recruitInfoList.do?menu_id=0604&amp;elementPerPage=5&amp;recruit_id=&amp;recruit_state_cd=&amp;index=1" class="active">1</a>
+			
+			
+			
+		</div>
+	</div>
+	<!-- paginate :E -->
+	
+	
+	<!-- 컨텐츠 ::e:: -->
+</div>
+<!-- Txt :: e :: -->
+
+	<!--contents-->
+<script>
+$(function(){
+	// visual img set
+	var menuParentsId = $("#menuParentsId").val().substring(1,2);
+	$("#headImg").removeClass();
+	/* 임시 visual set */
+	if(menuParentsId == "4"){
+			menuParentsId = "1";
+	}
+	$("#headImg").addClass("visual_"+menuParentsId);
+})
+
+</script>
+	
+<script>
+</script>
+
+<!-- footer :: s :: -->
+<div class="footer_layout">
+	<div class="footer_width">
+		<div class="footer_contents">
+			<ul class="footer_etc_btn">
+				<li>
+					<a href="./about-us.html">
+						<p>회사소개</p>
+					</a>
+				</li>
+					<img src="./img/footer_dot.png" alt="">
+				<li>
+					<a href="./career-info.html">
+						<p>채용정보</p>
+					</a>
+				</li>
+					<img src="./img/footer_dot.png" alt=" ">
+				<li>
+					<a href="./contact-us.html">
+						<p>CONTACT US</p>
+					</a>
+				</li>
+			</ul>
+			<select class="select2" onchange="if(this.value != &#39;&#39;) window.open(this.value);">
+				<option value="">관련 홈페이지</option>
+				<option value="./gooditier-pa.html">GoodITier PA</option>
+				<option value="./gooditier-pms.html">GoodITier PMS</option>
+			</select>
+		</div>
+		<div class="footer_info">
+			<p><span class="bold">대표이사 : </span>이현민 &nbsp; &nbsp; <span class="bold">사업자등록번호 :</span>283-87-03452 &nbsp; &nbsp; <span class="bold"><br class="on-br">이메일 : </span>gooditier@gooditier.co.kr<br class="onoff-br">
+				대전광역시 유성구 복용동로 43, F636호 <br class="on-br">(복용동, 대전더리브시그니처)<br>
+				Copyright ⓒ 2025 GoodITier Co.,Ltd. All rights reserved.</p>
+		</div>
+		<div class="admin_login">
+			<a href="./login.html">
+				<ul>
+					<li>
+						<img src="./img/login.png" style="width: 18px;" alt="로그인">
+					</li>
+					<li class="admin_login_text">관리자 로그인</li>
+				</ul>
+			</a>
+		</div>
+	</div>
+	<!--top_btn-->
+	<div class="top_postition">
+		<div class="top_btn_wrap">
+			<div class="top_btn" onclick="window.scrollTo({top:0,left:0, behavior:&#39;smooth&#39;});">
+				<div class="top_btn_con">
+					<a href="javascript:;">
+						<img src="./img/top_1.png" alt="맨 위로 이동">
+						<p>TOP</p>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	$(function(){
+		var message = "";
+		
+		if(message != ""){
+			alert(message);
+		}
+	});
+</script>
+<!-- footer :: e :: -->
+
+<!--타이틀 애니메이션-->
+<script>
+	const targets = document.querySelectorAll(".txt_ani");
+
+	const observer = new IntersectionObserver((entries) => {
+	entries.forEach((entry, index) => {
+		if (entry.isIntersecting) {
+		// 딜레이를 순차적으로 추가
+		setTimeout(() => {
+			entry.target.classList.add("show");
+		}, index * 200); // 0ms, 200ms, 400ms...
+		} else {
+		entry.target.classList.remove("show");
+		}
+	});
+	}, {
+	threshold: 0.5
+	});
+
+	targets.forEach((el) => observer.observe(el));
+</script>
+
+</body></html>

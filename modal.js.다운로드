@@ -1,0 +1,194 @@
+Modal = function(){
+	var title = null, message = null, footer = null, modalType = null, callBackFunction = null, id = null;
+	//제목 set
+	this.setTitle = function(value){
+		title = value;
+	};
+	//내용 set
+	this.setMessage = function(value){
+		message = value;
+	};
+	//modalType set
+	this.setModalType = function(value){
+		modalType = value;
+	};
+	//callBack 함수 set
+	this.setCallBackFunction = function(value){
+		callBackFunction = value;
+	};
+	//id set
+	this.setId = function(value){
+		id = value;
+	};
+	//초기화
+	this.remove = function(){
+		$("#" + id).remove();
+		$("#" + id + " .modal-backdrop").remove();
+	};
+	//열기
+	this.show = function(){
+		$("html").css('overflow','hidden');
+		$("#" + id).modal({
+			show : true
+		});
+	};
+	//닫기
+	this.hide = function(){
+		$("#" + id).modal("hide");
+		$("html").css('overflow','auto');
+	};
+	//생성
+	this.create = function(){
+		var html = "";
+		html += '<div class="modal-con" id="' + id + '">';
+		html += '	<div class="modal-content">';
+		html += '		<div class="modal-header">공지사항';
+		html += '			<a class="close close"></a>';
+		html += '		</div>';
+		html += '		<div class="modal-body">';
+		html += '			<img id="viewImg">';
+		html += '		</div>';
+		html += '		<div class="modal-footer" style="position: absolute; bottom: 0px; width: 100%; height: 7%;">';
+		html += '			<div style="text-decoration:underline;float:right;padding-top:3%;width:83%;text-align:right;position: absolute;">';
+		html += '				<span class="modal-close modal-today-close" style="cursor:pointer;">오늘 하루 동안 보지 않기</span>';
+		html += '			</div>';
+		html += '			<div style="padding-right:3%; padding-top:1%; float:right;width:11%">';
+		html += '				<a href="#" class="modal-close btn btn_sm square modal_btn_color" style="width:100%;padding: 15% 18%;" data-dismiss="modal">닫기</a>';
+		html += '			</div>';
+		html += '		</div>';
+		html += '	</div>';
+		html += '</div>';
+		
+		//modal 기본 영역 입력
+		$("body").prepend(html);
+	};
+}
+
+
+
+//Modal html생성
+function createModalHtml(id, width, height, left, modalType, title, callBackFunction, callBackCancelFunction){
+	var modal = new Modal();
+	// id set
+	modal.setId(id);
+	//제목 영역 set
+	modal.setTitle(title);
+	//내용 영역 set
+//	modal.setMessage(message);
+	//modal 타입 set
+	modal.setModalType(modalType);
+	//callBack 함수 set
+	modal.setCallBackFunction(callBackFunction);
+	//생성
+	modal.create();
+	
+	// width, height 지정
+	$("#"+id).css({"width":width, "height":height, "left":left});
+	$("#"+id).css("background-color", "white");
+	$("#"+id + " .modal-body").css({"width":"100%", "height":"90%", "position": "absolute"});
+	
+	//modal 열기
+	modal.show();
+	
+	$('html, body').css({'overflow': 'hidden', 'height': '100%'}); // 모달팝업 중 html,body의 scroll을 hidden시킴
+	$('body').on('scroll touchmove mousewheel', function(event) { // 터치무브와 마우스휠 스크롤 방지
+		event.preventDefault();
+		event.stopPropagation();
+
+		return false;
+	});
+
+	//modal footer 영역 버튼 클릭시
+	$('#' + id + ' .close, #' + id + ' .modal-close').click(function(e){
+		var buttonVal = e.target.value;
+		//modal 창 닫기
+		modal.hide();
+		//초기화
+		modal.remove();
+		// modal 체크
+		if ($('.modal-con').length == 0){
+			$('body').off('scroll touchmove mousewheel'); // 터치무브 및 마우스휠 스크롤 가능
+		}
+		$('#' + id).on('hidden.bs.modal',function(){
+			//modal 창에서 확인 버튼 클릭시
+			if("yes" == buttonVal){
+				//callBack함수 호출
+				callBackFunction();
+			}else{//modal 창에서 닫기 버튼 클릭시
+				//취소 callBack함수 호출
+				if(callBackCancelFunction != null){
+					callBackCancelFunction();
+				}
+			}
+		})
+	})
+	
+/*	$('#' + id + '.modal-footer .btn').click(function(e){
+		$('body').off('scroll touchmove mousewheel'); // 터치무브 및 마우스휠 스크롤 가능
+	})*/
+	
+	function setCookie(name, value, expiredays){
+		var today = new Date();
+		
+		console.log(today.getDate());
+		
+		today.setDate(today.getDate() + expiredays);// 현재 시간 + 1일
+		
+		document.cookie = name + '=' + escape(value) + '; expires=' + today.toGMTString();
+	}
+
+	function getCookie(name){
+		var cookie = document.cookie;
+		
+		if (document.cookie != "") {
+			var cookie_array = cookie.split("; ");
+			for ( var index = 0; index < cookie_array.length; index++) {
+				console.log(cookie_array)
+				var cookie_name = cookie_array[index].split("=");
+				if (cookie_name[0] == "mycookie-" + id) {
+					return cookie_name[1];
+				}
+			}
+		}
+		return;
+	}
+
+	$("#" + id + " .modal-today-close").click(function() {
+		setCookie("mycookie-" + id, "popupEnd", 2);
+		//modal 창 닫기
+		modal.hide();
+		//초기화
+		modal.remove();
+		// modal 체크
+		if ($('.modal-con').length == 0){
+			$('body').off('scroll touchmove mousewheel'); // 터치무브 및 마우스휠 스크롤 가능
+		}
+	})
+
+	var checkCookie = getCookie("mycookie-" + id);
+	if(checkCookie == 'popupEnd') {
+		//modal 창 닫기
+		modal.hide();
+		//초기화
+		modal.remove();
+		// modal 체크
+		if ($('.modal-con').length == 0){
+			$('body').off('scroll touchmove mousewheel'); // 터치무브 및 마우스휠 스크롤 가능
+		}
+	} else {
+		$('#'+id).modal("show");
+	}
+}
+
+//modal 확인창
+function modalAlert(id, src, width, height, left, url, callBackCancelFunction) {
+	//Modal html생성
+	var bool = createModalHtml(id, width, height, left, "ALERT", "확인창", "", callBackCancelFunction);
+	$("#"+id +" #viewImg").attr("src", src);// img 경로 지정
+	if (url != null){
+		$("#"+id +" #viewImg").attr("onclick", "javascript:location.href='" + url + "'");// url 경로 지정
+		$("#"+id + " .modal-body").css("cursor", "pointer");
+	}
+	return bool;
+}
+

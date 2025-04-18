@@ -1,0 +1,157 @@
+/* /////////////////////////////////////////////////////////////////////////////////////
+
+	popup
+
+///////////////////////////////////////////////////////////////////////////////////// */
+$(document).ready(function(){
+	if($(".btn_pop").size() != 0){
+		layer_popup_AC();
+	}
+});
+
+function layer_popup_AC(){
+	var popup = $("[class^=layer_popup]");
+		popup.btn = $(".btn_pop");
+		popup.btn_close = popup.find(" .btn_close");
+		popup.scrollTo_save = "";
+
+	for(var i=0; i<popup.size(); i++){
+		popup.op = popup.eq(i).attr("class").replace("layer_popup","").split("_");
+		popup.w = popup.op[1];
+		popup.h = popup.op[2];
+
+		popup.eq(i).css({
+			"width":popup.w+"px",
+			"height":popup.h+"px",
+			"margin-left":((popup.w/2)*-1)+"px"
+		});
+	}
+
+	popup.btn.on("click",function(){
+		var obj = $($(this).attr("href"));
+
+		popup.scrollTo_save = $(window).scrollTop();
+		$(window).scrollTo( {top:'0',left:'0'}, 600 ,function(){});
+
+		blind_on(function(){
+			obj.fadeIn(200);
+		});
+		return false;
+	});
+
+	popup.btn_close.on("click",function(){
+		$(window).scrollTo( {top:popup.scrollTo_save+'px',left:'0'}, 600 ,function(){});
+		popup.fadeOut(200,function(){
+			blind_off();
+		});
+		return false;
+	});
+}
+
+
+/* /////////////////////////////////////////////////////////////////////////////////////
+
+	tab
+
+///////////////////////////////////////////////////////////////////////////////////// */
+$(document).ready(function(){
+	if($(".tab").size() != 0){
+		tab_AC();
+	}
+});
+
+function tab_AC(){
+	var tab = $(".tab");
+		tab.views = $("[id^='tab_view_']");
+		tab.btns = tab.find(" li > a");
+	var obj = "";
+
+	tab.views.hide();
+
+	function multi_AC(str){
+		var hitObj = $(str.find(" li.on > a").attr("href"));
+
+		hitObj.show();
+	}
+
+	for(var i=0; i<tab.size(); i++){
+		obj = tab.eq(i);
+		multi_AC(obj);
+	}
+
+	tab.btns.on("click",function(){
+		if($(this).attr("href").substr(0,1) == "#" && $(this).attr("href").substr(0,2) != "#"){
+			var old_views = $($(this).parent().parent().find(">li.on").removeClass("on").find(" > a").attr("href"));
+			var new_views = $($(this).attr("href"));
+
+			$(this).parent().addClass("on");
+
+			old_views.hide();
+			new_views.show();
+
+			return false;
+		} else {
+			return true;
+		}
+	});
+}
+
+
+
+
+
+/* /////////////////////////////////////////////////////////////////////////////////////
+
+	gnb
+
+///////////////////////////////////////////////////////////////////////////////////// */
+
+$(document).ready(function(){
+	if($(".menu#gnb").size() != 0){
+		gnb_AC();
+	}
+});
+
+function gnb_AC(){
+	var obj = $(".menu#gnb > ul");
+		obj.li = obj.find(">li");
+		obj.a = obj.li.find(">a");
+		obj.ul = obj.li.find(">ul");
+
+	obj.a.mouseover(function(){
+		if($(this).siblings("ul").is(":hidden")){
+			obj.ul.not(":hidden").slideUp(200);
+			$(this).siblings("ul").slideDown(200);
+		} else if($(this).siblings("ul").size() == 0){
+			obj.ul.not(":hidden").slideUp(200);
+		}
+	});
+
+	obj.mouseleave(function(){
+		obj.ul.not(":hidden").slideUp(200);
+	});
+}
+
+/* /////////////////////////////////////////////////////////////////////////////////////
+
+	tab type_02
+	하위 메뉴가 있을시 하단영역(padding-bottom)을 제공한다.
+
+///////////////////////////////////////////////////////////////////////////////////// */
+$(document).ready(function(){
+	if($(".tab.type_02").size() != 0){
+		tab_type_02_AC();
+	}
+});
+
+function tab_type_02_AC(){
+	var obj = $(".tab.type_02");
+		ch = obj.find(">ul>li.on");
+
+	obj.css({"padding-bottom":"0px"});
+	if(ch.size() != 0){
+		if(ch.find(">ul").size() != 0){
+			obj.css({"padding-bottom":"50px"});
+		}
+	}
+}

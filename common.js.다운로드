@@ -1,0 +1,1104 @@
+var popupMap = new Map(); // 팝업을 저장할 map
+var popupBlankMap = new Map(); // 새창을 저장할 map
+/*
+ * 
+ * jquery class선택자를 이용하여 자동 formatter구현
+ */
+// 0) common
+function addComma(str) {
+	if (str == null) {
+		return "";
+	}
+	str = removeComma(str);
+	x = str.split(".");// 소수부분리
+	x1 = x[0];
+	x2 = x.length > 1 ? "." + x[1] : "";
+	var regex = /(\d+)(\d{3})/;
+	while (regex.test(x1)) {
+		x1 = x1.replace(regex, "$1" + "," + "$2");
+	}
+	return x1 + x2;
+}
+
+function removeComma(str) {
+	str += "";
+	var regex = /,/g;
+	return str.replace(regex, "");
+}
+
+function formatComma(e) {
+	if (keyFilter(e)) {
+		$(this).val(addComma($(this).val()));
+	}
+}
+
+function formatSelect() {
+	$(this).select();
+}
+
+// <-(37) , ->(39) , backspace(8) , tab(9) , decimal point(110) (190), home(36), insert(45), delete(46), end(35)를 제외한 keyup에서만 동작
+function keyFilter(e) {
+	if (e.keyCode == 37 || e.keyCode == 39 || e.keyCode == 8 || e.keyCode == 9 || e.keyCode == 110 || e.keyCode == 190 || e.keyCode == 36 || e.keyCode == 45 || e.keyCode == 46 || e.keyCode == 35)
+		return false;
+	else
+		return true;
+}
+
+/**
+ * flag : g = global, i = ignore case, m = multiline ^ =
+ */
+// 1) money - 100,000
+function restrictMoney(e) {
+	if (keyFilter(e)) {
+		var regex = /[^0-9]/g;
+		$(this).val($(this).val().replace(regex, ""));
+	}
+}
+
+// 2) number - 100,000.00
+function restrictNumber(e) {
+	if (keyFilter(e)) {
+		var regex = /[^0-9\.]/g;
+		$(this).val($(this).val().replace(regex, ""));
+	}
+}
+
+//3) decimal - 100000.00
+function restrictDecimal(e) {
+	if (keyFilter(e)) {
+		var regex = /[^0-9\.]/g;
+		$(this).val($(this).val().replace(regex, ""));
+		
+		if(isNaN($(this).val())){ // 숫자가 아닌 경우(점(.)이 2개일 경우) 초기화
+			$(this).val("");
+		}
+	}
+}
+
+// 3-1) decimal - 100000.00
+/** 
+	ex) <input type="text" class="decimal2" decimalPlace="1" />
+	
+		decimalPlace : 소수점 자릿수 지정
+*/
+function restrictDecimal2(e) {
+	if (keyFilter(e)) {
+		
+		var pattern = /^\d+(?:[.]?[\d]?[\d])?$/;
+		var txt = $(this).val();
+		var decimalPlace = parseInt($(this).attr("decimalPlace"));
+		var dp = 1;
+		
+		for(var i=0; i<decimalPlace; i++){
+			dp = dp * 10;
+		}
+		
+ 		if(!pattern.test(txt)){
+ 			
+ 			if(isNaN(txt)){ // 숫자가 아닌 경우(점(.)이 2개일 경우) 초기화
+ 				$(this).val("");
+ 			}else{
+				txt = parseFloat(txt);
+				txt = Math.floor(txt * dp)/dp;
+				$(this).val(txt);
+ 			}
+		}
+ 		
+ 		if(isNaN(txt)){ // 숫자가 아닌 경우(점(.)이 2개일 경우) 초기화
+			$(this).val("");
+		}
+	}
+}
+
+// 4) onlyNumber - 1234567890
+function restrictOnlyNumber(e) {
+	if (keyFilter(e)) {
+		var regex = /[^0-9]/g;
+		$(this).val($(this).val().replace(regex, ""));
+	}
+}
+// 5) onlyEnglish - a-z,A-Z
+function restrictOnlyEnglish(e) {
+	if (keyFilter(e)) {
+		var regex = /[^a-z]/gi;
+		$(this).val($(this).val().replace(regex, ""));
+	}
+}
+// 5-1) onlyEnglishUpper - A-Z
+function restrictOnlyEnglishUpper(e) {
+	if (keyFilter(e)) {
+		var regex = /[^a-z]/gi;
+		$(this).val($(this).val().replace(regex, "").toUpperCase());
+	}
+}
+// 5-2) onlyEnglishLower - a-z
+function restrictOnlyEnglishLower(e) {
+	if (keyFilter(e)) {
+		var regex = /[^a-z]/gi;
+		$(this).val($(this).val().replace(regex, "").toLowerCase());
+	}
+}
+// 6) forCode - 0-9,A-Z
+function restrictForCode(e) {
+	if (keyFilter(e)) {
+		var regex = /[^0-9a-z\_]/gi;
+		$(this).val($(this).val().replace(regex, "").toUpperCase());
+	}
+}
+// 7) forId - 0-9,A-Z,특수문자(_-!@#$%^)
+function restrictForId(e) {
+	if (keyFilter(e)) {
+		var regex = /[^0-9a-z\_\-\!\@\#\$\%\^]/gi;
+		$(this).val($(this).val().replace(regex, ""));
+	}
+}
+
+//8) forUserId - 0-9,a-z
+function restrictForUserId(e) {
+	if (keyFilter(e)) {
+		var regex = /[^0-9a-z\_]/gi;
+		$(this).val($(this).val().replace(regex, ""));
+	}
+}
+
+// 파일 확장자 체크
+function restrictFileExtension(e) {
+	var ext = $(this).val().split('.').pop().toLowerCase();
+	
+	if($.inArray(ext, ['exe', 'bat', 'sh', 'java', 'jsp', 'html', 'js', 'css', 'xml']) >= 0) {
+		$(this).replaceWith($(this).clone(true));
+		// $(this).val("");
+		
+		alert('허용되지 않는 확장자입니다.');
+	} // end if $.inArray(ext, ['exe', 'bat', 'sh']) > 0
+}
+
+//파일 확장자 체크 Img
+function restrictFileExtensionImg(e) {
+	var ext = $(this).val().split('.').pop().toLowerCase();
+	
+	 if($.inArray(ext, ['gif', 'png', 'jpg', 'jpeg']) == -1) { // 허용하는 확장자가 작을 경우
+		$(this).replaceWith($(this).clone(true));
+		// $(this).val("");
+		
+		alert('허용되지 않는 확장자입니다.');
+	} // end if $.inArray(ext, ['gif', 'png', 'jpg', 'jpeg']) == -1
+}
+
+//파일 확장자 체크 Excel
+function restrictFileExtensionExcel(e) {
+	var ext = $(this).val().split('.').pop().toLowerCase();
+	
+	if($.inArray(ext, ['xls', 'xlsx']) == -1) { // 허용하는 확장자가 작을 경우
+		$(this).replaceWith($(this).clone(true));
+		// $(this).val("");
+		
+		alert('허용되지 않는 확장자입니다.');
+	} // end if $.inArray(ext, ['xls', 'xlsx']) == -1
+}
+
+// 99) class선택자로 keyup이벤트에 자동 바인딩
+$(document).ready(function() {
+	// money
+	$(".money").bind("keyup", restrictMoney);
+	$(".money").bind("keyup", formatComma);
+	$(".money").bind("focus", formatSelect);
+
+	$(".money").bind("blur", restrictMoney);
+	$(".money").bind("blur", formatComma);
+	// number
+	$(".number").bind("keyup", restrictNumber);
+	$(".number").bind("keyup", formatComma);
+	$(".number").bind("focus", formatSelect);
+
+	$(".number").bind("blur", restrictNumber);
+	$(".number").bind("blur", formatComma);
+	// decimal
+	$(".decimal").bind("keyup", restrictDecimal);
+	$(".decimal").bind("focus", formatSelect);
+
+	$(".decimal").bind("blur", restrictDecimal);
+	// decimal2
+	$(".decimal2").bind("keyup", restrictDecimal2);
+	$(".decimal2").bind("focus", formatSelect);  
+	
+	$(".decimal2").bind("blur", restrictDecimal2);
+	
+	// onlyNumber
+	$(".onlyNumber").bind("keyup", restrictOnlyNumber);
+	$(".onlyNumber").bind("focus", formatSelect);
+
+	$(".onlyNumber").bind("blur", restrictOnlyNumber);
+	// onlyEnglish
+	$(".onlyEnglish").bind("keyup", restrictOnlyEnglish);
+	$(".onlyEnglish").bind("focus", formatSelect);
+
+	$(".onlyEnglish").bind("blur", restrictOnlyEnglish);
+	// onlyEnglishUpper
+	$(".onlyEnglishUpper").bind("keyup", restrictOnlyEnglishUpper);
+	$(".onlyEnglishUpper").bind("focus", formatSelect);
+
+	$(".onlyEnglishUpper").bind("blur", restrictOnlyEnglishUpper);
+	// onlyEnglishLower
+	$(".onlyEnglishLower").bind("keyup", restrictOnlyEnglishLower);
+	$(".onlyEnglishLower").bind("focus", formatSelect);
+
+	$(".onlyEnglishLower").bind("blur", restrictOnlyEnglishLower);
+	// forCode
+	$(".forCode").bind("keyup", restrictForCode);
+	$(".forCode").bind("focus", formatSelect);
+
+	$(".forCode").bind("blur", restrictForCode);
+	// forId
+	$(".forId").bind("keyup", restrictForId);
+	$(".forId").bind("focus", formatSelect);
+
+	$(".forId").bind("blur", restrictForId);
+	
+	// forUserId
+	$(".forUserId").bind("keyup", restrictForUserId);
+	$(".forUserId").bind("focus", formatSelect);
+	$(".forUserId").bind("blur", restrictForUserId);
+	
+	$(".fileExtension").bind("change", restrictFileExtension);
+	$(".fileExtensionImg").bind("change", restrictFileExtensionImg);
+	$(".fileExtensionExcel").bind("change", restrictFileExtensionExcel);
+});
+
+/** Date **/
+/**
+ * 현재 시간을 String으로 반환 2013-07-24 09:59:15<br/>
+ * 
+ * getStrDate([formatStr]);<br/>
+ * 
+ * @param formatStr
+ *            (옵션) 날짜의 각 부분<br/> : YY=년도, MM=월, DD=일, HH=시간(24시간제), MI=분, SS=초,
+ *            WK=요일<br/> : DATE=년-월-일(YYYY-MM-DD), TIME=시:분:초(HH:MI:SS)<br/> :
+ *            null =년-월-일 시:분:초<br/>
+ * 
+ */
+function getStrDate(formatStr) {
+	var weeks = new Array('일', '월', '화', '수', '목', '금', '토');
+	var datetime = new Date();
+	var strdate = "";
+
+	if (!formatStr)
+		formatStr = "DEFAULT";
+
+	if (formatStr == "YY") {
+		strdate = datetime.getFullYear() + "";
+	} else if (formatStr == "MM") {
+		strdate = leadingZeros(datetime.getMonth() + 1, 2);
+	} else if (formatStr == "DD") {
+		strdate = leadingZeros(datetime.getDate(), 2);
+	} else if (formatStr == "HH") {
+		strdate = leadingZeros(datetime.getHours(), 2);
+	} else if (formatStr == "MI") {
+		strdate = leadingZeros(datetime.getMinutes(), 2);
+	} else if (formatStr == "SS") {
+		strdate = leadingZeros(datetime.getSeconds(), 2);
+	} else if (formatStr == "WK") {
+		strdate = weeks[datetime.getDay()];
+	} else if (formatStr == "DATE") {
+		strdate = datetime.getFullYear() + "-"
+				+ leadingZeros(datetime.getMonth() + 1, 2) + "-"
+				+ leadingZeros(datetime.getDate(), 2);
+	} else if (formatStr == "TIME") {
+		strdate = leadingZeros(datetime.getHours(), 2) + ":"
+				+ leadingZeros(datetime.getMinutes(), 2) + ":"
+				+ leadingZeros(datetime.getSeconds(), 2);
+
+	} else if (formatStr == "DEFAULT") {
+		strdate = datetime.getFullYear() + "-"
+				+ leadingZeros(datetime.getMonth() + 1, 2) + "-"
+				+ leadingZeros(datetime.getDate(), 2) + " "
+				+ leadingZeros(datetime.getHours(), 2) + ":"
+				+ leadingZeros(datetime.getMinutes(), 2) + ":"
+				+ leadingZeros(datetime.getSeconds(), 2);
+
+	}
+	return strdate;
+}
+
+// 날짜 포맷
+function formatDate(date, str) {
+	var dateStr;
+	var regex = /[0-9]/g;
+	if (date.length == 8 && regex.test(date) == true) {
+		dateStr = date.slice(0, 4) + str + date.slice(4, 6) + str + date.slice(6);
+	} else {
+		dateStr = date;
+	}
+	return dateStr;
+}
+
+/**
+ * Time 스트링을 자바스크립트 Date 객체로 변환<br/> ex) toDate("2009-11-25", "-");<br/> ex)
+ * toDate("20091125", "");<br/>
+ * 
+ * @param dateStr
+ *            날짜형식 문자열
+ * @param delemeter
+ * @returns {Date}
+ */
+function toDate(dateStr, delm) {
+	var year;
+	var month;
+	var day;
+
+	if (delm) {
+		var d = dateStr.split(delm);
+		year = d[0];
+		month = d[1] - 1;
+		day = d[2];
+	} else {
+		year = dateStr.substr(0, 4);
+		month = dateStr.substr(4, 2) - 1;
+		day = dateStr.substr(6, 2);
+	}
+
+	return new Date(year, month, day);
+}
+
+/**
+ * 날짜에 특정 필드를 amount 만큼 더하거나 뺀다. ex) addDate("2013-06-26", "d", 1) ex)
+ * addDate("2013-06-26", "m", 1) ex) addDate("2013-06-26", "y", 1)
+ * 
+ * @param src
+ *            더하거나 뺄 대상 날짜(Date 타입이나 "2011-06-01" 형식의 문자열)
+ * @param field
+ *            대상 필드( y, m, d )
+ * @param amount
+ *            더가허나 뺄 숫자
+ * @returns {String}
+ */
+function addDate(src, field, amount) {
+	var d = (src.getDate) ? src : toDate(src, "-");
+	d.addDate(field, amount);
+
+	var month = parseInt(d.getMonth()) + 1;
+	var day = parseInt(d.getDate());
+
+	return d.getFullYear() + "-" + (month < 10 ? "0" + month : month) + "-"
+			+ (day < 10 ? "0" + day : day);
+};
+
+/**
+ * 날짜의 특정 필드 연산
+ * 
+ * @param field
+ *            y, m, d
+ * @param amount
+ *            더하거나 뺄 숫자
+ * @returns {Date}
+ */
+Date.prototype.addDate = function(field, amount) {
+	if (isNaN(amount)) {
+		return false;
+	}
+	amount = new Number(amount);
+	switch (field.toLowerCase()) {
+	case "y": {
+		this.setFullYear(this.getFullYear() + amount);
+		break;
+	}
+	case "m": {
+		this.setMonth(this.getMonth() + amount);
+		break;
+	}
+	case "d": {
+		this.setDate(this.getDate() + amount);
+		break;
+	}
+	default: {
+		return false;
+	}
+	}
+	return this;
+};
+
+/** 날짜 길이 체크(datepicker) **/
+function dateValidation(id) {
+	var date = $("#" + id).val();
+	if (date != null && date.length != 10) {
+		$("#" + id).val("");
+	}
+}
+
+/**
+ * 날짜 길이 체크(datepicker) + 기간유효성체크
+ * 
+ * 
+ * @param sdtId - 시작일에 해당되는 datepicker의 id(
+ * @param edtId - 종료일에 해당되는 datepicker의 id
+ */
+function dateTermValidation(sdtId, edtId) {
+
+	var sdate = $("#" + sdtId).val();
+	var edate = $("#" + edtId).val();
+	if (sdate != null && sdate.length != 10) {
+		$("#" + sdtId).val("");
+	} else {
+		if (edate != null && edate.length != 10) {
+			$("#" + edtId).val("");
+		} else {
+			if (sdate > edate) {
+				$("#" + sdtId).blur();
+				$("#" + edtId).blur();
+				alert("기간설정이 잘못되었습니다.\r\n\r\n(시작일 > 종료일 : " + sdate + " ~ "
+						+ edate + ")");
+				$("#" + sdtId).val("");
+				$("#" + edtId).val("");
+			}
+		}
+	}
+}
+
+//바이트 문자 입력가능 문자수 체크
+function maxLengthCheck(id, maxLength){
+	var obj = $("#"+id);
+	if(maxLength == null) maxLength = obj.attr("maxLength") != null ? obj.attr("maxLength") : 1000;
+	if(Number(byteCheck(obj)) > Number(maxLength)) {
+		alert(obj.attr("title") + "이(가) 입력가능문자수를 초과하였습니다.\n(영문, 숫자, 일반 특수문자 : " + maxLength + " / 한글, 한자, 기타 특수문자 : " + parseInt(maxLength/2, 10) + ").");
+		obj.focus();
+		return false;
+	} else {
+		return true;
+	}
+}
+
+function byteCheck(code){
+	//바이트수에 따른 입력  
+	var codeByte = 0;
+	for (var idx = 0; idx < code.val().length; idx++) {
+		var oneChar = escape(code.val().charAt(idx));
+		if ( oneChar.length == 1 ) {
+			codeByte ++;
+		} else if (oneChar.indexOf("%u") != -1) {
+			codeByte += 2;
+		} else if (oneChar.indexOf("%") != -1) {
+			codeByte += oneChar.length / 3;
+		}
+	}
+	return codeByte;
+}
+
+/* input readonly 설정 */
+function setReadOnly(id, flag) {
+	if (flag) {
+		// disabled된 것 처럼 처리
+		$("#" + id).attr("readonly", true);// readonly - disabled로 하면 전송이 안됨
+		$("#" + id).addClass("readonly");// 스타일 적용
+		$("#" + id).bind("focus", function(e) {
+			$(this).blur();
+		});// 포커스를 갖지 못하게 조정
+	} else {
+		// disabled된 것 처럼 처리된것 해제
+		$("#" + id).attr("readonly", false);// readonly해제
+		$("#" + id).removeClass("readonly");// 스타일 해제
+		$("#" + id).unbind("focus");// 이벤트 해제
+	}
+}
+
+
+/** Input **/
+
+/**
+ * 숫자를 문자열로... 자릿수만큼 '0'을 채워서<br/>
+ * 
+ * @param num
+ *            숫자<br/>
+ * @param digits
+ *            자릿수<br/> leadingZeros(1, 2) --> '01'반환<br/>
+ */
+function leadingZeros(num, digits) {
+	var zeros = "";
+
+	num = num.toString();
+	if (num.length < digits) {
+		for ( var i = 0; i < (digits - num.length); i++) {
+			zeros += "0";
+		}
+	}
+	return zeros + num;
+}
+
+Array.prototype.unique = function() {
+	var a = {};
+	for ( var i = 0; i < this.length; i++) {
+		if (typeof a[this[i]] == "undefined") {
+			a[this[i]] = 1;
+		}
+	}
+	this.length = 0;
+	for ( var i in a) {
+		this[this.length] = i;
+	}
+	return this;
+}
+
+/**
+ * 문자 Null 체크
+ * 
+ * @param str 문자열
+ * @param format 문자열 null 일경우 반환 값
+ */
+function isNullCheck(str, format){
+	return (str == null || str == '') ? format : str;
+}
+
+/**
+ * 문자 Null 체크2
+ * 
+ * @param str 문자열
+ * @param result 문자열 not null 일경우 반환 값
+ * @param result2 문자열 null 일경우 반환 값
+ */
+function isNullCheckReturn(str, result, result2){
+	return (str == null || str == '') ? result2 : result; 
+}
+
+/**
+ * POPUP WINDOW
+ */
+function windowOpen(url, name, width, height, options) {
+	// 값검증
+	if (name == null)
+		name = "";
+	if (width == null || width == "")
+		width = 700;
+	if (height == null || height == "")
+		height = 500;
+	if (options == null || options == "")
+		options = "directories=no,fullscreen=no,location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no";
+	// 창위치
+	var x = 0;
+	var y = 0;
+	if (window.screenX) {
+		x = window.screenX;
+		y = window.screenY;
+	} else {// IE
+		x = window.screenLeft;
+		y = window.screenTop;
+	}
+	var x = x + ($(window).width() - width) / 2;
+	var y = y + ($(window).height() - height) / 2;
+
+	return window.open(url, name, "width=" + width + ",height=" + height
+			+ ",top=" + y + ",left=" + x + "," + options);
+}
+
+String.prototype.replaceAll = function(searchStr, replaceStr) {
+	var temp = this;
+	while(temp.indexOf(searchStr) != -1) {
+		temp = temp.replace(searchStr, replaceStr);
+	}
+	return temp;
+};
+
+String.prototype.trim = function(){
+	return this.replace(/(^\s*)|(\s*$)gi/,'');
+};
+
+/** @param txt<br/>
+ * 	@param len : 생략시 기본값 20<br/>
+ * 	@param lastTxt : 생략시 기본값 "..."<br/>
+ * 	@returns 결과값
+ * <br/>
+ * <br/>
+ * 특정 글자수가 넘어가면 넘어가는 글자는 자르고 마지막에 대체문자 처리<br/>
+ * &emsp;ex) 가나다라마바사 -> textLengthOverCut('가나다라마바사', '5', '...') : 가나다라마...<br/>
+*/
+function textLengthOverCut(txt, len, lastTxt){
+	var rtn = txt;
+	if(len == "" || len == null){ // 기본값
+		len = 20;
+	}
+	if(lastTxt == "" || lastTxt == null){ // 기본값
+		lastTxt = "...";
+	}
+	if(txt.length > len){
+		rtn = txt.substr(0,len) + lastTxt;
+	
+		var spaceCnt = 0;
+		var temp = rtn;
+		while(temp.indexOf(" ") != -1) {
+			temp = temp.replace(" ", "");
+			spaceCnt++;
+		}
+		spaceCnt = parseInt(spaceCnt/2);
+		len = len + spaceCnt;
+		
+		if(txt.length > len){
+			rtn = txt.substr(0,len) + lastTxt;
+		}else{
+			rtn = txt.substr(0,len);
+		}
+	}
+	return rtn;
+}
+
+/**
+ *  소숫점 파라미터 자리까지 0으로 표현<br/>
+ *  @param num 숫자<br/>
+ *  @param digits 자릿수<br/>
+ *  leadingZeros(10.1, 2) --> '10.10'반환<br/>
+ */
+function leadingPointZeros(num, digits){
+	var regExp = /^[0-9.-]+$/;
+	
+	if(num == null || num == ""){
+		num = 0;
+	}
+	
+	if(regExp.test(num)){
+		var zeros = "";
+		var pointIndex = "";
+		
+		num = num.toString();
+		
+		if(num != "-"){ // dash가 아닌경우에만
+			// 맨 앞 처리가 .으로 시작할 경우 앞에 0을 붙여준다.
+			if(num.substring(0, 1) == "."){
+				num = "0" + num;
+			}
+			
+			// 맨 앞 처리가 -.으로 시작할 경우 앞에 -0을 붙여준다.
+			if(num.substring(0, 1) == "-" && num.substring(1, 2) == "."){
+				num = "-0" +num.substring(1);
+			}
+		
+			if(num.indexOf(".") < 0){
+				for(var i=0; i<digits; i++){
+					zeros += "0";
+				}
+				num = num + "." + zeros;
+			} else {
+				var tempVal = "";
+				pointIndex = num.indexOf(".");
+				tempVal = num.substring(pointIndex + 1, num.length);
+				
+				for(var i = tempVal.length; i< digits; i++){
+					zeros += "0";
+				}
+				
+				num = num + zeros;
+			}
+		}
+	} 
+	return num;
+}
+
+/**
+ * 소수점 반올림, 소수점 올림, 소수점 버림
+ * 
+ * @param num 파라미터는 반올림/올림/내림 할 숫자
+ * @param ja 소숫점 몇 번째에서 반올림/올림/내림 할 것인지
+ * @returns 반올림/올림/내림 결과
+**/
+
+var math = {
+	// 반올림
+	round : function(num, ja) {
+		ja = Math.pow(10, ja);
+		return Math.round(num * ja) / ja;
+	}
+	// 올림
+	,
+	ceil : function(num, ja) {
+		ja = Math.pow(10, ja);
+		return Math.ceil(num * ja) / ja;
+	}
+	// 버림
+	,
+	floor : function(num, ja) {
+		ja = Math.pow(10, ja);
+		return Math.floor(num * ja) / ja;
+	}
+};
+
+// 문자열을 유니코드로 변환한다.
+function transferUniCode(paramData) {
+	var arrayData = new Array();
+
+	for ( var i = 0; i < paramData.length; i++) {
+		arrayData[i] = paramData.substring(i, i + 1).charCodeAt(0);
+	}
+
+	return arrayData;
+}
+
+// 유니코드를 문자열로 변환한다.
+function transferString(paramData) {
+	if(paramData == null || paramData == "") return "";
+	
+	var split_str = paramData.split(",");
+	var result = "";
+
+	for ( var i = 0; i < split_str.length; i++) {
+		result += String.fromCharCode(split_str[i]);
+	}
+	return result;
+}
+
+/**
+ * 팝업 다중 열림 방지
+ * 
+ * @param popupKey
+ * @param popUrl
+ * @param popName
+ * @param popWidth
+ * @param popHeight
+ * @param popOptions
+ */
+function popupMultiPreventManager(popupKey, popUrl, popName, popWidth, popHeight, popOptions){
+	var winRef;
+	if(popupMap.get(popupKey) == null){
+		winRef = windowOpen(popUrl, popName, popWidth, popHeight, popOptions);
+		popupMap.put(popupKey, winRef);
+	}else{
+		winRef = popupMap.get(popupKey);
+		if (winRef.closed == false) {
+			winRef.focus();
+		} else {
+			winRef = windowOpen(popUrl, popName, popWidth, popHeight, popOptions);
+			popupMap.put(popupKey, winRef);
+		}
+	}
+}
+
+/**
+ * 새창 다중 열림 방지
+ * 
+ * @param popupKey
+ * @param popUrl
+ */
+function popupMultiPreventManagerBlank(popupKey, popUrl){
+	var winRef;
+	if(popupBlankMap.get(popupKey) == null){
+		winRef = window.open(popUrl, '_blank');
+		popupBlankMap.put(popupKey, winRef);
+	}else{
+		winRef = popupBlankMap.get(popupKey);
+		if (winRef.closed == false) {
+			// 새창이 탭으로 열려서 포커스가 작동하지 않음....
+			winRef.focus();
+		} else {
+			winRef = window.open(popUrl, '_blank');
+			popupBlankMap.put(popupKey, winRef);
+		}
+	}
+}
+
+// 페이지가 닫힐 때 저장해 두었던 팝업들을 모두 종료한다.
+window.onbeforeunload = function(e) {
+	if(e != null && e != undefined){
+		if(popupMap.size() > 0){
+			var keys = popupMap.keys();
+			
+			for ( var i = 0; i < keys.length; i++) {
+				if(keys[i].indexOf("noClose_") == -1){
+					popupMap.get(keys[i]).close();
+				}
+			}
+		}
+		popupMap.clear();
+	}
+};
+
+//HTML 태그 컨버터
+function getHtmlStrCnvr(str) {
+	var value = str;
+
+	if (value == null) { return null; }
+	value = value.replaceAll("&amp;", "&");
+	value = value.replaceAll("&lt;", "<");
+	value = value.replaceAll("&gt;", ">");
+	value = value.replaceAll("&quot;", "\"");
+	value = value.replaceAll("&apos;", "\'");
+
+	value = value.replaceAll("<script>", "");
+	value = value.replaceAll("</script>", "");
+	return value;
+}
+
+//Cookie 확인
+function checkPopupCookie(cookieName){
+	var cookie = document.cookie;
+	if(cookie.length > 0){
+		startIndex = cookie.indexOf(cookieName);
+		if(startIndex != -1){
+			return true;
+		} else {
+			return false;
+		};
+	} else {
+		return false;
+	}
+}
+
+// Cookie 설정
+// day : 보관일수
+var setCookie = function(name, value, day) {
+	var date = new Date();
+	date.setTime(date.getTime() + day * 60 * 60 * 24 * 1000);
+	document.cookie = name + '=' + value + ';expires=' + date.toUTCString()
+			+ ';path=/';
+};
+
+var getCookie = function(name) {
+	var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+	return value ? value[2] : null;
+};
+
+var deleteCookie = function(name) {
+	var date = new Date();
+	document.cookie = name + "= " + "; expires=" + date.toUTCString()
+			+ "; path=/";
+}
+
+// 로딩 프로그래스 출력
+function showBusysign() {
+  document.getElementById('ajaxveil').style.display ='inline';
+}
+
+// 로딩 프로그래스 숨김
+function hideBusysign() {
+   document.getElementById('ajaxveil').style.display ='none';
+}
+
+/**
+ * 천단위 콤마, 천단위 구분기호 삽입
+ * 
+ * @param value
+ * @returns
+ */
+function setComma ( value )
+{
+	if (value == null || value == ""){
+		return value;
+	}
+	
+	// 소수점 분리
+	var valueArr = value.toString().split(".");
+	
+	var str = valueArr[0].toString();
+		str = str.replace ( /,/g ,'' );
+	var retValue = "";
+ 
+	for( var i = 1; i <= str.length; i++ ) {
+		if ( i > 1 && ( i % 3 ) == 1 )
+			retValue = str.charAt ( str.length - i ) + "," + retValue;
+		else
+			retValue = str.charAt ( str.length - i ) + retValue;
+	}
+ 
+	return retValue + (valueArr.length > 1 ? "." + valueArr[1] : "");
+}
+
+/**
+* CONTEXT PATH 
+*/
+function getContextPath() {
+	var hostIndex = location.href.indexOf( location.host ) + location.host.length;
+	return location.href.substring( hostIndex, location.href.indexOf('/', hostIndex + 1) );
+};
+
+
+//_ValueNotNull 클래스에 대해서 빈값 체크
+function valueNotNullCheck(msg){
+	var elements = $('._ValueNotNull');
+	
+	for ( var index = 0; index < elements.size(); index++) {
+		var element = elements.get(index);
+		
+		// disabled 는 체크하지 않는다.
+		if($(element).attr("disabled") == undefined){
+			var str = element.value;
+		    var re = /.+/;
+		    if(!str.trim().match(re)) {
+		        alert(element.title + msg);
+		        element.focus();
+		        return false;
+		    }
+		}
+	}
+	
+	return true;
+}
+
+/**
+ * 중복서브밋 방지
+ * 
+ * @returns {Boolean}
+ */
+var doubleSubmitFlag = false;
+function doubleSubmitCheck(){
+	if(doubleSubmitFlag){
+		return doubleSubmitFlag;
+	}else{
+		doubleSubmitFlag = true;
+		return false;
+	}
+}
+
+/**
+ * 파일 확장자 체크
+ * 
+ * @param elId
+ */
+function fileExtensionCheck(elId) {
+	var ext = $("#"+elId).val().split('.').pop().toLowerCase();
+	
+	if(ext == ""){
+		return true;
+	}
+	
+	if(ext.length >= 10 || ext == "" || $.inArray(ext, ['exe', 'bat', 'sh', 'java', 'jsp', 'html', 'js', 'css', 'xml']) >= 0) {
+		$("#"+elId).replaceWith($("#"+elId).clone(true));
+		alert('허용되지 않는 확장자입니다.');
+		return false;
+	} // end if
+	
+	return true;
+}
+
+/**
+ * ie version check
+ * @returns {String}
+ */
+function get_version_of_IE () { 
+	 var word; 
+	 var version = "N/A"; 
+
+	 var agent = navigator.userAgent.toLowerCase(); 
+
+	 // IE old version ( IE 10 or Lower ) 
+	 if ( navigator.appName == "Microsoft Internet Explorer" ) word = "msie "; 
+
+	 else { 
+		 // IE 11 
+		 if ( agent.search( "trident" ) > -1 ) word = "trident/.*rv:"; 
+
+		 // Microsoft Edge  
+		 else if ( agent.search( "edge/" ) > -1 ) word = "edge/"; 
+
+		 // 그외, IE가 아니라면 ( If it's not IE or Edge )  
+		 else return version; 
+	 } 
+
+	 var reg = new RegExp( word + "([0-9]{1,})(\\.{0,}[0-9]{0,1})" ); 
+	 if (  reg.exec( agent ) != null  ){
+//		 version = RegExp.$1 + RegExp.$2; 
+		 version = RegExp.$1; 
+	 }
+	 return version; 
+} 
+
+/**
+ * 첨부파일 사이즈 체크 (dispatcher-servlet 에 정의한 maxUploadSize 와 같아야 함)
+ * IE가 아니거나 IE 10 이상만 사용가능
+ * 
+ * @param elId
+ * @param maxSize
+ */
+function maxUploadSizeCheck(elId, maxSize){
+    var maxSize;
+    
+    if(maxSize == "" || maxSize == null){
+    	maxSize = 52428800; // 52428800 byte : 50MB
+    }
+    
+    var maxSizeText = setComma(maxSize) + " byte";
+    
+    var fileSize = 0;
+    
+    if (document.getElementById(elId).value != "") { 
+    	// 브라우저 확인
+    	if(get_version_of_IE () == "N/A" || get_version_of_IE () >= 10){
+    		// IE가 아니거나 IE 10 이상
+    		fileSize = document.getElementById(elId).files[0].size;
+    	}
+    	
+    	if(fileSize > maxSize){
+    		$("#"+elId).replaceWith($("#"+elId).clone(true));
+    		alert("첨부파일 사이즈는 " + maxSizeText + " 이내로 등록 가능합니다.");
+    		return false;
+        }else{
+        	return true;
+        }
+    }else{
+    	return true;
+    }
+}
+
+/**
+ *  검색용 selectbox 만들기
+ *  
+ * @param selectElId
+ * @param resultList
+ * @param valueKey
+ * @param lableKey
+ * @returns
+ */
+function buildSearchSelectBox(selectElId, resultList, valueKey, lableKey){
+	if(resultList.length > 0){
+		// List 반복문
+		$.each(resultList, function (index, result) {
+			// option 셋팅
+			$("#" + selectElId).append("<option value='" + result[valueKey] + "'>" + result[lableKey] + "</option>");
+		});
+	}
+}
+
+// ajax 공통 error 처리
+$.ajaxSetup({
+	beforeSend: function(xhr) {
+		xhr.setRequestHeader("AJAX", true);
+	},
+	error: function(xhr, status, err) {
+		var message = "";
+		var statusErrorMap = {
+		     '400' : "Server understood the request but request content was invalid.",
+		     '401' : "Unauthorised access.",
+		     '403' : "Forbidden resouce can't be accessed",
+		     '404' : "페이지가 존재 하지 않습니다.",
+		     '500' : "Internal Server Error.",
+		     '503' : "Service Unavailable",
+		     '504' : "정상적인 서비스 이용을 위하여 오래걸리는 작업을 종료하였습니다.\n\n증상이 지속될 경우 관리자에게 문의하시기 바랍니다.",
+		     '901' : "로그아웃 되었습니다. 처음페이지로 이동 합니다."
+		};
+		
+		if(xhr.status){
+			message = statusErrorMap[xhr.status];
+			
+			if(!message){
+				message="알수 없는 오류가 발생 하였습니다.";
+			}
+		}else if(status=='parsererror'){
+			message="Error.\nParsing JSON Request failed.";
+		}else if(status=='timeout'){
+		    message="Request Time out.";
+		}else if(status=='abort'){
+		    message="Request was aborted by the server";
+		}else{
+		    message="Unknow Error.";
+		}
+			
+		alert(message);
+//		alert("code : " + xhr.status + "\n" + err);
+	}
+});
+
+//이미지가 없을 경우
+function showNoImage(id){
+	$("#"+id +" img").remove();
+
+	var htmls = "";
+	htmls += '<div class="no_image_wrap">';
+	htmls += '	<ul>';
+	htmls += '		<li class="no_image_center"></li>';
+	htmls += '	</ul>';
+	htmls += '</div>';
+	$("#"+id).append(htmls);
+}

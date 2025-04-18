@@ -1,0 +1,56 @@
+// menu
+$(document).ready(function () {
+	$('.header').removeClass('headerOn');
+	$('nav').mouseover(function(){
+		$('.header').addClass('headerOn');
+	})
+	$('nav').hover(function () {
+		$("#fade").fadeIn(300);
+		$('.header').addClass('headerOn');
+	}, function () {
+		$('.header').removeClass('headerOn');
+		$("#fade").fadeOut(300);
+	});
+});
+
+
+/* 메뉴 리스트 오픈 상태에서 click 이벤트 발생시 서브메뉴 none 처리 */
+document.onmousedown = function leftClick() {
+	var target = window.event.srcElement.className;
+	if (target != "" && target != null && target != "subTitle") {
+		$("#downNav").fadeOut(300);
+		$("[class*='drop_nav_']").fadeOut(300);
+	}
+};
+
+/* 대메뉴 클릭 */
+function slideMenu(){
+	$("#downNav").fadeToggle(300);
+	$("[class*='drop_nav_']").fadeOut(300);
+}
+
+/* 서브메뉴 클릭 */
+function slideSubMenu(menuCd){
+	$(".drop_nav_"+menuCd).css("display","none");
+	$(".drop_nav_"+menuCd).fadeToggle(300);
+	$("#downNav").fadeOut(300);
+	// 대메뉴 클릭 후 바뀐 서브 메뉴 텍스트를 대메뉴에 맞게 재설정
+	$("#subMenu p span").text($(".drop_nav_"+menuCd).find(".subTitle:eq(0)").text());
+}
+
+/* 대메뉴에서 항목 click시 서브메뉴 데이터 set */
+function changeNavMenu(menuCd, menuNm){
+	$("[class*='drop_nav_']").css("display", "none");
+//	$("#menu p span").text(menuNm);
+	$("#menu .nav_btn_in li:eq(0)").text(menuNm);
+	
+	document.getElementById("subMenu").setAttribute("onClick", "slideSubMenu('"+menuCd+"')");
+//	$("#subMenu p span").text($(".drop_nav_"+menuCd).find(".subTitle:eq(0)").text());
+	$("#subMenu .nav_btn_in li:eq(0)").text($(".drop_nav_"+menuCd).find(".subTitle:eq(0)").text());
+
+	$(".drop_nav_"+menuCd).fadeToggle(300);
+	
+	/* li > li 구조로 인해 clickEvt() 호출 방지 */
+	event.stopPropagation();
+	$("#downNav").fadeOut(300);// 대메뉴 depth display :none
+}

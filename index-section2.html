@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<!-- saved from url=(0077)https://www.wizetech.co.kr/recruit/recruitment_recruitProcess.do?menu_id=0602 -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- saved from url=(0046)https://www.wizetech.co.kr/main/main_doMain.do -->
+<html class="fp-enabled" style="overflow: hidden; height: 100%;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
 
 <!-- stylesheet -->
 <link rel="stylesheet" href="./jquery-ui.css">
@@ -11,8 +12,10 @@
 
 <!-- jquery -->
 <script type="text/javascript" src="./jquery-1.11.0.min.js.다운로드"></script>
+<!-- bootstrap -->
+<script type="text/javascript" src="./bootstrap.min.js.다운로드"></script>
 <!-- locale -->
-
+<script type="text/javascript" src="./datepicker.locale-ko.js.다운로드" charset="utf-8"></script>
 <!-- ui -->
 <script type="text/javascript" src="./jquery-ui-1.10.4.custom.min.js.다운로드"></script>
 <!-- form  -->
@@ -35,23 +38,25 @@
 <script src="./respond.min.js.다운로드"></script>
 <script src="./content.js.다운로드"></script>
 <script src="./navFunc.js.다운로드"></script>
-<!-- summernote -->
-<script src="./summernote-lite.js.다운로드"></script>
-<script src="./summernote-ko-KR.js.다운로드"></script>
+<script src="./modal.js.다운로드"></script>
 
 <link rel="stylesheet" href="./reset.css">
 <link rel="stylesheet" href="./layout.css">
 <link rel="stylesheet" href="./contents.css">
+<link rel="stylesheet" href="./index.css">
 <link rel="stylesheet" href="./loading.css">
-<link rel="stylesheet" href="./datepicker-custom.css">
+<link rel="stylesheet" href="./jquery.fullPage.css">
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
 <link rel="stylesheet" href="./responsive.css">
-<!-- summernote -->
-<link rel="stylesheet" href="./summernote-lite.css">
 </head>
-<body>
+
+<body marginwidth="0" marginheight="0" class="fp-viewing-firstPage" style="overflow: hidden; height: 100%;">
+	
+
+
 
 <script type="text/javascript">
-var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
+/*var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
 
 $(document).ready(function(){
 // 	var width_size = window.outerWidth;
@@ -70,26 +75,30 @@ $(document).ready(function(){
 		$(".talent_wrap").css("width", "100%");
 		$(".footer_width").css({"width":"88%", "padding":"0px 70px"});
 		$(".wrap h1").css("padding-left", "30px");
-		/* section2 */
+		
+		// section2 
 		$(".section2_text2").css({"width":"550px", "margin":"20px auto"});
 		$(".section2_text3").css("margin-top","50px");
-		/* main - news&notice */
+		
+		// main - news&notice
 		$(".index_news_box").css("width","33%");
 		$(".index_news_box:last").css("display","none");
 		$(".index_news_box img").css("width","100%");
-		/* main-career */
+		
+		// main-career
 		$(".career_info_title").css("width", "75%");
 		$(".career_info_in").css({"width":"45%","padding":"30px 15px"});
 		
 		$(".area_wrap").css("width","33%");
 		$(".area_box_inner").css("padding","17px 40px");
-		/* 메인 배경 위치 잡기 */
+		
+		// 메인 배경 위치 잡기
 		$(".section2_bg, .section3_bg, .section4_bg").css({"top":"", "height":"50%"});
 		$("#section4").css("padding-bottom","180px");
 		
 		$(".visual_slide_btn").css("display","none");
 		
-		/* main section */
+		// main section 
 		$(".index_visual_line").css("margin-left", "70px");
 		$(".index_visual_inner_wrap").css("padding-left", "120px");
 		$(".section_con_center").removeClass("width1400");
@@ -97,29 +106,31 @@ $(document).ready(function(){
 		$(".section_con_center").css("padding", "0px 30px");
 		$(".section_con_left").css({"padding":"0px 30px", "width":"95%"});
 
-		/* wizeBoard */
+		// wizeBoard
 		$(".news_title_text img").css("width", "100%");
 		$(".newsnotice_con_box .area").css("width", "33%");
 		$(".newsnotice_con_box > div").css("width","33%");
 		$(".news_title_text .no_image_wrap, .news_title_text .no_image_center").css("width","288px");
 		
-		/* 연혁 */
+		// 연혁 
 		$(".history_text_set").css("width", "30%");
 		$(".year_con_1").css("width", "60%");
 		$(".history_con_box2").css("width", "100%");
-		/* ci */
+		// ci 
 		$(".ci_text_bold").css("margin-bottom", "0px");
-		/* 오시는길 */
+		// 오시는길
 		$(".transit_center").css("margin", "35px");
-		/* 인증현황 */
+		// 인증현황
 		$(".certification_img_title").css("height", "15%");
-		/* 복지제도 */
+		// 복지제도
 		$(".welfare_con_wrap").css({"height":"185px", "padding":"30px 20px"});
 		$(".welfare_wrap1, .welfare_wrap1-1").css("width", "100%");
-		/* 채용정보 */
+		// 채용정보
 		$(".post_data_width").css("width", "100%");
+		
 	}
-})
+});*/
+
 $(function(){
 	$("#ham").click(function(){
 		$(".sitemap_wrap").slideDown(300);
@@ -129,11 +140,10 @@ $(function(){
 	});
 });
 </script>
-
 <div id="ajaxveil">
 	<img src="./img/wize_loading.gif" alt="로딩 이미지">
 </div>
-<div id="fade"></div>
+<div id="fade" style="display: none;"></div>
 
 <!--사이트맵  -->
 <div class="sitemap_wrap" style="display : none;">
@@ -186,33 +196,87 @@ $(function(){
 					</ul>
 				</div>
 					
+				<div class="sitemap_align1-3">
+					<ul class="sitemap_depth1">
+						<li class="sitemap_align2">
+							<!--https://www.wizetech.co.kr/procurement/product_doWebLogic.do?menu_id=0201-->
+							<a href="./service-development.html" onclick="showBusysign();">
+								<span class="blue underline">
+									PRODUCTS
+								</span>
+							</a>
+							<ul class="sitemap_depth2">
+								<li>
+									<!--https://www.wizetech.co.kr/procurement/product_doWebLogic.do?menu_id=0201-->
+									<a href="./products-database.html" onclick="showBusysign();">Database</a>
+								</li>
+								<li>
+									<!--https://www.wizetech.co.kr/procurement/product_doWebTier.do?menu_id=0202-->
+									<a href="./products-weblogic.html" onclick="showBusysign();">WebLogic</a>
+								</li>
+								<li>
+									<!--https://www.wizetech.co.kr/procurement/product_toadForOracle.do?menu_id=0205-->
+									<a href="./products-webtier.html" onclick="showBusysign();">WebTier</a>
+								</li>
+								<li>
+									<!--https://www.wizetech.co.kr/procurement/product_doWebLogic.do?menu_id=0201-->
+									<a href="./products-database.html" onclick="showBusysign();">Database</a>
+								</li>
+								<li>
+									<!--https://www.wizetech.co.kr/procurement/product_doWebTier.do?menu_id=0202-->
+									<a href="./products-weblogic.html" onclick="showBusysign();">WebLogic</a>
+								</li>
+								<li>
+									<!--https://www.wizetech.co.kr/procurement/product_doWebTier.do?menu_id=0202-->
+									<a href="./products-ogg.html" onclick="showBusysign();">Oracle Golden Gate</a>
+								</li>
+								<li>
+									<!--https://www.wizetech.co.kr/procurement/product_toadForOracle.do?menu_id=0205-->
+									<a href="./products-adg.html" onclick="showBusysign();">Active Data Guard</a>
+								</li>
+								<li>
+									<!--https://www.wizetech.co.kr/procurement/product_doWebLogic.do?menu_id=0201-->
+									<a href="./products-aso.html" onclick="showBusysign();">Advanced Security Option</a>
+								</li>
+								<li>
+									<!--https://www.wizetech.co.kr/procurement/product_doWebTier.do?menu_id=0202-->
+									<a href="./products-keyvault.html" onclick="showBusysign();">Key Vault</a>
+								</li>
+								<li>
+									<!--https://www.wizetech.co.kr/procurement/product_toadForOracle.do?menu_id=0205-->
+									<a href="./products-oda.html" onclick="showBusysign();">Oracle Database Appliance</a>
+								</li>
+								<li>
+									<!--https://www.wizetech.co.kr/procurement/product_doWebLogic.do?menu_id=0201-->
+									<a href="./products-exadata.html" onclick="showBusysign();">Exadata</a>
+								</li>
+								<li>
+									<!--https://www.wizetech.co.kr/procurement/product_doWebTier.do?menu_id=0202-->
+									<a href="./products-sql.html" onclick="showBusysign();">MySQL</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+					
 				<div class="sitemap_align1-2">
 					<ul class="sitemap_depth1">
 						<li class="sitemap_align2">
 							<!--https://www.wizetech.co.kr/procurement/product_doWebLogic.do?menu_id=0201-->
 							<a href="./service-development.html" onclick="showBusysign();">
 								<span class="blue underline">
-									SERVICE
+									SOLUTION
 								</span>
 							</a>
 							<ul class="sitemap_depth2">
 								<li>
 									<!--https://www.wizetech.co.kr/procurement/product_doWebLogic.do?menu_id=0201-->
-									<a href="./service-development.html" onclick="showBusysign();">
-										소프트웨어 개발
-									</a>
+									<a href="./solution-rpa.html" onclick="showBusysign();">RPA</a>
 								</li>
 								<li>
 									<!--https://www.wizetech.co.kr/procurement/product_doWebTier.do?menu_id=0202-->
-									<a href="./service-supply.html" onclick="showBusysign();">
-										소프트웨어 공급
-									</a>
-								</li>
-								<li>
-									<!--https://www.wizetech.co.kr/procurement/product_toadForOracle.do?menu_id=0205-->
-									<a href="./service-maintenance.html" onclick="showBusysign();">
-										소프트웨어 유지보수
-									</a>
+									<a href="./solution-pms.html" onclick="showBusysign();">PMS</a>
 								</li>
 							</ul>
 						</li>
@@ -223,7 +287,7 @@ $(function(){
 					<ul class="sitemap_depth1">
 						<li class="sitemap_align2">
 							<!--https://www.wizetech.co.kr/promotion/promotion_wizeBoardList.do?menu_id=0501-->
-							<a href="notice.html" onclick="showBusysign();">
+							<a href="./notice.html" onclick="showBusysign();">
 								<span class="blue underline">
 									NOTICE
 								</span>
@@ -231,13 +295,13 @@ $(function(){
 							<ul class="sitemap_depth2">
 								<li>
 									<!--https://www.wizetech.co.kr/promotion/promotion_wizeBoardList.do?menu_id=0501-->
-									<a href="notice.html" onclick="showBusysign();">
+									<a href="./notice.html" onclick="showBusysign();">
 										공지사항
 									</a>
 								</li>
 								<li>
 									<!--https://www.wizetech.co.kr/promotion/promotion_wizeBoardList.do?menu_id=0501-->
-									<a href=".notice-news.html" onclick="showBusysign();">
+									<a href="./notice-news.html" onclick="showBusysign();">
 										소식
 									</a>
 								</li>
@@ -305,7 +369,7 @@ $(function(){
 <header class="header">
 	<div class="wrap">
 		<!--https://www.wizetech.co.kr/main/main_doMain.do-->
-		<h1><a href="index.html"><img src="./img/gooditierlogo.png" alt="굿아이티어" style="width: 70px;"></a></h1>
+		<h1><a href="./index.html"><img src="./img/gooditierlogo.png" alt="와이즈테크놀로지" style="width: 70px;"></a></h1>
 		<div class="lnb">
 			<nav>
 				<ul>
@@ -319,7 +383,7 @@ $(function(){
 							</li>
 							<li>
 								<!--https://www.wizetech.co.kr/info/companyInfo_history.do?menu_id=0102-->
-								<a href="./about-history" onclick="showBusysign();">연혁</a>
+								<a href="./about-history.html" onclick="showBusysign();">연혁</a>
 							</li>
 							<li>
 								<!--https://www.wizetech.co.kr/info/companyInfo_orgChart.do?menu_id=0103-->
@@ -337,25 +401,75 @@ $(function(){
 					</li>
 					<li>
 						<!--https://www.wizetech.co.kr/procurement/product_doWebLogic.do?menu_id=0201-->
-						<a href="./service-development.html" onclick="showBusysign();">SERVICE</a>
+						<a href="./products-database.html" onclick="showBusysign();">PRODUCTS</a>
 						<ul>
 							<li>
 								<!--https://www.wizetech.co.kr/procurement/product_doWebLogic.do?menu_id=0201-->
-								<a href="./service-development.html" onclick="showBusysign();">소프트웨어 개발</a>
+								<a href="./products-database.html" onclick="showBusysign();">Database</a>
 							</li>
 							<li>
 								<!--https://www.wizetech.co.kr/procurement/product_doWebTier.do?menu_id=0202-->
-								<a href="./service-supply.html" onclick="showBusysign();">소프트웨어 공급</a>
+								<a href="./products-weblogic.html" onclick="showBusysign();">WebLogic</a>
 							</li>
 							<li>
 								<!--https://www.wizetech.co.kr/procurement/product_toadForOracle.do?menu_id=0205-->
-								<a href="./service-maintenance.html" onclick="showBusysign();">소프트웨어 유지보수</a>
+								<a href="./products-webtier.html" onclick="showBusysign();">WebTier</a>
+							</li>
+							<li>
+								<!--https://www.wizetech.co.kr/procurement/product_doWebLogic.do?menu_id=0201-->
+								<a href="./products-database.html" onclick="showBusysign();">Database</a>
+							</li>
+							<li>
+								<!--https://www.wizetech.co.kr/procurement/product_doWebTier.do?menu_id=0202-->
+								<a href="./products-weblogic.html" onclick="showBusysign();">WebLogic</a>
+							</li>
+							<li>
+								<!--https://www.wizetech.co.kr/procurement/product_doWebTier.do?menu_id=0202-->
+								<a href="./products-ogg.html" onclick="showBusysign();">Oracle Golden Gate</a>
+							</li>
+							<li>
+								<!--https://www.wizetech.co.kr/procurement/product_toadForOracle.do?menu_id=0205-->
+								<a href="./products-adg.html" onclick="showBusysign();">Active Data Guard</a>
+							</li>
+							<li>
+								<!--https://www.wizetech.co.kr/procurement/product_doWebLogic.do?menu_id=0201-->
+								<a href="./products-aso.html" onclick="showBusysign();">Advanced Security Option</a>
+							</li>
+							<li>
+								<!--https://www.wizetech.co.kr/procurement/product_doWebTier.do?menu_id=0202-->
+								<a href="./products-keyvault.html" onclick="showBusysign();">Key Vault</a>
+							</li>
+							<li>
+								<!--https://www.wizetech.co.kr/procurement/product_toadForOracle.do?menu_id=0205-->
+								<a href="./products-oda.html" onclick="showBusysign();">Oracle Database Appliance</a>
+							</li>
+							<li>
+								<!--https://www.wizetech.co.kr/procurement/product_doWebLogic.do?menu_id=0201-->
+								<a href="./products-exadata.html" onclick="showBusysign();">Exadata</a>
+							</li>
+							<li>
+								<!--https://www.wizetech.co.kr/procurement/product_doWebTier.do?menu_id=0202-->
+								<a href="./products-sql.html" onclick="showBusysign();">MySQL</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<!--https://www.wizetech.co.kr/procurement/product_doWebLogic.do?menu_id=0201-->
+						<a href="./solution-rpa.html" onclick="showBusysign();">SOLUTION</a>
+						<ul>
+							<li>
+								<!--https://www.wizetech.co.kr/procurement/product_doWebLogic.do?menu_id=0201-->
+								<a href="./solution-rpa.html" onclick="showBusysign();">RPA</a>
+							</li>
+							<li>
+								<!--https://www.wizetech.co.kr/procurement/product_doWebTier.do?menu_id=0202-->
+								<a href="./solution-pms.html" onclick="showBusysign();">PMS</a>
 							</li>
 						</ul>
 					</li>
 					<li>
 						<!--https://www.wizetech.co.kr/promotion/promotion_wizeBoardList.do?menu_id=0501-->
-						<a href="./notice.html" onclick="showBusysign();">NOTICE</a>
+						<a href="" onclick="showBusysign();">NOTICE</a>
 						<ul>
 							<li>
 								<!--https://www.wizetech.co.kr/promotion/promotion_wizeBoardList.do?menu_id=0501-->
@@ -404,291 +518,216 @@ $(function(){
 	</div>
 </header>
 <!-- header :: e :: -->
-		
-<div id="headImg" class="visual_6">
-	<div class="visual_wrap">
-		<div>CAREER</div>
-	</div>
-</div>
-		
-<input type="hidden" id="menuParentsId" value="01">
-<div class="nav_bg">
-	<div class="navigation">
-		<div class="nav_home_btn">
-			<!--https://www.wizetech.co.kr/main/main_doMain.do-->
-			<a href="./index.html"><div class="icon-4"></div></a>
-		</div>
-		<!--navigation-->
-		<ul class="nav_depth">
-			<li onclick="slideMenu();">
-				<a href="javascript:;" id="menu">
-					<ul class="nav_btn_in">
-						<li>CAREER</li>
-						<li class="icon-6"></li>
-					</ul>
-				</a>
-				<ul class="nav_depth_drop" id="downNav">
-					<li>
-						<a href="javascript:;" onclick="changeNavMenu(&#39;01&#39;, &#39;ABOUT US&#39;);">
-							ABOUT US
-						</a>
-					</li>
-					<li>
-						<a href="javascript:;" onclick="changeNavMenu(&#39;02&#39;, &#39;SERVICE&#39;);">
-							SERVICE
-						</a>
-					</li>
-					<li>
-						<a href="javascript:;" onclick="changeNavMenu(&#39;03&#39;, &#39;NOTICE&#39;);">
-							NOTICE
-						</a>
-					</li>
-					<li>
-						<a href="javascript:;" onclick="changeNavMenu(&#39;04&#39;, &#39;CAREER&#39;);">
-							CAREER
-						</a>
-					</li>
-					<li>
-						<a href="./contact-us.html">
-							CONTACT US
-						</a>
-					</li>
-				</ul>
-			</li>
-			<li onclick="slideSubMenu(&#39;04&#39;);" id="subMenu">
-				<a href="javascript:;">
-					<ul class="nav_btn_in">
-						<li>채용절차</li>
-						<li class="icon-6"></li>
-					</ul>
-				</a>		
-				<ul class="nav_depth_drop drop_nav_01">
-					<li>
-						<a href="./about-us.html">
-							<span class="subTitle">회사소개</span>
-						</a>
-					</li>
-					<li>
-						<a href="./about-history.html">
-							<span class="subTitle">연혁</span>
-						</a>
-					</li>
-					<li>
-						<a href="./about-organization.html">
-							<span class="subTitle">조직도</span>
-						</a>
-					</li>
-					<li>
-						<a href="./about-ci.html">
-							<span class="subTitle">CI</span>
-						</a>
-					</li>
-					<li>
-						<a href="./about-certification.html">
-							<span class="subTitle">자격 및 인증</span>
-						</a>
-					</li>
-				</ul>
-				<ul class="nav_depth_drop drop_nav_02">
-					<li>
-						<a href="./service-development.html">
-							<span class="subTitle">소프트웨어 개발</span>
-						</a>
-					</li>
-					<li>
-						<a href="./service-supply.html">
-							<span class="subTitle">소프트웨어 공급</span>
-						</a>
-					</li>
-					<li>
-						<a href="./service-maintenance.html">
-							<span class="subTitle">소프트웨어 유지보수</span>
-						</a>
-					</li>
-				</ul>
-				<ul class="nav_depth_drop drop_nav_03">
-					<li>
-						<a href="./notice.html">
-							<span class="subTitle">공지사항</span>
-						</a>
-					</li>
-					<li>
-						<a href="./notice-news.html">
-							<span class="subTitle">소식</span>
-						</a>
-					</li>
-				</ul>
-				<ul class="nav_depth_drop drop_nav_04">
-					<li>
-						<a href="./career-talent.html">
-							<span class="subTitle">인재상</span>
-						</a>
-					</li>
-					<li>
-						<a href="./career-benefit.html">
-							<span class="subTitle">복리후생</span>
-						</a>
-					</li>
-					<li>
-						<a href="./career-process.html">
-							<span class="subTitle">채용절차</span>
-						</a>
-					</li>
-					<li>
-						<a href="./career-info.html">
-							<span class="subTitle">채용정보</span>
-						</a>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</div>
-</div>
-
-<!--contents-->
-<div class="career_process">
-<div class="contents_wrap">
-	<div class="contents_title_wrap">
-		<p class="sub_page_title2 txt_ani">채용절차</p>
-	</div>
-	<div class="career-link">
-        <a href="" class="left">
-            <div class="left">
-            	<p class="contents1_1">JABKOREA</p>
-                <P class="contents1_2">채용공고 바로가기</P>
-            </div>
-        	<div class="left">
-                <img src="img/career-btn.png" alt="바로가기">
-            </div>
-        </a>
-        <a href="" class="left">
-            <div class="left">
-        	    <p class="contents1_1">saramin</p>
-                <P class="contents1_2">채용공고 바로가기</P>
-            </div>
-            <div class="left">
-                <img src="img/career-btn.png" alt="바로가기">
-            </div>
-        </a>
-    </div>
-    
-    <div class="contents">
-        <div class="left step">
-            <p class="contents1_2">step 01</p>
-        	<img src="./img/step01.png" alt="인턴평가 및 채용 아이콘">
-            <p class="contents1_1">입사지원</p>
-        </div>
-        <div class="left career-arrow">→</div>
-        <div class="left step">
-            <p class="contents1_2">step 02</p>
-            <img src="./img/step02.png" alt="인턴평가 및 채용 아이콘">
-            <p class="contents1_1">서류전형</p>
-        </div>
-        <div class="left career-arrow">→</div>
-        <div class="left step">
-            <p class="contents1_2">step 03</p>
-            <img src="./img/step03.png" alt="인턴평가 및 채용 아이콘">
-            <p class="contents1_1">지원자 면접</p>
-        </div>
-        <div class="left career-arrow">→</div>
-        <div class="left step">
-            <p class="contents1_2">step 04</p>
-            <img src="./img/step04.png" alt="인턴평가 및 채용 아이콘">
-            <p class="contents1_1">인턴평가 및 채용</p>
-        </div>
-    </div>
-</div>
-<div class="step-bg">
-</div>
-</div>
-<!--contents-->
-
-<script>
-$(function(){
-	// visual img set
-	var menuParentsId = $("#menuParentsId").val().substring(1,2);
-	$("#headImg").removeClass();
-	/* 임시 visual set */
-	if(menuParentsId == "4"){
-			menuParentsId = "1";
-	}
-	$("#headImg").addClass("visual_"+menuParentsId);
-})
-</script>
 	
 <script>
+$(document).ready(function () {
+	$(".area_wrap").hover(function(){
+		$(this).find(".section2_move_btn").css("display","inline-block");
+	}, function () {
+		$(this).find(".section2_move_btn").css('display','none');
+	});
+	var toadUrl = "https://toad.co.kr/oracle"
+	//modalAlert('이미지 경로', width, height);
+	modalAlert("modalPopup", "../images/popup/main_popup_img.jpg", "30%", "75%", "45%");
+	modalAlert("modalPopup2", "../images/popup/toad_for_oracle_popup.png", "30%", "75%", "76%", toadUrl);
+	
+	
+});
+//page 이동
+function goToPage(type, val){
+	if(type == "PRICE"){
+		location.href="/procurement/product_doWebLogic.do?menu_id=0201";
+	}else if(type == "PRODUCT"){
+		location.href="/product/product_getProduct.do?menu_id=0301&prdType=DB";
+	}else if(type == "SOLUTION"){
+		location.href="/common/info/getReady.do?menu_id=0401";
+	}else if(type == "GREETING"){
+		location.href="/info/companyInfo_greeting.do?menu_id=0101";
+	}else if(type == "WIZEBOARD"){
+		location.href="/promotion/promotion_wizeBoardList.do?menu_id=0501";
+	}else if(type == "BOARD_DETAIL"){
+		location.href="/promotion/promotion_wizeBoardView.do?menu_id=0501&board_seq="+val;
+	}else if(type == "RECRUIT"){
+		location.href="/recruit/recruitment_recruitInfoList.do?menu_id=0604";
+	}else if(type == "RECRUIT_DETAIL"){
+		location.href="/recruit/recruitment_recruitInfoView.do?menu_id=0604&recruit_id="+val;
+	}else if(type == "TALENT"){
+		location.href="/recruit/recruitment_talent.do?menu_id=0601";
+	}else if(type == "PROCESS"){
+		location.href="/recruit/recruitment_recruitProcess.do?menu_id=0602";
+	}else if(type == "WELFARE"){
+		location.href="/recruit/recruitment_welfare.do?menu_id=0603";
+	}
+}
+
 </script>
 
-<!-- footer :: s :: -->
-<div class="footer_layout">
-	<div class="footer_width">
-		<div class="footer_contents">
-			<ul class="footer_etc_btn">
-				<li>
-					<a href="./about-us.html">
-						<p>회사소개</p>
-					</a>
-				</li>
-					<img src="./img/footer_dot.png" alt="">
-				<li>
-					<a href="./career-info.html">
-						<p>채용정보</p>
-					</a>
-				</li>
-					<img src="./img/footer_dot.png" alt=" ">
-				<li>
-					<a href="./contact-us.html">
-						<p>CONTACT US</p>
-					</a>
-				</li>
-			</ul>
-			<select class="select2" onchange="if(this.value != &#39;&#39;) window.open(this.value);">
-				<option value="">관련 홈페이지</option>
-				<option value="./gooditier-pa.html">GoodITier PA</option>
-				<option value="./gooditier-pms.html">GoodITier PMS</option>
-			</select>
-		</div>
-		<div class="footer_info">
-			<p><span class="bold">대표이사 : </span>이현민 &nbsp; &nbsp; <span class="bold">사업자등록번호 :</span>283-87-03452 &nbsp; &nbsp; <span class="bold"><br class="on-br">이메일 : </span>gooditier@gooditier.co.kr<br class="onoff-br">
-				대전광역시 유성구 복용동로 43, F636호 <br class="on-br">(복용동, 대전더리브시그니처)<br>
-				Copyright ⓒ 2025 GoodITier Co.,Ltd. All rights reserved.</p>
-		</div>
-		<div class="admin_login">
-			<a href="./login.html">
-				<ul>
-					<li>
-						<img src="./img/login.png" style="width: 18px;" alt="로그인">
-					</li>
-					<li class="admin_login_text">관리자 로그인</li>
-				</ul>
-			</a>
-		</div>
-	</div>
-	<!--top_btn-->
-	<div class="top_postition">
-		<div class="top_btn_wrap">
-			<div class="top_btn" onclick="window.scrollTo({top:0,left:0, behavior:&#39;smooth&#39;});">
-				<div class="top_btn_con">
-					<a href="javascript:;">
-						<img src="./img/top_1.png" alt="맨 위로 이동">
-						<p>TOP</p>
-					</a>
+<style>
+	.no_image_wrap, .no_image_center{
+		width: 337px;
+		height: 240px;
+		border: none;
+		background-color: transparent;
+	}
+	.ellipsis-box {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 2; 
+		-webkit-box-orient: vertical;
+		width: 290px;
+		height: 45px;
+	}
+/* carousel 설정 */
+.carousel {
+	position: relative;
+}
+
+.carousel.pointer-event {
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-inner::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.carousel-item {
+  position: relative;
+  display: none;
+  float: left;
+  width: 100%;
+  margin-right: -100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: -webkit-transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-item {
+    transition: none;
+  }
+}
+
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev {
+  display: block;
+}
+
+.carousel-item-next:not(.carousel-item-left),
+.active.carousel-item-right {
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+.carousel-item-prev:not(.carousel-item-right),
+.active.carousel-item-left {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+
+.carousel-fade .carousel-item {
+  opacity: 0;
+  transition-property: opacity;
+  -webkit-transform: none;
+  transform: none;
+}
+
+.carousel-fade .carousel-item.active,
+.carousel-fade .carousel-item-next.carousel-item-left,
+.carousel-fade .carousel-item-prev.carousel-item-right {
+  z-index: 1;
+  opacity: 1;
+}
+
+.carousel-fade .active.carousel-item-left,
+.carousel-fade .active.carousel-item-right {
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0s 0.6s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-fade .active.carousel-item-left,
+  .carousel-fade .active.carousel-item-right {
+    transition: none;
+  }
+}
+
+.carousel-caption {
+  position: absolute;
+  right: 15%;
+  bottom: 20px;
+  left: 15%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
+</style>
+<div id="fullpage" class="fullpage-wrapper" style="height: 100%; position: relative; touch-action: none; transform: translate3d(0px, 0px, 0px);">
+	
+	<div class="section fp-section fp-table" id="section2" data-anchor="3rdPage" style="height: 919px;"><div class="fp-tableCell" style="height: 919px;">
+		<div class="section2_bg"></div>
+		<div class="section_con_left width1400">
+			<div class="section2_con_box">
+				<div>
+					<p class="section_en_title txt_ani"><span>SERVICE</span></p>
+					<p class="section_sub_title txt_ani" style="margin-bottom: 50px;">신뢰할 수 있는 기술과 <br class="off-br">함께 디지털 전환을 이끌어갑니다</p>
+					<ul class="section_sub_text_btn" onclick="goToPage(&#39;SERVICE&#39;);">
+						<li class="go_btn_text">더 알아보기 > </li>
+					</ul>
+				</div>
+				<div>
+					<div class="area_wrap area_wrap_bg1">
+						<div class="area_wrap_layer">
+							<div class="area_box_inner">
+								<img src="./img/area1.png" alt="">
+								<p>SOLUTION</p>
+								<span>솔루션</span>
+							</div>
+							<div class="section2_move_btn" onclick="goToPage(&#39;PRICE&#39;);"></div>
+						</div>
+					</div>
+					<div class="area_wrap area_wrap_bg2">
+						<div class="area_wrap_layer">
+							<div class="area_box_inner">
+								<img src="./img/area2.png" alt="">
+								<p>PRODUCTS</p>
+								<span>제품</span>
+							</div>
+							<div class="section2_move_btn" onclick="goToPage(&#39;PRODUCT&#39;);"></div>
+						</div>
+					</div>
+					
+					<div class="area_wrap area_wrap_bg3">
+						<div class="area_wrap_layer">
+							<div class="area_box_inner">
+								<img src="./img/area3.png" alt="">
+								<p>MAINTENANCE</p>
+								<span>기술지원</span>
+							</div>
+							<div class="section2_move_btn" onclick="goToPage(&#39;SOLUTION&#39;);"></div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</div>
+	</div></div>
 
-<script>
-	$(function(){
-		var message = "";
-		
-		if(message != ""){
-			alert(message);
-		}
-	});
-</script>
-<!-- footer :: e :: -->
+<div id="fp-nav" class="fp-show-active right" style="margin-top: 0px;"><div class="line"></div><ul><li><a href="#undefined"><div><div></div></div></a><div class="fp-tooltip right">CAREER</div></li></ul></div>
 
 <!--타이틀 애니메이션-->
 <script>

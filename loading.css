@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+#ajaxveil {
+	display: none;
+ 	z-index: 1000;
+	top: 35%;
+	left: 45%;
+	position: fixed;
+}

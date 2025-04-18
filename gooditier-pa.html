@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)http://fileserver.wizetech.co.kr:18080/wizePa/common/auth/logout.do -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Login</title>
+<script type="text/javascript" src="./jquery-1.11.0.min.js.다운로드"></script>
+<script type="text/javascript" src="./map.js.다운로드"></script>
+<script type="text/javascript" src="./common.js.다운로드"></script>
+
+<script type="text/javascript" src="./rsa.js.다운로드"></script>
+<script type="text/javascript" src="./jsbn.js.다운로드"></script>
+<script type="text/javascript" src="./prng4.js.다운로드"></script>
+<script type="text/javascript" src="./rng.js.다운로드"></script>
+
+<!-- ///////////////////////////////////////////////////////////////////////////////////// -->
+<!-- new style -->
+<link rel="stylesheet" href="./core.css">
+<link rel="stylesheet" href="./skin.css">
+<link rel="stylesheet" href="./layout.css">
+<link rel="stylesheet" href="./content.css">
+<link rel="stylesheet" href="./media.css">
+<link rel="stylesheet" href="./loading.css">
+<link rel="stylesheet" href="./responsive.css">
+<!-- new js -->
+<script type="text/javascript" src="./js.js.다운로드"></script><script type="text/javascript" src="./jquery.scrollTo.min.js.다운로드"></script><script type="text/javascript" src="./jquery.mCustomScrollbar.concat.min.js.다운로드"></script><script type="text/javascript" src="./core.js.다운로드"></script><script type="text/javascript" src="./content.js.다운로드"></script><link rel="stylesheet" type="text/css" href="./jquery.mCustomScrollbar.css" media="all">
+<script src="./html5.js.다운로드"></script>	
+<script src="./respond.min.js.다운로드"></script>
+<script src="./content(1).js.다운로드"></script>
+
+<script type="text/javascript">
+	function login(){
+		var id = $("#USER_ID_TEXT");
+		var pw = $("#USER_PW_TEXT");
+	
+		if(id.val() == ""){
+			hideBusysign();
+			alert("아이디를 입력 해주세요.");
+			id.focus();
+			return false;
+		}
+		
+		if(pw.val() == ""){
+			hideBusysign();
+			alert("비밀번호를 입력 해주세요.");
+			pw.focus();
+			return false;
+		}
+		
+		// ===================================================================
+			
+		var rsa = new RSAKey();
+		rsa.setPublic($('#RSAModulus').val(),$('#RSAExponent').val());
+		
+		$("#USER_ID").val(rsa.encrypt(id.val()));
+		$("#USER_PW").val(rsa.encrypt(pw.val()));
+		
+		id.val("");
+		pw.val("");
+		
+		form.action = "/wizePa/common/auth/login.do;jsessionid=Ux0UHApY_gi4kWWSK1ygXKvC35331uDA0GiuK7IUzOlrvzLREfJB!1561084559";
+		if(doubleSubmitCheck()) return;
+		form.submit();
+		
+		showBusysign();
+	}
+	
+	function focus(){
+		var id = $("#USER_ID_TEXT");
+		var pw = $("#USER_PW_TEXT");
+		
+		pw.val("");
+		if(id) id.focus();
+	}
+</script>
+</head>
+<body id="main" class="user mobile" onload="focus();" marginwidth="0" marginheight="0">
+	<div id="ajaxveil">
+		<img src="./img/loading.gif" alt="로딩 이미지">
+	</div>
+	
+	<div class="main_bg"></div>
+	<div id="wrap_box">
+		<div id="intro_login">
+			<div class="moves">
+				<ul>
+					<li class="bg_01 on"></li>
+					<li class="bg_02"></li>
+					<li class="bg_03"></li>
+					<li class="bg_04"></li>
+				</ul>
+			</div>
+			<h1><span style="font-size: 47px; font-weight:bolder; color : #555;">WIZE PA</span><span>&nbsp;</span></h1>
+			
+			<div class="cons">
+				<form name="form" id="form" method="post" onsubmit="login(); return false;">
+					<input type="hidden" id="RSAModulus" value="beaf265eaae936c52228d75d779e97ef828f9b76b28a2d7c413355092be38723d0eac2b1a2f338b6a077b2a95f4d807c1980de1924ebbd7adb0fb8671b2be6767c4a413645c22567ccc4b13642bbe684b946adf18697c3f6e282d1c2b097f2a6c5926f56bddafead3cd69e6bc79f7551b874cd7fd47c171a6f1e2e1a75965e59">
+					<input type="hidden" id="RSAExponent" value="10001">	
+					<input type="text" placeholder="아이디" id="USER_ID_TEXT" name="USER_ID_TEXT" value="" style="ime-mode:inactive" maxlength="20">
+					<input type="password" placeholder="비밀번호" id="USER_PW_TEXT" name="USER_PW_TEXT" maxlength="20">
+					<input type="hidden" id="USER_ID" name="USER_ID">
+					<input type="hidden" id="USER_PW" name="USER_PW">
+					<input type="submit" value="로그인">
+				</form>
+			</div>
+		</div>
+		<script type="text/javascript">
+		$(document).ready(function(){
+			//intro_login_AC();
+		});
+		function intro_login_AC(){
+			var intro_bg = $("#intro_login > .moves > ul");
+				intro_bg.li = intro_bg.find(">li");
+				intro_bg.cnt = 0;
+				intro_bg.speeds = 2000; //애니메이션 속도
+
+			function bg_ac(str){
+				var olds = intro_bg.find(">li.on");
+				var news = intro_bg.li.eq(str);
+
+				olds.removeClass("on");
+				olds.css({"left":"0","z-index":"1","opacity":"1"}).animate({"opacity":"0"},600,function(){
+					olds.css({"left":"-100%"});
+					news.addClass("on");
+					intro_bg.cnt = str;
+				});
+				news.css({"left":"0","z-index":"0","opacity":"1"});
+			}
+			setInterval(function(){
+				var idx = intro_bg.cnt + 1;
+				if(idx > intro_bg.li.size()-1) idx = 0;
+
+				bg_ac(idx);
+			},intro_bg.speeds);
+		}
+		</script>
+	</div>
+	<!-- footer :: s :: -->
+	<div id="footer">
+		<div class="layout">
+			<p class="copy">
+				Copyright ⓒ 2025 GoodITier Co.,Ltd. All rights reserved.
+			</p>
+		</div>
+		
+		<script>
+			$(function(){
+				var message = "";
+				
+				if(message != ""){
+					alert(message);
+				}
+			});
+		</script>
+	</div>
+	<!-- footer :: e :: -->
+
+
+</body></html>

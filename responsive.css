@@ -1,0 +1,604 @@
+@charset "UTF-8";
+
+.on-br{
+    display: inline-block;
+    content: "";
+}
+
+.wrap > ul {
+    display: none;
+}
+
+.scroll-show {
+    opacity: 1;
+  }
+
+@media (min-width:1440px) {
+.scroll-show.bg1 {
+    top: -150px;
+}
+  
+.scroll-show.bg2 {
+    top: 50px;
+}
+  
+.scroll-show.bg3 {
+    top: 250px;
+}
+}
+
+/*~1439px 태블릿 가로, 노트북 이하*/
+@media (max-width:1439px) {
+
+    /*home-service*/
+    .area_wrap_bg2 {
+        left: 100px;
+    }
+
+    .area_wrap_bg1 {
+        top: 50px;
+    }
+
+    .area_wrap_bg2 {
+        top: 450px;
+    }
+
+    .area_wrap_bg3 {
+        top: 850px;
+    }
+
+    /*about-us*/    
+    .contents2 > li:last-child{
+        margin-bottom: 100px;
+    }
+    .contents3 {
+        height: 1000px;
+    }
+    .contents3 > div{
+        width: 100%;
+    }
+
+    .contents3 div li{
+        display: block;
+        float: left;
+        width: 450px;
+    }
+    
+    .contents3 div li:nth-child(5){
+        width: 100%;
+    }
+
+    .contents3 div li:nth-child(6){
+        width: 100%;
+    }
+
+    .contents3 > div:first-child{
+        height: 500px;
+    }
+
+    .overview-bg{
+        top: 270px;
+        height: 200px;
+    }
+    
+    .vision-bg{
+        top: 430px;
+        height: 670px;
+    }
+
+    /*about-organization*/
+    .organization .team > div img{
+        width: 70px;
+        padding-top: 35px;
+        padding-left: 60px;
+        padding-right: 20px;
+    }
+
+    .talent_wrap > div{
+        margin-right: 0;
+    }
+
+    /*contact us*/
+    .location_text_wrap:first-child{
+        width: 100%;
+    }
+
+    .lacation_text_margin_left{
+        width: 49%;
+        margin-left: 0;
+        margin-top: 50px;
+    }
+
+    .lacation_text_margin_left:first-child{
+        margin-right: 2%;
+    }
+
+    .map_con_box {
+        height: 190px;
+    }
+
+    
+    .off-br{
+        display: inline-block;
+        content: "";
+        padding: 0 2px;
+    }
+          
+}
+  
+/*1024~1439px 태블릿 가로*/
+@media (min-width:1024px) and (max-width:1439px) {
+    /*header*/
+    .wrap {
+        width: 1020px;
+    }
+    .wrap .lnb nav > ul > li > a {
+        width: 140px;
+    }
+
+    /*메뉴*/
+    .sitemap_inner {
+        width: 1020px;
+    }
+
+    .sitemap_depth1 {
+        width: 1020px;
+    }
+
+    .sitemap_depth2 {
+        width: 800px;
+    }
+
+    /*footer*/
+    .footer_width {
+        width: 950px;
+    }
+
+    /*contents*/
+    .width1400{
+        width: 950px;
+    }
+
+    .contents_wrap {
+        width: 950px;
+    }
+
+    /*home-imgslide*/
+    .index_visual_inner_wrap{
+        width: 950px;
+    }
+
+    /*home-service*/
+    .area_wrap {
+        width: 300px;
+        height: 300px;
+    }
+
+    /*home-notice*/
+    .index_news_wrap{
+        width: 950px;
+    }
+
+    .index_news_box {
+        width: 48%;
+        margin-right: 2%;
+        margin-bottom: 30px;
+        height: auto;
+    }
+
+    /*career-talent*/
+    .talent_wrap {
+        flex-wrap: wrap;
+        width: 1020px;
+    }
+
+    /*career-benefit*/
+    .welfare_wrap{
+        flex-wrap: wrap;
+        width: 1020px;
+    }
+    
+    .welfare_wrap1 {
+        flex-wrap: wrap;
+        width: 1020px;
+    }
+
+    .welfare_wrap2 {
+        flex-wrap: wrap;
+        width: 1020px;
+    }
+
+    .welfare_wrap1-1 {
+        flex-wrap: wrap;
+        width: 1020px;
+    }
+}
+  
+/*~1023px 태블릿 세로 이하*/
+@media (max-width:1023px) {
+    /*header*/
+    .wrap {
+        width: 95%;
+    }
+  
+    .lnb {
+        display: none;
+    }
+
+    .wrap > ul {
+        display: block;
+    }
+
+    /*menu*/
+
+    .sitemap_inner {
+        height: 90%;
+    }
+
+    .sitemap_depth1 {
+        width: 100%;
+    }
+    .sitemap_align2{
+        flex-wrap: wrap;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .sitemap_align2>a {
+        width: 100%;
+    }
+    .sitemap_depth2 {
+        width: 100%;
+        padding: 5px;
+        top: 40px;
+        right: -10px;
+    }
+
+    .sitemap_align1-1{
+        height: 150px
+    }
+
+    .sitemap_align1-2{
+        height: 130px;
+    }
+    
+    .sitemap_align1-3{
+        height: 320px;
+    }
+
+    .sitemap_align1-2:nth-child(3){
+        height: 100px;
+    }
+
+    .sitemap_align1-2:nth-child(4){
+        height: 170px;
+    }
+
+    .sitemap_align1-2:nth-child(5){
+        height: 30px;
+    }
+
+    .sitemap_depth2 > li {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .sitemap_depth2>li:nth-child(5), .sitemap_depth2>li:nth-child(6), .sitemap_depth2>li:nth-child(7), .sitemap_depth2>li:nth-child(8), .sitemap_depth2>li:nth-child(9), .sitemap_depth2>li:nth-child(10) {
+        margin-top: 0;
+    }
+
+    /*footer*/
+    .footer_width {
+        width: 90%;
+    }
+
+    /*contents*/
+    .width1400{
+        width: 90%;
+    }
+
+    .contents_wrap {
+        width: 90%;
+    }
+
+    .index_visual_inner_wrap{
+        width: 90%;
+    }
+    
+    /*home-service*/
+    .section2_con_box > div:last-child {
+        height: 1000px;
+    }
+
+    .section2_con_box{
+        display: block;
+    }
+
+    .area_wrap{
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    
+
+    .index_news_wrap{
+        width: 100%;
+        height: 700px;
+        display: block;
+    }
+
+    .index_news_box{
+        width: 100%;
+        height: auto;
+        margin-bottom: 30px;
+    }
+
+    .section2_con_box > div:first-child {
+        width: 100%;
+    }
+
+    .area_wrap_bg2{
+        left: 0;
+    }
+
+    /*home-career*/
+    .career_info_in {
+        width: 90%;
+    }
+
+    .career_info_line_right {
+        display: none;
+    }
+
+    .career_in_1 {
+        flex-flow: wrap;
+    }
+
+    .career_big_btn_wrap{
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .career_intro {
+        width: 100%;
+    }
+
+    .career_big_btn_wrap > ul{
+        width: 48%;
+        margin-right: 2%;
+    }
+
+    .career_big_btn_img1 {
+        width: 100%;
+        height: 500px;
+        margin-right: 0;
+        background-size: contain;
+    }
+
+    .career_big_btn_img2 {
+        width: 100%;
+        height: 500px;
+        margin-right: 0;
+        background-size: contain;
+    }
+
+    .career_big_btn_img3 {
+        width: 100%;
+        height: 500px;
+        margin-right: 0;
+        background-size: contain;
+    }
+
+    .career_intro {
+        padding-top: 30px;
+    }
+
+    /*about us*/
+    .contents_sub_text {
+        padding-bottom: 50px;
+    }
+
+    .contents3{
+        height: 1080px;
+    }
+
+    .contents3 div{
+        margin-top: 50px;
+        margin-bottom: 0;
+    }
+    .contents3 div li{
+        width: 400px;
+    }
+
+    .contents3 div li:nth-child(1){
+        margin-right: 30px;
+    }
+    
+    .contents3 div li:nth-child(3){
+        margin-right: 30px;
+    }
+
+    /*about us-ci*/
+    .ci_wrap{
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .dl_btn_guide > ul{
+        position: flex;
+        width: 100%;
+    }
+
+    .dl_btn{
+        width: 49%;
+        margin-right: 2%;
+    }
+
+    .dl_btn_guide > ul > li:last-child{
+        margin-right: 0;
+    }
+
+    /*service*/
+    .edm_table {
+        width: 100%;
+    }
+
+    .edm_contect {
+        width: 100%;
+    }
+
+    .edm_flex2 {
+        width: 200px;
+        justify-content: center;
+    }
+
+    .edm_flex2 .mail{
+        margin-top: 10px;
+    }
+
+    /*career-talent*/
+    .talent_wrap {
+        flex-wrap: wrap;
+        width: 90%;
+    }
+
+    /*career-benefit*/
+    .welfare_wrap{
+        flex-wrap: wrap;
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .welfare_wrap1 {
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 0;
+    }
+
+    .welfare_wrap2 {
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 0;
+    }
+
+    .welfare_wrap1-1 {
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 0;
+    }
+
+    .welfare_con_wrap {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .welfare_sub_text {
+        margin-bottom: 50px;
+    }
+
+    /*career-info*/
+    .post_info_2 {
+        flex-wrap: wrap;
+    }
+
+    .post_info_2 > p {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .small_info_text {
+        flex-wrap: wrap;
+    }
+    
+    .post_side_margin{
+        margin-left: 92px;
+    }
+
+    /*contact us*/
+    .map_con_box {
+        width: 100%;
+        height: 170px;
+        margin-bottom: 30px;
+    }
+
+}
+  
+/*768~1023px 태블릿 세로*/
+@media (min-width:768px) and (max-width:1023px) {
+    
+}
+  
+/*0 ~ 767px 모바일*/
+@media (max-width:767px) {
+
+    /*home*/
+    .career_big_btn_wrap > ul{
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .on-br{
+        display: block;
+    }
+
+
+    /*about us*/
+    .contents1 > li{
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .contents2 li{
+        width: 100%;
+    }
+    
+    /*about-organization*/
+    .organization .team > div {
+        text-align: center;
+        height: 190px;
+    }
+
+    .organization .team > div img{
+        padding : 0;
+        width: 80px;
+        height:80px;
+        margin: 20px auto;
+    }
+
+    .organization .team > div p{
+        width: 100%;
+        text-align: center;
+        line-height: 60px;
+    }
+
+    /*about-certification*/
+    .certification_box {
+        margin: 0;
+    }
+
+    .certification_con {
+        width: 300px;
+        height: 600px;
+        margin: 0;
+    }
+
+    .view_btn {
+        margin: 0 auto;
+    }
+
+    /*career-info*/
+    .small_info_text > li > ul {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+
+    .post_side_margin{
+        margin-left: 0;
+    }
+
+    /*contact us*/
+    .lacation_text_margin_left{
+        width: 100%;
+        margin-left: 0;
+    }
+}

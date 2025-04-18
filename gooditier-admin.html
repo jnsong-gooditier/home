@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://www.wizetech.co.kr/common/auth/loginForm.do -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<title>Login</title>
+<script type="text/javascript" src="./jquery-1.11.0.min.js.다운로드"></script>
+<script type="text/javascript" src="./map.js.다운로드"></script>
+<script type="text/javascript" src="./common.js.다운로드"></script>
+
+<script type="text/javascript" src="./rsa.js.다운로드"></script>
+<script type="text/javascript" src="./jsbn.js.다운로드"></script>
+<script type="text/javascript" src="./prng4.js.다운로드"></script>
+<script type="text/javascript" src="./rng.js.다운로드"></script>
+
+<!-- ///////////////////////////////////////////////////////////////////////////////////// -->
+<!-- new js -->
+<script type="text/javascript" src="./js.js.다운로드"></script>
+<script src="./html5.js.다운로드"></script>
+<script src="./respond.min.js.다운로드"></script>
+<script src="./content.js.다운로드"></script>
+
+<!-- new style -->
+<link rel="stylesheet" href="./reset.css">
+<link rel="stylesheet" href="./all.min.css">
+<link rel="stylesheet" href="./loading.css">
+<link rel="stylesheet" href="./login.css">
+<link rel="stylesheet" href="./responsive.css">
+<script type="text/javascript">
+	function login(){
+		var id = $("#MANAGER_ID_TEXT");
+		var pw = $("#MANAGER_PW_TEXT");
+	
+		if(id.val() == ""){
+			hideBusysign();
+			alert("아이디를 입력 해주세요.");
+			id.focus();
+			return false;
+		}
+		
+		if(pw.val() == ""){
+			hideBusysign();
+			alert("비밀번호를 입력 해주세요.");
+			pw.focus();
+			return false;
+		}
+		
+		// ===================================================================
+			
+		var rsa = new RSAKey();
+		rsa.setPublic($('#RSAModulus').val(),$('#RSAExponent').val());
+		
+		$("#MANAGER_ID").val(rsa.encrypt(id.val()));
+		$("#MANAGER_PW").val(rsa.encrypt(pw.val()));
+		
+		id.val("");
+		pw.val("");
+		
+		form.action = "/common/auth/login.do";
+		if(doubleSubmitCheck()) return;
+		form.submit();
+		
+		showBusysign();
+	}
+	
+	function focus(){
+		var id = $("#MANAGER_ID_TEXT");
+		var pw = $("#MANAGER_PW_TEXT");
+		
+		pw.val("");
+		if(id) id.focus();
+	}
+</script>
+</head>
+<body onload="focus();" marginwidth="0" marginheight="0">
+	<div id="ajaxveil">
+		<img src="./wize_loading.gif" alt="로딩 이미지">
+	</div>
+	
+	<div class="login_bg_top"><img src="./login_bg_1.png" alt=""></div>
+	<div class="login_bg_bottom"><img src="./login_bg_2.png" alt=""></div>
+	<div class="logo">
+		<h1><a href="https://www.wizetech.co.kr/common/auth/loginForm.do#"><img src="./login_logo_w.png" alt=""></a></h1>
+	</div>
+	<div class="center">
+		<div class="login-container">
+		<p class="title">굿아이티어 홈페이지<br>관리자 로그인</p>
+		<div class="separator"></div>
+			<p class="welcome-message">본 시스템은 <span>굿아이티어 홈페이지의 관리자용</span>으로<br>일반사용자는 로그인 할 수 없습니다.</p>
+			<form name="form" id="form" method="post">
+				<div class="login-form">
+					<input type="hidden" id="RSAModulus" value="b90d142bf12cb5f9ef094e702f2aeda8398c5d65d394d0f0c03e93d82e355feb7070c3187fab329551e25f6e459ed9f0f1878bf21964abd6d37e39272e01abd94d8c4a6db918ffc72533ddfa361b6f769a65531211a57a8eced98e11d4531259163753ca18cca46d0b242534b2aefeb8938e7ae2c299014d4a0fbb0a112a8a13">
+					<input type="hidden" id="RSAExponent" value="10001">
+					<input type="hidden" id="MANAGER_ID" name="MANAGER_ID">
+					<input type="hidden" id="MANAGER_PW" name="MANAGER_PW">
+					<div class="form-control">
+						<input type="text" placeholder="ID" id="MANAGER_ID_TEXT" name="MANAGER_ID_TEXT" value="" maxlength="20">
+						<i class="fas fa-user"></i>
+					</div>
+					<div class="form-control">
+						<input type="password" placeholder="Password" id="MANAGER_PW_TEXT" name="MANAGER_PW_TEXT" maxlength="20">
+						<i class="fas fa-lock"></i>
+					</div>
+					<button onclick="login(); return false;" class="submit">Login</button>
+				</div>
+			</form>
+		</div>
+		<script type="text/javascript">
+		$(document).ready(function(){
+			intro_login_AC();
+		});
+		function intro_login_AC(){
+			var intro_bg = $("#intro_login > .moves > ul");
+				intro_bg.li = intro_bg.find(">li");
+				intro_bg.cnt = 0;
+				intro_bg.speeds = 2000; //애니메이션 속도
+
+			function bg_ac(str){
+				var olds = intro_bg.find(">li.on");
+				var news = intro_bg.li.eq(str);
+
+				olds.removeClass("on");
+				olds.css({"left":"0","z-index":"1","opacity":"1"}).animate({"opacity":"0"},600,function(){
+					olds.css({"left":"-100%"});
+					news.addClass("on");
+					intro_bg.cnt = str;
+				});
+				news.css({"left":"0","z-index":"0","opacity":"1"});
+			}
+			setInterval(function(){
+				var idx = intro_bg.cnt + 1;
+				if(idx > intro_bg.li.size()-1) idx = 0;
+
+				bg_ac(idx);
+			},intro_bg.speeds);
+		}
+		</script>
+	</div>
+<script>
+	$(function(){
+		var message = "";
+		
+		if(message != ""){
+			alert(message);
+		}
+	});
+</script>
+
+</body></html>

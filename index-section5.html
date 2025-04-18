@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<!-- saved from url=(0068)https://www.wizetech.co.kr/info/companyInfo_greeting.do?menu_id=0101 -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- saved from url=(0046)https://www.wizetech.co.kr/main/main_doMain.do -->
+<html class="fp-enabled" style="overflow: hidden; height: 100%;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
 
 <!-- stylesheet -->
 <link rel="stylesheet" href="./jquery-ui.css">
@@ -11,8 +12,10 @@
 
 <!-- jquery -->
 <script type="text/javascript" src="./jquery-1.11.0.min.js.다운로드"></script>
+<!-- bootstrap -->
+<script type="text/javascript" src="./bootstrap.min.js.다운로드"></script>
 <!-- locale -->
-
+<script type="text/javascript" src="./datepicker.locale-ko.js.다운로드" charset="utf-8"></script>
 <!-- ui -->
 <script type="text/javascript" src="./jquery-ui-1.10.4.custom.min.js.다운로드"></script>
 <!-- form  -->
@@ -35,20 +38,22 @@
 <script src="./respond.min.js.다운로드"></script>
 <script src="./content.js.다운로드"></script>
 <script src="./navFunc.js.다운로드"></script>
-<!-- summernote -->
-<script src="./summernote-lite.js.다운로드"></script>
-<script src="./summernote-ko-KR.js.다운로드"></script>
+<script src="./modal.js.다운로드"></script>
+
 <link rel="stylesheet" href="./reset.css">
 <link rel="stylesheet" href="./layout.css">
 <link rel="stylesheet" href="./contents.css">
+<link rel="stylesheet" href="./index.css">
 <link rel="stylesheet" href="./loading.css">
-<link rel="stylesheet" href="./datepicker-custom.css">
-<!-- summernote -->
-<link rel="stylesheet" href="./summernote-lite.css">
 <link rel="stylesheet" href="./responsive.css">
+<link rel="stylesheet" href="./jquery.fullPage.css">
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
 </head>
 
-<body>
+<body marginwidth="0" marginheight="0" class="fp-viewing-firstPage" style="overflow: hidden; height: 100%;">
+	
+
+
 
 <script type="text/javascript">
 /*var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
@@ -125,6 +130,7 @@ $(document).ready(function(){
 		
 	}
 });*/
+
 $(function(){
 	$("#ham").click(function(){
 		$(".sitemap_wrap").slideDown(300);
@@ -135,9 +141,9 @@ $(function(){
 });
 </script>
 <div id="ajaxveil">
-	<img src="./img/loading.gif" alt="로딩 이미지">
+	<img src="./img/wize_loading.gif" alt="로딩 이미지">
 </div>
-<div id="fade"></div>
+<div id="fade" style="display: none;"></div>
 
 <!--사이트맵  -->
 <div class="sitemap_wrap" style="display : none;">
@@ -398,36 +404,51 @@ $(function(){
 						<a href="./products-database.html" onclick="showBusysign();">PRODUCTS</a>
 						<ul>
 							<li>
+								<!--https://www.wizetech.co.kr/procurement/product_doWebLogic.do?menu_id=0201-->
 								<a href="./products-database.html" onclick="showBusysign();">Database</a>
 							</li>
 							<li>
+								<!--https://www.wizetech.co.kr/procurement/product_doWebTier.do?menu_id=0202-->
 								<a href="./products-weblogic.html" onclick="showBusysign();">WebLogic</a>
 							</li>
 							<li>
+								<!--https://www.wizetech.co.kr/procurement/product_toadForOracle.do?menu_id=0205-->
 								<a href="./products-webtier.html" onclick="showBusysign();">WebTier</a>
 							</li>
 							<li>
-								<a href="./products-toad.html" onclick="showBusysign();">Toad for Oracle</a>
+								<!--https://www.wizetech.co.kr/procurement/product_doWebLogic.do?menu_id=0201-->
+								<a href="./products-database.html" onclick="showBusysign();">Database</a>
 							</li>
 							<li>
+								<!--https://www.wizetech.co.kr/procurement/product_doWebTier.do?menu_id=0202-->
+								<a href="./products-weblogic.html" onclick="showBusysign();">WebLogic</a>
+							</li>
+							<li>
+								<!--https://www.wizetech.co.kr/procurement/product_doWebTier.do?menu_id=0202-->
 								<a href="./products-ogg.html" onclick="showBusysign();">Oracle Golden Gate</a>
 							</li>
 							<li>
+								<!--https://www.wizetech.co.kr/procurement/product_toadForOracle.do?menu_id=0205-->
 								<a href="./products-adg.html" onclick="showBusysign();">Active Data Guard</a>
 							</li>
 							<li>
+								<!--https://www.wizetech.co.kr/procurement/product_doWebLogic.do?menu_id=0201-->
 								<a href="./products-aso.html" onclick="showBusysign();">Advanced Security Option</a>
 							</li>
 							<li>
+								<!--https://www.wizetech.co.kr/procurement/product_doWebTier.do?menu_id=0202-->
 								<a href="./products-keyvault.html" onclick="showBusysign();">Key Vault</a>
 							</li>
 							<li>
+								<!--https://www.wizetech.co.kr/procurement/product_toadForOracle.do?menu_id=0205-->
 								<a href="./products-oda.html" onclick="showBusysign();">Oracle Database Appliance</a>
 							</li>
 							<li>
+								<!--https://www.wizetech.co.kr/procurement/product_doWebLogic.do?menu_id=0201-->
 								<a href="./products-exadata.html" onclick="showBusysign();">Exadata</a>
 							</li>
 							<li>
+								<!--https://www.wizetech.co.kr/procurement/product_doWebTier.do?menu_id=0202-->
 								<a href="./products-sql.html" onclick="showBusysign();">MySQL</a>
 							</li>
 						</ul>
@@ -497,489 +518,274 @@ $(function(){
 	</div>
 </header>
 <!-- header :: e :: -->
-		
-<div id="headImg" class="visual_1">
-	<div class="visual_wrap">
-		<div>ABOUT US</div>
-	</div>
-</div>
-		
-<input type="hidden" id="menuParentsId" value="01">
-<div class="nav_bg">
-	<div class="navigation">
-		<div class="nav_home_btn">
-			<!--https://www.wizetech.co.kr/main/main_doMain.do-->
-			<a href="./index.html"><div class="icon-4"></div></a>
-		</div>
-		<!--navigation-->
-		<ul class="nav_depth">
-			<li onclick="slideMenu();">
-				<a href="javascript:;" id="menu">
-					<ul class="nav_btn_in">
-						<li>ABOUT US</li>
-						<li class="icon-6"></li>
-					</ul>
-				</a>
-				<ul class="nav_depth_drop" id="downNav">
-					<li>
-						<a href="javascript:;" onclick="changeNavMenu(&#39;01&#39;, &#39;ABOUT US&#39;);">
-							ABOUT US
-						</a>
-					</li>
-					<li>
-						<a href="javascript:;" onclick="changeNavMenu(&#39;02&#39;, &#39;PRODUCTS&#39;);">
-							PRODUCTS
-						</a>
-					</li>
-					<li>
-						<a href="javascript:;" onclick="changeNavMenu(&#39;03&#39;, &#39;SOLUTION&#39;);">
-							SOLUTION
-						</a>
-					</li>
-					<li>
-						<a href="javascript:;" onclick="changeNavMenu(&#39;04&#39;, &#39;NOTICE&#39;);">
-							NOTICE
-						</a>
-					</li>
-					<li>
-						<a href="javascript:;" onclick="changeNavMenu(&#39;05&#39;, &#39;CAREER&#39;);">
-							CAREER
-						</a>
-					</li>
-					<li>
-						<a href="javascript:;" onclick="changeNavMenu(&#39;06&#39;, &#39;CONTACT US&#39;);">
-							CONTACT US
-						</a>
-					</li>
-				</ul>
-			</li>
-			<li onclick="slideSubMenu(&#39;01&#39;);" id="subMenu">
-				<a href="javascript:;">
-					<ul class="nav_btn_in">
-						<li>회사소개</li>
-						<li class="icon-6"></li>
-					</ul>
-				</a>		
-				<ul class="nav_depth_drop drop_nav_01">
-					<li>
-						<a href="./about-us.html">
-							<span class="subTitle">회사소개</span>
-						</a>
-					</li>
-					<li>
-						<a href="./about-history.html">
-							<span class="subTitle">연혁</span>
-						</a>
-					</li>
-					<li>
-						<a href="./about-organization.html">
-							<span class="subTitle">조직도</span>
-						</a>
-					</li>
-					<li>
-						<a href="./about-ci.html">
-							<span class="subTitle">CI</span>
-						</a>
-					</li>
-					<li>
-						<a href="./about-certification.html">
-							<span class="subTitle">자격 및 인증</span>
-						</a>
-					</li>
-				</ul>
-				<ul class="nav_depth_drop drop_nav_02">
-					<li>
-						<a href="./products-database.html">
-							<span class="subTitle">Database</span>
-						</a>
-					</li>
-					<li>
-						<a href="./products-weblogic.html">
-							<span class="subTitle">WebLogic</span>
-						</a>
-					</li>
-					<li>
-						<a href="./products-webtier.html">
-							<span class="subTitle">WebTier</span>
-						</a>
-					</li>
-					<li>
-						<a href="./products-toad.html">
-							<span class="subTitle">Toad for Oracle</span>
-						</a>
-					</li>
-					<li>
-						<a href="./products-ogg.html">
-							<span class="subTitle">Oracle Golden Gate</span>
-						</a>
-					</li>
-					<li>
-						<a href="./products-adg.html">
-							<span class="subTitle">Active Data Guard</span>
-						</a>
-					</li>
-					<li>
-						<a href="./products-aso.html">
-							<span class="subTitle">Advanced Security Option</span>
-						</a>
-					</li>
-					<li>
-						<a href="./products-keyvault.html">
-							<span class="subTitle">Key Vault</span>
-						</a>
-					</li>
-					<li>
-						<a href="./products-oda.html">
-							<span class="subTitle">Oracle Database Appliance</span>
-						</a>
-					</li>
-					<li>
-						<a href="./products-exadata.html">
-							<span class="subTitle">Exadata</span>
-						</a>
-					</li>
-					<li>
-						<a href="./products-sql.html">
-							<span class="subTitle">MySQL</span>
-						</a>
-					</li>
-				</ul>
-				<ul class="nav_depth_drop drop_nav_03">
-					<li>
-						<a href="./solution-rpa.html">
-							<span class="subTitle">RPA</span>
-						</a>
-					</li>
-					<li>
-						<a href="./solution-pms.html">
-							<span class="subTitle">PMS</span>
-						</a>
-					</li>
-				</ul>
-				<ul class="nav_depth_drop drop_nav_04">
-					<li>
-						<a href="./notice.html">
-							<span class="subTitle">공지사항</span>
-						</a>
-					</li>
-					<li>
-						<a href="./notice-news.html">
-							<span class="subTitle">소식</span>
-						</a>
-					</li>
-				</ul>
-				<ul class="nav_depth_drop drop_nav_05">
-					<li>
-						<a href="./career-talent.html">
-							<span class="subTitle">인재상</span>
-						</a>
-					</li>
-					<li>
-						<a href="./career-benefit.html">
-							<span class="subTitle">복리후생</span>
-						</a>
-					</li>
-					<li>
-						<a href="./career-process.html">
-							<span class="subTitle">채용절차</span>
-						</a>
-					</li>
-					<li>
-						<a href="./career-info.html">
-							<span class="subTitle">채용정보</span>
-						</a>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</div>
-</div>
-
-<!--contents-->
-<div class="aboutus">
-<div class="contents_wrap">
-	<div class="contents_title_wrap">
-		<p class="sub_page_title2 txt_ani">OVERVIEW</p>
-		<p class="contents_sub_text txt_ani">우리는 기술 혁신과 서비스로 <br class="off-br">끊임없이 변화하는 시장에서 <br class="on-br">성과를 이끌어내고 있습니다.</p>
-	</div>
-	<ul class="contents1">
-		<li>
-			<p class="contents1_2">
-				설립연도
-			</p>
-			<p class="contents1_1">
-				<span class="counter big" data-target="2025">0</span>년
-			</p>
-		</li>
-		<li>
-			<p class="contents1_2">
-				임직원
-			</p>
-			<p class="contents1_1">
-				<span class="counter mid" data-target="10">0</span>명
-			</p>
-		</li>
-		<li>
-			<p class="contents1_2">
-				레퍼런스
-			</p>
-			<p class="contents1_1">
-				<span class="counter small" data-target="5">0</span>건
-			</p>
-		</li>
-	</ul>
-	<div class="contents_title_wrap">
-		<p class="sub_page_title2 txt_ani">VISION</p>
-	</div>
-	<ul class="contents2">
-		<li>
-			<img src="./img/vision01.png" alt="">
-			<p class="contents1_1">
-				혁신
-			</p>
-			<p class="contents1_2">
-				우리는 창의적 사고와 최천단 기술을 바탕으로 <br>혁신적인 솔루션을 제공합니다
-			</p>
-		</li>
-		<li>
-			<img src="./img/vision02.png" alt="">
-			<p class="contents1_1">
-				신뢰
-			</p>
-			<p class="contents1_2">
-				우리의 기술은 사람과 사회에 믿음을 주고 <br>신뢰를 바탕으로 더 나은 미래를 약속합니다
-			</p>
-		</li>
-		<li>
-			<img src="./img/vision03.png" alt="">
-			<p class="contents1_1">
-				지속가능성
-			</p>
-			<p class="contents1_2">
-				우리는 환경과 사회를 위한 지속 가능한 <br>기술을 만들어 더 건강한 미래를 설계합니다
-			</p>
-		</li>
-		<li>
-			<img src="./img/vision04.png" alt="">
-			<p class="contents1_1">
-				상생
-			</p>
-			<p class="contents1_2">
-				우리는 기술을 통해 협력하고 함께 <br>성장하는 생태계를 만들어갑니다
-			</p>
-		</li>
-	</ul>
-	<div class="contents_title_wrap">
-		<p class="sub_page_title2 txt_ani">COMPANY INFO</p>
-	</div>
-	<ul class="contents3">
-		<div></div>
-		<div>
-			<li>
-				<p class="contents1_1">
-					회사명
-				</p>
-				<p class="contents1_2">
-					굿아이티어
-				</p>
-			</li>
-			<li>
-				<p class="contents1_1">
-					대표이사
-				</p>
-				<p class="contents1_2">
-					이현민
-				</p>
-			</li>
-			<li>
-				<p class="contents1_1">
-					임직원수
-				</p>
-				<p class="contents1_2">
-					10명 (2025.03)
-				</p>
-			</li>
-			<li>
-				<p class="contents1_1">
-					설립일
-				</p>
-				<p class="contents1_2">
-					2024년 07월 16일
-				</p>
-			</li>
-			<li>
-				<p class="contents1_1">
-					소재지
-				</p>
-				<p class="contents1_2">
-					[우34202] 대전광역시 유성구 복용동로 43, F636호 <br class="off-br">(복용동, 대전도안더리브시그니처)
-				</p>
-			</li>
-			<li>
-				<p class="contents1_1">
-					사업분야
-				</p>
-				<p class="contents1_2">
-					소프트웨어 제조업, 컴퓨터 관련 도소매업, 소프트웨어 개발, <br class="off-br">공급 및 유지보수업 등
-				</p>
-			</li>
-		</div>
-	</ul>
-</div>
-<div class="overview-bg"></div>
-<div class="vision-bg"></div>
-</div>
-<!--contents-->
-
-<script>
-$(function(){
-	// visual img set
-	var menuParentsId = $("#menuParentsId").val().substring(1,2);
-	$("#headImg").removeClass();
-	/* 임시 visual set */
-	if(menuParentsId == "4"){
-			menuParentsId = "1";
-	}
-	$("#headImg").addClass("visual_"+menuParentsId);
-})
-
-</script>
 	
 <script>
+$(document).ready(function () {
+	$(".area_wrap").hover(function(){
+		$(this).find(".section2_move_btn").css("display","inline-block");
+	}, function () {
+		$(this).find(".section2_move_btn").css('display','none');
+	});
+	var toadUrl = "https://toad.co.kr/oracle"
+	//modalAlert('이미지 경로', width, height);
+	modalAlert("modalPopup", "../images/popup/main_popup_img.jpg", "30%", "75%", "45%");
+	modalAlert("modalPopup2", "../images/popup/toad_for_oracle_popup.png", "30%", "75%", "76%", toadUrl);
+	
+	
+});
+//page 이동
+function goToPage(type, val){
+	if(type == "PRICE"){
+		location.href="/procurement/product_doWebLogic.do?menu_id=0201";
+	}else if(type == "PRODUCT"){
+		location.href="/product/product_getProduct.do?menu_id=0301&prdType=DB";
+	}else if(type == "SOLUTION"){
+		location.href="/common/info/getReady.do?menu_id=0401";
+	}else if(type == "GREETING"){
+		location.href="/info/companyInfo_greeting.do?menu_id=0101";
+	}else if(type == "WIZEBOARD"){
+		location.href="/promotion/promotion_wizeBoardList.do?menu_id=0501";
+	}else if(type == "BOARD_DETAIL"){
+		location.href="/promotion/promotion_wizeBoardView.do?menu_id=0501&board_seq="+val;
+	}else if(type == "RECRUIT"){
+		location.href="/recruit/recruitment_recruitInfoList.do?menu_id=0604";
+	}else if(type == "RECRUIT_DETAIL"){
+		location.href="/recruit/recruitment_recruitInfoView.do?menu_id=0604&recruit_id="+val;
+	}else if(type == "TALENT"){
+		location.href="/recruit/recruitment_talent.do?menu_id=0601";
+	}else if(type == "PROCESS"){
+		location.href="/recruit/recruitment_recruitProcess.do?menu_id=0602";
+	}else if(type == "WELFARE"){
+		location.href="/recruit/recruitment_welfare.do?menu_id=0603";
+	}
+}
+
 </script>
 
-<!-- footer :: s :: -->
-<div class="footer_layout">
-	<div class="footer_width">
-		<div class="footer_contents">
-			<ul class="footer_etc_btn">
-				<li>
-					<a href="./about-us.html">
-						<p>회사소개</p>
-					</a>
-				</li>
-					<img src="./img/footer_dot.png" alt="">
-				<li>
-					<a href="./career-info.html">
-						<p>채용정보</p>
-					</a>
-				</li>
-					<img src="./img/footer_dot.png" alt=" ">
-				<li>
-					<a href="./contact-us.html">
-						<p>CONTACT US</p>
-					</a>
-				</li>
-			</ul>
-			<select class="select2" onchange="if(this.value != &#39;&#39;) window.open(this.value);">
-				<option value="">관련 홈페이지</option>
-				<option value="./gooditier-pa.html">GoodITier PA</option>
-				<option value="./gooditier-pms.html">GoodITier PMS</option>
-			</select>
-		</div>
-		<div class="footer_info">
-			<p><span class="bold">대표이사 : </span>이현민 &nbsp; &nbsp; <span class="bold">사업자등록번호 :</span>283-87-03452 &nbsp; &nbsp; <span class="bold"><br class="on-br">이메일 : </span>gooditier@gooditier.co.kr<br class="onoff-br">
-				대전광역시 유성구 복용동로 43, F636호 <br class="on-br">(복용동, 대전더리브시그니처)<br>
-				Copyright ⓒ 2025 GoodITier Co.,Ltd. All rights reserved.</p>
-		</div>
-		<div class="admin_login">
-			<a href="./login.html">
-				<ul>
-					<li>
-						<img src="./img/login.png" style="width: 18px;" alt="로그인">
-					</li>
-					<li class="admin_login_text">관리자 로그인</li>
-				</ul>
-			</a>
-		</div>
-	</div>
-	<!--top_btn-->
-	<div class="top_postition">
-		<div class="top_btn_wrap">
-			<div class="top_btn" onclick="window.scrollTo({top:0,left:0, behavior:&#39;smooth&#39;});">
-				<div class="top_btn_con">
-					<a href="javascript:;">
-						<img src="./img/top_1.png" alt="맨 위로 이동">
-						<p>TOP</p>
+<style>
+	.no_image_wrap, .no_image_center{
+		width: 337px;
+		height: 240px;
+		border: none;
+		background-color: transparent;
+	}
+	.ellipsis-box {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 2; 
+		-webkit-box-orient: vertical;
+		width: 290px;
+		height: 45px;
+	}
+/* carousel 설정 */
+.carousel {
+	position: relative;
+}
+
+.carousel.pointer-event {
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-inner::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.carousel-item {
+  position: relative;
+  display: none;
+  float: left;
+  width: 100%;
+  margin-right: -100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: -webkit-transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-item {
+    transition: none;
+  }
+}
+
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev {
+  display: block;
+}
+
+.carousel-item-next:not(.carousel-item-left),
+.active.carousel-item-right {
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+.carousel-item-prev:not(.carousel-item-right),
+.active.carousel-item-left {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+
+.carousel-fade .carousel-item {
+  opacity: 0;
+  transition-property: opacity;
+  -webkit-transform: none;
+  transform: none;
+}
+
+.carousel-fade .carousel-item.active,
+.carousel-fade .carousel-item-next.carousel-item-left,
+.carousel-fade .carousel-item-prev.carousel-item-right {
+  z-index: 1;
+  opacity: 1;
+}
+
+.carousel-fade .active.carousel-item-left,
+.carousel-fade .active.carousel-item-right {
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0s 0.6s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-fade .active.carousel-item-left,
+  .carousel-fade .active.carousel-item-right {
+    transition: none;
+  }
+}
+
+.carousel-caption {
+  position: absolute;
+  right: 15%;
+  bottom: 20px;
+  left: 15%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
+</style>
+<div id="fullpage" class="fullpage-wrapper" style="height: 100%; position: relative; touch-action: none; transform: translate3d(0px, 0px, 0px);">
+
+	<!-- full-page-scroll.js 적용으로 인해 footer를 main에 추가 -->
+	<div class="section fp-auto-height fp-section fp-table" id="section5" style="height: 919px;"><div class="fp-tableCell" style="height: 919px;">
+		<div class="footer_layout" style="height: 310px;">
+			<div class="footer_width">
+				<div class="footer_contents">
+					<ul class="footer_etc_btn">
+						<li>
+							<a href="./about-us.html">
+								<p>이용약관</p>
+							</a>
+						</li>
+							<img src="./img/footer_dot.png" alt="">
+						<li>
+							<a href="./career-info.html">
+								<p>개인정보처리방침</p>
+							</a>
+						</li>
+					</ul>
+					<select class="select2" onchange="if(this.value != &#39;&#39;) window.open(this.value);">
+						<option value="">관련 홈페이지</option>
+						<option value="./gooditier-pa.html">GoodITier PA</option>
+						<option value="./gooditier-pms.html">GoodITier PMS</option>
+					</select>
+				</div>
+				<div class="footer_info">
+					<p><span class="bold">대표이사 : </span>이현민 &nbsp; &nbsp; <span class="bold">사업자등록번호 :</span>283-87-03452 &nbsp; &nbsp; <span class="bold"><br class="on-br">이메일 : </span>gooditier@gooditier.co.kr<br>
+					대전광역시 유성구 복용동로 43, F636호 <br class="on-br">(복용동, 대전더리브시그니처)<br>
+					Copyright ⓒ 2025 GoodITier Co.,Ltd. All rights reserved.</p>
+				</div>
+				<div class="admin_login">
+					<a href="./login.html">
+						<ul>
+							<li>
+								<img src="./img/login.png" style="width: 18px;" alt="로그인">
+							</li>
+							<li class="admin_login_text">관리자 로그인</li>
+						</ul>
 					</a>
 				</div>
 			</div>
+			<!--top_btn-->
+			<div class="top_postition">
+				<div class="top_btn_wrap" style="bottom: 83.5%;" onclick="location.href=&#39;#firstPage&#39;">
+					<div class="top_btn">
+						<div class="top_btn_con">
+							<a href="javascript:;">
+								<img src="./img/top_1.png" alt="맨 위로 이동">
+								<p>TOP</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
+	</div></div>
 </div>
+<script src="./jquery.fullPage.js.다운로드"></script>
+<script type="text/javascript">
+	var width_size = window.outerWidth;
+	var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
 
-<script>
-	$(function(){
-		var message = "";
+	$(document).ready(function(){
 		
-		if(message != ""){
-			alert(message);
+// 		if(width_size > 1400){//PC
+		if(!isMobile){//mobile
+			// slide 활성화
+			$("#slide1-2").css("display","block");
+			$("#slide1-3").css("display","block");
+			
+			// TOP 버튼
+			$(".top_btn_wrap").attr("onclick", "location.href='#firstPage'");
+			
+			$('#fullpage').fullpage({
+				anchors: ['firstPage', 'secondPage', '3rdPage'],
+				sectionsColor: ['#fff'],
+				navigation: true,
+				navigationPosition: 'right',
+				showActiveTooltip:true,
+				navigationTooltips: ['MAIN', 'WIZETECHNOLOGY', 'BUSINESS', 'NEWS & NOTICE', 'CAREER'],
+				controlArrows: false,
+			});
+			$("#fp-nav ul").before("<div class='line'></div>");
+			// 마지막 tooltip 제거
+			$("#fp-nav > ul > li").last().remove();
+			
+			$("#fp-nav li").hover(function(){// nav 호버 시 기존 txt display:none 처리
+				var oriTxt = $("#fp-nav li .active ~.fp-tooltip").text();
+				var hoverTxt = $(this).find("div").text();
+				if(oriTxt != hoverTxt){
+					$("#fp-nav li .active ~.fp-tooltip").css("display", "none");
+				}
+			}, function () {
+				$("#fp-nav li .active ~.fp-tooltip").css("display", "block");
+			});
+			
+			$("#fp-nav li").click(function(){// nav 클릭 시 display:none 이 돌아오지 않을 경우 강제 변환
+				$("#fp-nav li .fp-tooltip").css("display", "block");
+			})
+		}else{
+			$("#slide1-2").css("display","none");
+			$("#slide1-3").css("display","none");
+			
+			$(".top_btn_wrap").attr("onclick", "window.scrollTo(0,0)");
 		}
-	});
-</script>
-<!-- footer :: e :: -->
 
-<!--타이틀 애니메이션-->
-<script>
-	const targets = document.querySelectorAll(".txt_ani");
-
-	const observer = new IntersectionObserver((entries) => {
-	entries.forEach((entry, index) => {
-		if (entry.isIntersecting) {
-		// 딜레이를 순차적으로 추가
-		setTimeout(() => {
-			entry.target.classList.add("show");
-		}, index * 200); // 0ms, 200ms, 400ms...
-		} else {
-		entry.target.classList.remove("show");
-		}
-	});
-	}, {
-	threshold: 0.5
 	});
 
-	targets.forEach((el) => observer.observe(el));
 </script>
 
-<!--숫자가 올라가는 애니메이션-->
-<script>
-	document.addEventListener("DOMContentLoaded", function () {
-  const counters = document.querySelectorAll(".counter");
-
-  counters.forEach(counter => {
-    const target = +counter.dataset.target;
-    let current = 0;
-    let increment;
-
-    // class에 따라 증가 단위 조절
-    if (counter.classList.contains("big")) {
-      increment = 25;
-    } else if (counter.classList.contains("mid")) {
-      increment = 1;
-    } else if (counter.classList.contains("small")) {
-      increment = 1;
-    } else {
-      increment = 1;
-    }
-
-    const duration = 2000;
-    const steps = Math.ceil(target / increment);
-    const stepTime = duration / steps;
-
-    const updateCounter = () => {
-      current += increment;
-      if (current >= target) {
-        counter.textContent = target;
-        clearInterval(timer);
-      } else {
-        counter.textContent = current;
-      }
-    };
-
-    const timer = setInterval(updateCounter, stepTime);
-  });
-});
-  </script>
-
-</body>
-</html>
+<div id="fp-nav" class="fp-show-active right" style="margin-top: 0px;"><div class="line"></div><ul><li><a href="#undefined"><div><div></div></div></a><div class="fp-tooltip right">CAREER</div></li></ul></div></body></html>
