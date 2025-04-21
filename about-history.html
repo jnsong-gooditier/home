@@ -359,10 +359,10 @@ $(function(){
 	</div>
 </div>
 <!-- header :: s :: -->
-<header class="header">
+<header class="header default">
 	<div class="wrap">
 		<!--https://www.wizetech.co.kr/main/main_doMain.do-->
-		<h1><a href="./index.html"><img src="./img/gooditierlogo.png" alt="와이즈테크놀로지" style="width: 70px;"></a></h1>
+		<a href="./index.html"><h1 class="logo black"></h1></a>
 		<div class="lnb">
 			<nav>
 				<ul>
@@ -397,57 +397,68 @@ $(function(){
 						<a href="./products-database.html" onclick="showBusysign();">PRODUCTS</a>
 						<ul>
 							<li>
+								<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0301&amp;prdType=DB" onclick="showBusysign();">Database</a>-->
 								<a href="./products-database.html" onclick="showBusysign();">Database</a>
 							</li>
 							<li>
+								<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0302&amp;prdType=WebLogic" onclick="showBusysign();">WebLogic</a>-->
 								<a href="./products-weblogic.html" onclick="showBusysign();">WebLogic</a>
 							</li>
 							<li>
+								<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0303&amp;prdType=WebTier" onclick="showBusysign();">WebTier</a>-->
 								<a href="./products-webtier.html" onclick="showBusysign();">WebTier</a>
 							</li>
 							<li>
+								<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0311&amp;prdType=ToadForOracle" onclick="showBusysign();">Toad For Oracle</a>-->
 								<a href="./products-toad.html" onclick="showBusysign();">Toad for Oracle</a>
 							</li>
 							<li>
+								<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0304&amp;prdType=OGG" onclick="showBusysign();">Oracle Golden Gate</a>-->
 								<a href="./products-ogg.html" onclick="showBusysign();">Oracle Golden Gate</a>
 							</li>
 							<li>
+								<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0305&amp;prdType=ADG" onclick="showBusysign();">Active Data Guard</a>-->
 								<a href="./products-adg.html" onclick="showBusysign();">Active Data Guard</a>
 							</li>
 							<li>
+								<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0306&amp;prdType=ASO" onclick="showBusysign();">Advanced Security Option</a>-->
 								<a href="./products-aso.html" onclick="showBusysign();">Advanced Security Option</a>
 							</li>
 							<li>
+								<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0307&amp;prdType=KeyVault" onclick="showBusysign();">Key Vault</a>-->
 								<a href="./products-keyvault.html" onclick="showBusysign();">Key Vault</a>
 							</li>
 							<li>
+								<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0308&amp;prdType=ODA" onclick="showBusysign();">Oracle Database Appliance</a>-->
 								<a href="./products-oda.html" onclick="showBusysign();">Oracle Database Appliance</a>
 							</li>
 							<li>
+								<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0309&amp;prdType=Exadata" onclick="showBusysign();">Exadata</a>-->
 								<a href="./products-exadata.html" onclick="showBusysign();">Exadata</a>
 							</li>
 							<li>
+								<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0310&amp;prdType=MySQL" onclick="showBusysign();">MySQL</a>-->
 								<a href="./products-sql.html" onclick="showBusysign();">MySQL</a>
 							</li>
 						</ul>
 					</li>
 					<li>
-						<!--https://www.wizetech.co.kr/procurement/product_doWebLogic.do?menu_id=0201-->
+						<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0305&amp;prdType=ADG#">솔루션</a>-->
 						<a href="./solution-rpa.html" onclick="showBusysign();">SOLUTION</a>
 						<ul>
 							<li>
-								<!--https://www.wizetech.co.kr/procurement/product_doWebLogic.do?menu_id=0201-->
+								<!--<a href="https://www.wizetech.co.kr/solution/solution_getSolution.do?menu_id=0401&amp;solType=RPA" onclick="showBusysign();">RPA</a>-->
 								<a href="./solution-rpa.html" onclick="showBusysign();">RPA</a>
 							</li>
 							<li>
-								<!--https://www.wizetech.co.kr/procurement/product_doWebTier.do?menu_id=0202-->
+								<!--<a href="https://www.wizetech.co.kr/solution/solution_getSolution.do?menu_id=0402&amp;solType=PMS" onclick="showBusysign();">PMS</a>-->
 								<a href="./solution-pms.html" onclick="showBusysign();">PMS</a>
 							</li>
 						</ul>
 					</li>
 					<li>
 						<!--https://www.wizetech.co.kr/promotion/promotion_wizeBoardList.do?menu_id=0501-->
-						<a href="" onclick="showBusysign();">NOTICE</a>
+						<a href="./notice.html" onclick="showBusysign();">NOTICE</a>
 						<ul>
 							<li>
 								<!--https://www.wizetech.co.kr/promotion/promotion_wizeBoardList.do?menu_id=0501-->
@@ -546,7 +557,8 @@ $(function(){
 						</a>
 					</li>
 					<li>
-						<a href="javascript:;" onclick="changeNavMenu(&#39;06&#39;, &#39;CONTACT US&#39;);">
+						<!--<a href="https://www.wizetech.co.kr/info/companyInfo_location.do?menu_id=0106">-->
+						<a href="./contact-us.html" onclick="changeNavMenu(&#39;06&#39;, &#39;CONTACT US&#39;);">
 							CONTACT US
 						</a>
 					</li>
@@ -558,29 +570,34 @@ $(function(){
 						<li>연혁</li>
 						<li class="icon-6"></li>
 					</ul>
-				</a>		
+				</a>
 				<ul class="nav_depth_drop drop_nav_01">
 					<li>
+						<!--<a href="https://www.wizetech.co.kr/info/companyInfo_greeting.do?menu_id=0101">-->
 						<a href="./about-us.html">
-							<span class="subTitle">회사소개</span>
+						<span class="subTitle">회사소개</span>
 						</a>
 					</li>
 					<li>
+						<!--<a href="https://www.wizetech.co.kr/info/companyInfo_history.do?menu_id=0102">-->
 						<a href="./about-history.html">
 							<span class="subTitle">연혁</span>
 						</a>
 					</li>
 					<li>
+						<!--<a href="https://www.wizetech.co.kr/info/companyInfo_orgChart.do?menu_id=0103">-->
 						<a href="./about-organization.html">
 							<span class="subTitle">조직도</span>
 						</a>
 					</li>
 					<li>
+						<!--<a href="https://www.wizetech.co.kr/info/companyInfo_ciInfo.do?menu_id=0105">-->
 						<a href="./about-ci.html">
-							<span class="subTitle">CI</span>
+						<span class="subTitle">CI</span>
 						</a>
 					</li>
 					<li>
+						<!--<a href="https://www.wizetech.co.kr/promotion/promotion_certStatusList.do?menu_id=0502">-->
 						<a href="./about-certification.html">
 							<span class="subTitle">자격 및 인증</span>
 						</a>
@@ -588,80 +605,95 @@ $(function(){
 				</ul>
 				<ul class="nav_depth_drop drop_nav_02">
 					<li>
+						<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0301&amp;prdType=DB">-->
 						<a href="./products-database.html">
 							<span class="subTitle">Database</span>
 						</a>
 					</li>
 					<li>
+						<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0302&amp;prdType=WebLogic">-->
 						<a href="./products-weblogic.html">
 							<span class="subTitle">WebLogic</span>
 						</a>
 					</li>
 					<li>
+						<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0303&amp;prdType=WebTier">-->
 						<a href="./products-webtier.html">
-							<span class="subTitle">WebTier</span>
+						<span class="subTitle">WebTier</span>
 						</a>
 					</li>
 					<li>
+						<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0311&amp;prdType=ToadForOracle">-->
 						<a href="./products-toad.html">
-							<span class="subTitle">Toad for Oracle</span>
+							<span class="subTitle">Toad For Oracle</span>
 						</a>
 					</li>
 					<li>
+						<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0304&amp;prdType=OGG">-->
 						<a href="./products-ogg.html">
 							<span class="subTitle">Oracle Golden Gate</span>
 						</a>
 					</li>
 					<li>
+						<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0305&amp;prdType=ADG">-->
 						<a href="./products-adg.html">
 							<span class="subTitle">Active Data Guard</span>
 						</a>
 					</li>
 					<li>
+						<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0306&amp;prdType=ASO">-->
 						<a href="./products-aso.html">
-							<span class="subTitle">Advanced Security Option</span>
+						<span class="subTitle">Advanced Security Option</span>
 						</a>
 					</li>
 					<li>
+						<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0307&amp;prdType=KeyVault">-->
 						<a href="./products-keyvault.html">
-							<span class="subTitle">Key Vault</span>
+						<span class="subTitle">Key Vault</span>
 						</a>
 					</li>
 					<li>
+						<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0308&amp;prdType=ODA">-->
 						<a href="./products-oda.html">
-							<span class="subTitle">Oracle Database Appliance</span>
+						<span class="subTitle">Oracle Database Appliance</span>
 						</a>
 					</li>
 					<li>
+						<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0309&amp;prdType=Exadata">-->
 						<a href="./products-exadata.html">
-							<span class="subTitle">Exadata</span>
+						<span class="subTitle">Exadata</span>
 						</a>
 					</li>
 					<li>
+						<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0310&amp;prdType=MySQL">-->
 						<a href="./products-sql.html">
-							<span class="subTitle">MySQL</span>
+						<span class="subTitle">MySQL</span>
 						</a>
 					</li>
 				</ul>
 				<ul class="nav_depth_drop drop_nav_03">
 					<li>
+						<!--<a href="https://www.wizetech.co.kr/solution/solution_getSolution.do?menu_id=0401&amp;solType=RPA">-->
 						<a href="./solution-rpa.html">
-							<span class="subTitle">RPA</span>
+						<span class="subTitle">RPA</span>
 						</a>
 					</li>
 					<li>
+						<!--<a href="https://www.wizetech.co.kr/solution/solution_getSolution.do?menu_id=0402&amp;solType=PMS">-->
 						<a href="./solution-pms.html">
-							<span class="subTitle">PMS</span>
+						<span class="subTitle">PMS</span>
 						</a>
 					</li>
 				</ul>
 				<ul class="nav_depth_drop drop_nav_04">
 					<li>
+						<!--<a href="https://www.wizetech.co.kr/promotion/promotion_wizeBoardList.do?menu_id=0501">-->
 						<a href="./notice.html">
 							<span class="subTitle">공지사항</span>
 						</a>
 					</li>
 					<li>
+						<!--<a href="https://www.wizetech.co.kr/promotion/promotion_wizeBoardList.do?menu_id=0501">-->
 						<a href="./notice-news.html">
 							<span class="subTitle">소식</span>
 						</a>
@@ -669,21 +701,25 @@ $(function(){
 				</ul>
 				<ul class="nav_depth_drop drop_nav_05">
 					<li>
+						<!--<a href="https://www.wizetech.co.kr/recruit/recruitment_talent.do?menu_id=0601">-->
 						<a href="./career-talent.html">
 							<span class="subTitle">인재상</span>
 						</a>
 					</li>
 					<li>
+						<!--<a href="https://www.wizetech.co.kr/recruit/recruitment_welfare.do?menu_id=0603">-->
 						<a href="./career-benefit.html">
-							<span class="subTitle">복리후생</span>
+						<span class="subTitle">복리후생</span>
 						</a>
 					</li>
 					<li>
+						<!--<a href="https://www.wizetech.co.kr/recruit/recruitment_recruitProcess.do?menu_id=0602">-->
 						<a href="./career-process.html">
 							<span class="subTitle">채용절차</span>
 						</a>
 					</li>
 					<li>
+						<!--<a href="https://www.wizetech.co.kr/recruit/recruitment_recruitInfoList.do?menu_id=0604">-->
 						<a href="./career-info.html">
 							<span class="subTitle">채용정보</span>
 						</a>

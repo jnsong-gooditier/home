@@ -50,10 +50,6 @@
 </head>
 <body>
 
-	
-
-
-
 <script type="text/javascript">
 var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
 
@@ -133,9 +129,11 @@ $(function(){
 	});
 });
 </script>
+
 <div id="ajaxveil">
 	<img src="./img/wize_loading.gif" alt="로딩 이미지">
 </div>
+
 <div id="fade"></div>
 
 <!--사이트맵  -->
@@ -304,11 +302,12 @@ $(function(){
 		</div>
 	</div>
 </div>
+
 <!-- header :: s :: -->
-<header class="header">
+<header class="header default">
 	<div class="wrap">
 		<!--https://www.wizetech.co.kr/main/main_doMain.do-->
-		<h1><a href="index.html"><img src="./img/gooditierlogo.png" alt="굿아이티어" style="width: 70px;"></a></h1>
+		<a href="./index.html"><h1 class="logo black"></h1></a>
 		<div class="lnb">
 			<nav>
 				<ul>
@@ -322,7 +321,7 @@ $(function(){
 							</li>
 							<li>
 								<!--https://www.wizetech.co.kr/info/companyInfo_history.do?menu_id=0102-->
-								<a href="./about-history" onclick="showBusysign();">연혁</a>
+								<a href="./about-history.html" onclick="showBusysign();">연혁</a>
 							</li>
 							<li>
 								<!--https://www.wizetech.co.kr/info/companyInfo_orgChart.do?menu_id=0103-->
@@ -340,19 +339,65 @@ $(function(){
 					</li>
 					<li>
 						<!--https://www.wizetech.co.kr/procurement/product_doWebLogic.do?menu_id=0201-->
-						<a href="./service-development.html" onclick="showBusysign();">SERVICE</a>
+						<a href="./products-database.html" onclick="showBusysign();">PRODUCTS</a>
 						<ul>
 							<li>
-								<!--https://www.wizetech.co.kr/procurement/product_doWebLogic.do?menu_id=0201-->
-								<a href="./service-development.html" onclick="showBusysign();">소프트웨어 개발</a>
+								<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0301&amp;prdType=DB" onclick="showBusysign();">Database</a>-->
+								<a href="./products-database.html" onclick="showBusysign();">Database</a>
 							</li>
 							<li>
-								<!--https://www.wizetech.co.kr/procurement/product_doWebTier.do?menu_id=0202-->
-								<a href="./service-supply.html" onclick="showBusysign();">소프트웨어 공급</a>
+								<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0302&amp;prdType=WebLogic" onclick="showBusysign();">WebLogic</a>-->
+								<a href="./products-weblogic.html" onclick="showBusysign();">WebLogic</a>
 							</li>
 							<li>
-								<!--https://www.wizetech.co.kr/procurement/product_toadForOracle.do?menu_id=0205-->
-								<a href="./service-maintenance.html" onclick="showBusysign();">소프트웨어 유지보수</a>
+								<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0303&amp;prdType=WebTier" onclick="showBusysign();">WebTier</a>-->
+								<a href="./products-webtier.html" onclick="showBusysign();">WebTier</a>
+							</li>
+							<li>
+								<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0311&amp;prdType=ToadForOracle" onclick="showBusysign();">Toad For Oracle</a>-->
+								<a href="./products-toad.html" onclick="showBusysign();">Toad for Oracle</a>
+							</li>
+							<li>
+								<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0304&amp;prdType=OGG" onclick="showBusysign();">Oracle Golden Gate</a>-->
+								<a href="./products-ogg.html" onclick="showBusysign();">Oracle Golden Gate</a>
+							</li>
+							<li>
+								<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0305&amp;prdType=ADG" onclick="showBusysign();">Active Data Guard</a>-->
+								<a href="./products-adg.html" onclick="showBusysign();">Active Data Guard</a>
+							</li>
+							<li>
+								<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0306&amp;prdType=ASO" onclick="showBusysign();">Advanced Security Option</a>-->
+								<a href="./products-aso.html" onclick="showBusysign();">Advanced Security Option</a>
+							</li>
+							<li>
+								<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0307&amp;prdType=KeyVault" onclick="showBusysign();">Key Vault</a>-->
+								<a href="./products-keyvault.html" onclick="showBusysign();">Key Vault</a>
+							</li>
+							<li>
+								<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0308&amp;prdType=ODA" onclick="showBusysign();">Oracle Database Appliance</a>-->
+								<a href="./products-oda.html" onclick="showBusysign();">Oracle Database Appliance</a>
+							</li>
+							<li>
+								<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0309&amp;prdType=Exadata" onclick="showBusysign();">Exadata</a>-->
+								<a href="./products-exadata.html" onclick="showBusysign();">Exadata</a>
+							</li>
+							<li>
+								<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0310&amp;prdType=MySQL" onclick="showBusysign();">MySQL</a>-->
+								<a href="./products-sql.html" onclick="showBusysign();">MySQL</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<!--<a href="https://www.wizetech.co.kr/product/product_getProduct.do?menu_id=0305&amp;prdType=ADG#">솔루션</a>-->
+						<a href="./solution-rpa.html" onclick="showBusysign();">SOLUTION</a>
+						<ul>
+							<li>
+								<!--<a href="https://www.wizetech.co.kr/solution/solution_getSolution.do?menu_id=0401&amp;solType=RPA" onclick="showBusysign();">RPA</a>-->
+								<a href="./solution-rpa.html" onclick="showBusysign();">RPA</a>
+							</li>
+							<li>
+								<!--<a href="https://www.wizetech.co.kr/solution/solution_getSolution.do?menu_id=0402&amp;solType=PMS" onclick="showBusysign();">PMS</a>-->
+								<a href="./solution-pms.html" onclick="showBusysign();">PMS</a>
 							</li>
 						</ul>
 					</li>
@@ -380,7 +425,7 @@ $(function(){
 							</li>
 							<li>
 								<!--https://www.wizetech.co.kr/recruit/recruitment_welfare.do?menu_id=0603-->
-								<a href="./career-benefit.html" onclick="showBusysign();">복지후생</a>
+								<a href="./career-benefit.html" onclick="showBusysign();">복리후생</a>
 							</li>
 							<li>
 								<!--https://www.wizetech.co.kr/recruit/recruitment_recruitProcess.do?menu_id=0602-->
@@ -408,13 +453,13 @@ $(function(){
 </header>
 <!-- header :: e :: -->
 		
-<div id="headImg" class="visual_6">
+<div id="headImg" class="visual_5">
 	<div class="visual_wrap">
 		<div>CAREER</div>
 	</div>
 </div>
 		
-<input type="hidden" id="menuParentsId" value="01">
+<input type="hidden" id="menuParentsId" value="05">
 <div class="nav_bg">
 	<div class="navigation">
 		<div class="nav_home_btn">
@@ -550,137 +595,93 @@ $(function(){
 
 <!--contents-->
 <div class="contents_wrap">
-	<div class="contents_title_wrap" style="margin-bottom: 50px;">
+	<div class="contents_title_wrap">
 		<p class="sub_page_title2 txt_ani">복리후생</p>
-		<p class="sub_title_small txt_ani">회사 성장의 원동력인 임직원을 위한 <br class="on-br">굿아이티어의 복리후생</p>
-	</div>
-	<div class="welfare_wrap">
-		<p class="welfare_title">연금·보험</p>
-		<p class="welfare_sub_text">안정적인 근무환경을 위하여 연금·보험 제도를 운영합니다.</p>
-		<div class="welfare_wrap1">
-			<div class="welfare_con_wrap">
-				<p class="welfare_icon_box"><img class="welfare_icon" src="./recruitment_welfare_files/welfare_1.png" alt=""></p>
-				<div class="welfare_con_inner">
-					<p class="welfare_in_text1">법정 4대보험 가입</p>
-					<p class="welfare_in_text2">법정 의무사항인 4대보험<br>(국민연금, 건강보험, 고용보험, 산재보험)에<br>전 임직원이 가입하고 있습니다.</p>
-				</div>
-			</div>
-			<div class="welfare_con_wrap">
-				<p class="welfare_icon_box"><img class="welfare_icon" src="./recruitment_welfare_files/welfare_2.png" alt=""></p>
-				<div class="welfare_con_inner">
-					<p class="welfare_in_text1">퇴직연금제도 운영</p>
-					<p class="welfare_in_text2">근로자의 퇴직 후 생활 안정을 위해<br>확정기여형(DC형)퇴직연금제도를 운영하고<br>있습니다</p>
-				</div>
-			</div>
-		</div>
+		<p class="contents_sub_text txt_ani">회사 성장의 원동력인 임직원을 위한 <br class="on-br">굿아이티어의 복리후생</p>
 	</div>
 	
 	<div class="welfare_wrap">
-		<p class="welfare_title">보상·수당·지원</p>
-		<p class="welfare_sub_text">임직원들의 업무 성취감과 더 나은 근무환경을 위해 다양한 지원 정책을 운영하고 있습니다.</p>
-		<div class="welfare_wrap2">
+		<p class="welfare_title">다양한 지원 혜택</p>
+		<div class="welfare_wrap1-1">
 			<div class="welfare_con_wrap">
-				<p class="welfare_icon_box"><img class="welfare_icon" src="./recruitment_welfare_files/welfare_3.png" alt=""></p>
+				<p class="welfare_icon_box"><img class="welfare_icon" src="./img/welfare_3.png" alt=""></p>
 				<div class="welfare_con_inner">
-					<p class="welfare_in_text1">점심 및 저녁식사 지원</p>
-					<p class="welfare_in_text2">임직원 식사편의를 위해<br>점심 및 저녁식사(야근 시) 비용을 지급하고<br>있습니다.</p>
+					<p class="welfare_in_text1">점심 지원</p>
+					<p class="welfare_in_text2">임직원 식사편의를 위해<br>중식을 지원하고 있습니다.</p>
 				</div>
 			</div>
 			<div class="welfare_con_wrap">
-				<p class="welfare_icon_box"><img class="welfare_icon" src="./recruitment_welfare_files/welfare_4.png" alt=""></p>
+				<p class="welfare_icon_box"><img class="welfare_icon" src="./img/welfare_7.png" alt=""></p>
 				<div class="welfare_con_inner">
-					<p class="welfare_in_text1">명절 선물 및 상여금 지급</p>
-					<p class="welfare_in_text2">설, 추석 든든한 명절을 위해 명절 선물 및<br>상여금을 지급하고 있습니다.</p>
+					<p class="welfare_in_text1">교육비 지원</p>
+					<p class="welfare_in_text2">전 직원의 업무 능력 향상을 위해 <br>업무관련 교육비를 지원하고 있습니다.</p>
+				</div>
+			</div>
+		</div>
+		<div class="welfare_wrap1-1">
+			<div class="welfare_con_wrap">
+				<p class="welfare_icon_box"><img class="welfare_icon" src="./img/welfare_4.png" alt=""></p>
+				<div class="welfare_con_inner">
+					<p class="welfare_in_text1">명절 귀향비 지급</p>
+					<p class="welfare_in_text2">설, 추석 든든한 명절을 위해 <br>귀향비를 지급하고 있습니다.</p>
 				</div>
 			</div>
 			<div class="welfare_con_wrap">
-				<p class="welfare_icon_box"><img class="welfare_icon" src="./recruitment_welfare_files/welfare_5.png" alt=""></p>
+				<p class="welfare_icon_box"><img class="welfare_icon" src="./img/welfare_5.png" alt=""></p>
 				<div class="welfare_con_inner">
 					<p class="welfare_in_text1">5월 가정의 달 효도비 지급</p>
 					<p class="welfare_in_text2">임직원과 임직원가족을 생각하는 마음으로<br>5월 가정의 달 효도비를 지급하고 있습니다.</p>
 				</div>
 			</div>
 		</div>
-		
-		<div class="welfare_wrap2">
-			<div class="welfare_con_wrap">
-				<p class="welfare_icon_box"><img class="welfare_icon" src="./recruitment_welfare_files/welfare_6.png" alt=""></p>
-				<div class="welfare_con_inner">
-					<p class="welfare_in_text1">휴가비 지급</p>
-					<p class="welfare_in_text2">임직원의 일과 삶의 균형을 맞추기 위해<br>하계 휴가비를 지급하고 있습니다.</p>
-				</div>
-			</div>
-			<div class="welfare_con_wrap">
-				<p class="welfare_icon_box"><img class="welfare_icon" src="./recruitment_welfare_files/welfare_7.png" alt=""></p>
-				<div class="welfare_con_inner">
-					<p class="welfare_in_text1">교육비 지원</p>
-					<p class="welfare_in_text2">전 직원의 자기 계발 및 업무 능력 향상을<br>위해 업무관련 각종 교육비를 지원하고 있습니다.</p>
-				</div>
-			</div>
-			<div class="welfare_con_wrap">
-				<p class="welfare_icon_box"><img class="welfare_icon" src="./recruitment_welfare_files/welfare_8.png" alt=""></p>
-				<div class="welfare_con_inner">
-					<p class="welfare_in_text1">차량 유류비 지원</p>
-					<p class="welfare_in_text2">업무 수행 시 자차를 이용할 경우 소정의<br>유류비를 지원하고 있습니다.</p>
-				</div>
-			</div>
-		</div>
-		
-        <div class="welfare_wrap1">
-            <div class="welfare_con_wrap">
-                <p class="welfare_icon_box"><img class="welfare_icon" src="./recruitment_welfare_files/welfare_9.png" alt=""></p>
-                <div class="welfare_con_inner">
-                    <p class="welfare_in_text1">통신비 지원</p>
-                    <p class="welfare_in_text2">업무 특성 상 발생되는 통신비에 대한<br>부담을 덜어내고자 사용 비용 중 일부를<br>지원합니다.</p>
-                </div>
-            </div>
-            <div class="welfare_con_wrap">
-                <p class="welfare_icon_box"><img class="welfare_icon" src="./recruitment_welfare_files/welfare_15.png" alt=""></p>
-                <div class="welfare_con_inner">
-                    <p class="welfare_in_text1">인센티브 지급</p>
-                    <p class="welfare_in_text2">업무에 대한 성과를 격려하고<br>근로의욕을 고취하고자 업무성과에 대한<br>인센티브를 지급합니다.</p>
-                </div>
-            </div>
-        </div>
-		
 	</div>
 	
 	<div class="welfare_wrap">
-		<p class="welfare_title">휴가·행사</p>
-		<p class="welfare_sub_text">임직원의 일과 삶의 균형을 위해 각종 휴가 지원 및 행사 개최를 실시하고 있습니다.</p>
+		<p class="welfare_title">워라밸 균형</p>
 		<div class="welfare_wrap2">
 			<div class="welfare_con_wrap">
-				<p class="welfare_icon_box"><img class="welfare_icon" src="./recruitment_welfare_files/welfare_10.png" alt=""></p>
+				<p class="welfare_icon_box"><img class="welfare_icon" src="./img/welfare_6.png" alt=""></p>
+				<div class="welfare_con_inner">
+					<p class="welfare_in_text1">휴가비 지급</p>
+					<p class="welfare_in_text2">임직원의 일과 삶의 균형을 맞추기 위해<br> 7월 소정의 휴가비를 지급하고 있습니다.</p>
+				</div>
+			</div>
+			<div class="welfare_con_wrap">
+				<p class="welfare_icon_box"><img class="welfare_icon" src="./img/welfare_10.png" alt=""></p>
 				<div class="welfare_con_inner">
 					<p class="welfare_in_text1">연차휴가 부여(하계휴가 포함)</p>
 					<p class="welfare_in_text2">관련법령에 의해 부여된 개인별 연차휴가<br>범위 내에서 휴가를 자유롭게 사용하실 수<br>있습니다.</p>
 				</div>
 			</div>
 			<div class="welfare_con_wrap">
-				<p class="welfare_icon_box"><img class="welfare_icon" src="./recruitment_welfare_files/welfare_11.png" alt=""></p>
-				<div class="welfare_con_inner">
-					<p class="welfare_in_text1">휴양시설 지원</p>
-					<p class="welfare_in_text2">임직원 및 임직원 가족의 복리후생을 도모하기 위해 전국 리조트 회원권을 보유하고 있어<br>저렴하게 이용하실 수 있습니다.</p>
-				</div>
-			</div>
-			<div class="welfare_con_wrap">
-				<p class="welfare_icon_box"><img class="welfare_icon" src="./recruitment_welfare_files/welfare_12.png" alt=""></p>
-				<div class="welfare_con_inner">
-					<p class="welfare_in_text1">근로자의 날 휴무</p>
-					<p class="welfare_in_text2">임직원을 격려하고 근무 의욕을 높이기 위해<br>근로자의 날 휴무를 실시합니다.</p>
-				</div>
-			</div>
+                <p class="welfare_icon_box"><img class="welfare_icon" src="./img/welfare_15.png" alt=""></p>
+                <div class="welfare_con_inner">
+                    <p class="welfare_in_text1">인센티브 지급</p>
+                    <p class="welfare_in_text2">2년 재직 시 평가 후 업무성과에 대한 <br>인센티브를 지급합니다.</p>
+                </div>
+            </div>
 		</div>
-		<div class="welfare_wrap1-1">
+	</div>
+
+	<div class="welfare_wrap">
+		<p class="welfare_title">안정적인 근무환경</p>
+		<div class="welfare_wrap2">
 			<div class="welfare_con_wrap">
-				<p class="welfare_icon_box"><img class="welfare_icon" src="./recruitment_welfare_files/welfare_13.png" alt=""></p>
+				<p class="welfare_icon_box"><img class="welfare_icon" src="./img/welfare_1.png" alt=""></p>
 				<div class="welfare_con_inner">
-					<p class="welfare_in_text1">워크샵</p>
-					<p class="welfare_in_text2">직원간의 상호유대관계 강화와 상호부조 및<br>직원들의 복리증진을 위해 워크샵 행사를<br>개최합니다.</p>
+					<p class="welfare_in_text1">법정 4대보험 가입</p>
+					<p class="welfare_in_text2">법정 의무사항인 4대보험<br>(국민연금, 건강보험, 고용보험, 산재보험)에<br>전 임직원이 가입하고 있습니다.</p>
 				</div>
 			</div>
 			<div class="welfare_con_wrap">
-				<p class="welfare_icon_box"><img class="welfare_icon" src="./recruitment_welfare_files/welfare_14.png" alt=""></p>
+				<p class="welfare_icon_box"><img class="welfare_icon" src="./img/welfare_2.png" alt=""></p>
+				<div class="welfare_con_inner">
+					<p class="welfare_in_text1">퇴직연금제도 운영</p>
+					<p class="welfare_in_text2">근로자의 퇴직 후 생활 안정을 위해<br>확정기여형(DC형)퇴직연금제도를 <br class="on-br">운영하고<br class="off-br">있습니다</p>
+				</div>
+			</div>
+			<div class="welfare_con_wrap">
+				<p class="welfare_icon_box"><img class="welfare_icon" src="./img/welfare_14.png" alt=""></p>
 				<div class="welfare_con_inner">
 					<p class="welfare_in_text1">사우회 운영</p>
 					<p class="welfare_in_text2">임직원과 직원가족의 경조사 발생 시<br>'사우회 약관에 따라' 경조금을 지급합니다.</p>
@@ -689,7 +690,7 @@ $(function(){
 		</div>
 	</div>
 	<p class="welfare_bottom_text">
-		-&nbsp;&nbsp;위의 사항은 굿아이티어 정규직 사원들에게 해당하는 사항입니다.&nbsp;&nbsp;-<br>
+		-&nbsp;&nbsp;위의 사항은 굿아이티어 정규직 사원들에게 <br class="on-br">해당하는 사항입니다.&nbsp;&nbsp;-<br>
 		<span>(수습기간은 복지 혜택이 적용되지 않습니다.)</span>
 	</p>
 </div>
