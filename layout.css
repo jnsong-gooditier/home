@@ -74,6 +74,7 @@ body{
 
 .headerOn {
     height: 520px;
+    box-shadow: 0 0 10px gray;
 }
 
 .header::after{
