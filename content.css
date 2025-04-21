@@ -330,9 +330,3 @@ div.tab-pane{padding:10px 0 0 10px; border-radius: 30px;}
 .contract .contractBox .content.collect.on{padding-top:15px; font-size: 27px; text-decoration:underline; cursor:pointer;}
 .contract .contractBox .content .price{margin-top: 8px; color:#636363;}
 
-/*text-animation*/
-.txt_ani{
-		opacity: 0;
-		transform: translateY(50px);
-		transition: opacity 1s ease-out 0.3s, transform 1s ease-out 0.3s;
-}

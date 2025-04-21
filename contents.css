@@ -1,17 +1,5 @@
 @charset "utf-8";
 
-/*글씨 애니메이션*/
-.txt_ani {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 1s ease-out;
-  }
-  
-  .txt_ani.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
 /*contents*/
 .contents_wrap {
     width: 1400px;
@@ -44,7 +32,7 @@
     font-weight: 300;
     font-size: 25px;
     line-height: 42px;
-    padding-bottom: 100px;
+    padding-bottom: 30px;
 }
 
 .contents1 {
@@ -929,8 +917,12 @@ a.hover.color-3:hover{
     height: 670px;
     top: 470px;
     background-size: cover;
+    background-position: bottom;
 }
 
+.contents1{
+    margin-top: 70px;
+}
 .contents2{
     height: 530px;
 }
@@ -1236,7 +1228,6 @@ a.hover.color-3:hover{
 .ci_wrap {
     display: flex;
     justify-content: space-between;
-    margin: 30px 0 110px 0;
 
 }
 
@@ -1262,12 +1253,22 @@ a.hover.color-3:hover{
 }
 
 /* 오시는길 */
+.contactus .contents_wrap{
+    height: 800px;
+}
+
+.contact-con{
+    margin-top: 30px;
+}
 
 .location_text_wrap {
-    display: flex;
-    flex-wrap: wrap;
+    display: block;
+    float: left;
+    margin-top: 15px;
+    margin-right: 2%;
+    width: 49%;
+    height: 500px;
     margin-bottom: 50px;
-    margin-top: 70px;
 }
 
 .location_con_title {
@@ -1283,7 +1284,6 @@ a.hover.color-3:hover{
     font-size: 24px;
     margin-bottom: 16px;
 }
-
 
 .address_text {
     display: flex;
@@ -1302,20 +1302,21 @@ a.hover.color-3:hover{
 }
 
 .lacation_text_margin_left {
-    margin-left: 120px;
+    margin-top: 50px;
 }
 
 /* 지도 map 영역 */
 .map_wrap {
-    width: 100%;
-    height: 700px;
+    float: left;
+    width: 49%;
+    height: 600px;
     background-color: #e0e0e0;
 }
 
 .map_con_box {
-    width: 49%;
+    width: 100%;
     height: 160px;
-    display: flex;
+    margin-bottom: 30px;
     border: 1px solid #e0e0e0;
     border-radius: 30px;
 }
@@ -1366,9 +1367,6 @@ a.hover.color-3:hover{
     color: #999;
 }
 .transit {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
     margin-top: 40px;
 }
 
@@ -1656,7 +1654,7 @@ a.hover.color-3:hover{
 /* 인재상 부분*/
 .sub_title {
     text-align: center;
-    margin: 60px 0;
+    margin: 0;
 }
 
 .sub_title_big {
@@ -1677,7 +1675,7 @@ a.hover.color-3:hover{
     height: 80px;
     border: 1px solid #e0e0e0;
     border-radius: 50px;
-    margin-right: 40px;
+    margin: 30px auto;
 }
 
 .ico_talent_circle > img {
@@ -1690,15 +1688,10 @@ a.hover.color-3:hover{
     display: flex;
     justify-content: space-between;
     text-align: center;
-    width: 1260px;
+    width: 100%;
 }
-
-.talent_wrap > div{
-    margin-right: 50px;
-}
-
-.talent_text_con {
-    margin: 80px 0;
+.talent_text_con{
+    text-align: center;
 }
 
 .talent_ico_text_big {
@@ -1709,7 +1702,7 @@ a.hover.color-3:hover{
 .talent_ico_text_small {
     font-size: 16px;
     font-weight: 300;
-    line-height: 22px;
+    line-height: 25px;
     margin-top: 10px;
 }
 
@@ -1726,13 +1719,12 @@ a.hover.color-3:hover{
 .welfare_title {
     font-size: 22px;
     font-weight: 500;
+    margin-bottom: 30px;
     text-align: center;
 }
 
-.welfare_sub_text {
-    font-size: 16px;
-    text-align: center;
-    margin-top: 18px;
+.welfare_wrap{
+    padding-bottom: 30px;
 }
 
 .welfare_con_wrap {
@@ -1740,6 +1732,7 @@ a.hover.color-3:hover{
     height: 150px;
     box-sizing: border-box;
     border:1px solid #e0e0e0;
+    border-radius: 30px;
     padding: 30px;
     display: flex;
     vertical-align: middle;
@@ -1772,7 +1765,7 @@ font-weight: 700;
 }
 
 .welfare_wrap1 {
-    margin: 50px auto 150px;
+    margin: 50px auto;
     width: 920px;
     display: flex;
     justify-content: space-between;
@@ -1807,7 +1800,6 @@ font-weight: 700;
 }
 
 .welfare_bottom_text {
-    margin-top: 100px;
     font-weight: 400;
     color: #1566ab;
     text-align: center;
@@ -2805,7 +2797,7 @@ padding: 8px 0px 8px 20px;
 }
 
 .question:hover {
-    color: #2962ff;
+    color: #0865b0;
 }
 
 [id$="-toggle"] {
@@ -2825,6 +2817,9 @@ padding: 8px 0px 8px 20px;
 }
 
 .database_answer_list_text {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    padding: 5px 20px ;
     font-weight: 500;
     font-size: 18px;
     margin-bottom: 10px;
@@ -2850,3 +2845,21 @@ dd{
     border: solid 1px #ffffff;
 }
 
+/*타이틀 애니메이션*/
+.txt_ani {
+    position: relative;
+    z-index: auto;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+  
+.txt_ani.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*솔루션*/
+.text02{
+    margin-top: 50px;
+}

@@ -15,20 +15,65 @@ body{
 	overflow-x:hidden;
 }
 
-/*header*/
-.header{
-    position: absolute;
-    left: 0; right: 0; top: 0;
-    height: 88px;
+/* 기본 헤더 설정 */
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+  }
+  
+  /* 홈 화면 처음 - 투명 상태 */
+  .logo {
+    display: block;
+    width:90px;
+    height:74px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+  }
+
+  .header.trans {
+    background: transparent;
+  }
+  
+  .header.trans a {
+    color: #fff;
+  }
+  
+  .logo.white {
+    background-image: url("./img/logo-white.png");
+  }
+  
+  /* hover했을 때 배경 흰색, 로고 검정, 글씨 검정 */
+  .header.trans.hovering {
     background: #fff;
-    transition: .3s;
-    z-index: 100;
-    border-bottom: 1px solid #ddd;
-    box-shadow: 0 0 10px #333;
-}
+  }
+  
+  .header.trans.hovering a {
+    color: #000;
+  }
+  
+  .logo.white.hovering {
+    background-image: url("./img/logo-color.png");
+    
+  }
+  
+  /* 스크롤 내리거나 다른 페이지 */
+  .header.default {
+    background: #fff;
+  }
+  
+  .header.default a {
+    color: #000;
+  }
+  
+  .logo.black{
+    background-image: url("./img/logo-color.png");
+  }
 
 .headerOn {
-    height: 530px;
+    height: 520px;
 }
 
 .header::after{
@@ -45,7 +90,6 @@ body{
 
 .wrap {
 	width: 1400px;
-	background-color: #fff;
 	height: 88px;
 	box-sizing: border-box;
 	position: relative;
@@ -122,10 +166,9 @@ body{
 .wrap .lnb nav > ul > li > a {
     display: block;
     position: relative;
-    width: 186px;
+    width: 200px;
     height: 88px;
     font-size: 18px;
-    color: #333;
     font-weight: 500;
     line-height: 88px;
 }
@@ -148,14 +191,13 @@ body{
     
 }
 .wrap .lnb nav > ul ul {
-	height: 600px;
+	height: 520px;
     position: absolute;
     width: 100%;
     padding: 22px 0 0;
     text-align: center;
     opacity: 0;
     transition: all 0.5s;
-    height: 450px;
     left: 0;
     top: 76px;
     z-index: 10000;
@@ -276,7 +318,7 @@ body{
 .nav_bg {
     width: 100%;
     height: 60px;
-    background-color: #1566ab;
+    background-color: #0865b0;
     box-sizing: border-box;
 }
 
@@ -291,7 +333,7 @@ body{
 .nav_home_btn {
     width: 60px;
     height: 60px;
-    background-color: #39a1e3;
+    background-color: #80c0e3;
 }
 
 .nav_home_btn > a {
@@ -335,23 +377,27 @@ body{
 }
 
 .nav_depth > li {
-    border-right: 1px solid #39a1e3;
+    border-right: 1px solid #80c0e3;
 }
 
 .nav_depth_drop {
+    position: relative;
+    z-index: 10;
     display : none;
-    background: #1566ab;
+    background: #0865b0;
     width: 100%;
     overflow: visible;
 }
 
 .nav_depth_drop > li {
+    position: relative;
+    z-index: 100;
     color: #fff;
     height: 50px;
     line-height: 50px;
     padding-left: 20px;
     margin: 0 auto;
-    border-top: 1px solid #39a1e3;
+    border-top: 1px solid #80c0e3;
     font-size: 14px;
 }
 
@@ -473,7 +519,7 @@ body{
 .top_btn {
     width: 50px;
     height: 60px;
-    background-color: #39a1e3;
+    background-color: #80c0e3;
     border-radius: 25px;
     display: flex;
     justify-content: space-around;
@@ -648,7 +694,7 @@ body{
 }
 
 .underline.blue {
-    background-image: linear-gradient(transparent 60%, #1566ab 40%);
+    background-image: linear-gradient(transparent 60%, #0865b0 40%);
 }
 
 .sitemap_depth1 > li:hover > a > span.underline {

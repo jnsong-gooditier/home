@@ -11,7 +11,15 @@
 
 .scroll-show {
     opacity: 1;
-  }
+}
+
+.sub_title img{
+    width: 900px;
+}
+
+.folding_con{
+    width: 900px;
+}
 
 @media (min-width:1440px) {
 .scroll-show.bg1 {
@@ -189,7 +197,7 @@
     /*career-talent*/
     .talent_wrap {
         flex-wrap: wrap;
-        width: 1020px;
+        width: 950px;
     }
 
     /*career-benefit*/
@@ -319,8 +327,6 @@
         margin-bottom: 50px;
     }
 
-    
-
     .index_news_wrap{
         width: 100%;
         height: 700px;
@@ -419,47 +425,64 @@
     }
 
     /*about us-ci*/
+    .ci_section_line {
+       margin: 30px 0;
+    }
     .ci_wrap{
         flex-wrap: wrap;
         flex-direction: row;
     }
 
-    .dl_btn_guide > ul{
-        position: flex;
+    .ci_left_con{
         width: 100%;
+        height: auto;
     }
 
-    .dl_btn{
+    .dl_btn_guide > ul > li{
+        float: left;
         width: 49%;
-        margin-right: 2%;
+        margin-right: 2%
     }
 
     .dl_btn_guide > ul > li:last-child{
         margin-right: 0;
     }
 
-    /*service*/
-    .edm_table {
+    .dl_btn {
+        width: 100%;
+        margin: 0;
+    }
+
+    .ci_wrap img{
+        margin-top: 30px
+    }
+
+    /*products*/
+    /*database*/
+    .answer_inner_list_flex{
+        flex-wrap: wrap;
+    }
+    .answer_inner_list_r {
+        margin-left: 0;
+    }
+
+    .sub_title img{
         width: 100%;
     }
 
-    .edm_contect {
+    .folding_con{
         width: 100%;
-    }
-
-    .edm_flex2 {
-        width: 200px;
-        justify-content: center;
-    }
-
-    .edm_flex2 .mail{
-        margin-top: 10px;
     }
 
     /*career-talent*/
     .talent_wrap {
         flex-wrap: wrap;
-        width: 90%;
+        width: 100%;
+    }
+
+    .talent_text_con {
+        width: 100%;
+        margin-top: 30px;
     }
 
     /*career-benefit*/
@@ -495,6 +518,7 @@
     .welfare_sub_text {
         margin-bottom: 50px;
     }
+    
 
     /*career-info*/
     .post_info_2 {
